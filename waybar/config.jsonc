@@ -10,6 +10,7 @@
         "custom/power",
 	"cpu",
         "memory",
+	"tray",
 	"hyprland/window"
         //"custom/media"
     ],
@@ -20,7 +21,6 @@
 	"pulseaudio",
         "backlight",
         "hyprland/language",
-        "tray",
 	"network",
 	"clock"
     ],
