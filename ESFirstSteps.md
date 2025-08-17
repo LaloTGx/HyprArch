@@ -5,6 +5,17 @@ Para poder instalar cualquier cosa se manejan por espejos y puedes editarlo con 
 `sudo nvim /etc/pacman.d/mirrorlist`
 dependiendo de tu zona puedes agregar el mirror
 
+<!-- por cierto este es listado de los servers oficiales mas rapidos segun la IA-->
+<!-- 
+Server = https://mirror.rackspace.com/archlinux/$repo/os/$arch
+Server = https://mirror.rackspace.com/archlinux/$repo/os/$arch
+Server = https://mirror.rackspace.com/archlinux/$repo/os/$arch
+Server = https://mirror.math.princeton.edu/pub/archlinux/$repo/os/$arch
+Server = https://mirror.chaotic.cx/archlinux/$repo/os/$arch
+Server = https://mirror.archlinux.org/$repo/os/$arch 
+
+Espero te funcione :)
+-->
 ---
 ## Pacman - Yay
 Bueno ya tienes instalado por defecto pacman (en el caso de arch)
@@ -58,6 +69,15 @@ ya que lo dividi en subarchivos en el caso de que quieras modificar otra cosas p
 `cd .config/hypr/`
 y con `ls` veras todos los archivos que quieras modificar con tu editor de texto preferido :)
 
+### Hyprsunset
+De acuerdo con la documentacion de hyprland hyprsunset es el manejo de la temperatura de tu monitor
+para evitar que tus ojos se cansen de ver mucho la pantalla para poder instalarlo es con este comando
+`sudo pacman -S hyprsunset` tambien en la carpeta de "Hypr" te deje un archivo de configuracion para que modifiques
+a la hora que se aplique el filtro o si quieres probarlo puedes intentarlo con el siguiente comando `hyprsunset -t 2500`
+pero si ya tienes mi archivo corriendo deber hacer `pkill hyprsunset` antes para que pueda correr el primer comando ya que
+primero verifica si ya tienes perfiles creados por lo que no te permite ejecutar sin antes eleminar ese proceso o tarea
+pero tranqui obviamente no sera permantes solo sera en ese uso si reinicias otra vez se ejecutara los perfiles :)
+
 ---
 ## Waybar
 En mi caso waybar siempre lo he tenido en
@@ -74,6 +94,9 @@ como mostrarte el clima y pasaralo con una API o crear tu media player de spotif
 `mkdir scripts` dentro de waybar 
 luego crea los archivos dentro de **scripts** con `touch script_example.sh`
 espero te funcione y no dejes de crear :)
+
+---
+## Swaync
 
 ---
 ## Referencias
