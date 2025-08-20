@@ -17,57 +17,114 @@ Server = https://mirror.archlinux.org/$repo/os/$arch
 Espero te funcione :)
 -->
 ---
+## Conectarte a una red (WIFI/Ethernet)
+En mi caso para mi es mas estable `sudo systemctl enable --now systemd-networkd` ya que en mi caso `networkmanager`
+no tenia tan estable mi wifi a cada rato se iba y aveces no se conectaba a mi red de internet (ocuapaba `nmtui`).
+entonces regrese mejor con `systemd-networkd` es mas estable pero tambien mas complejo por los comandos que llegues
+a ocupar para conectarte a una red asi que para evitarte investigar sobre como conectarte aqui te doy los pasos
+a seguir para que puedas conectarte a una red utilizando `iwd` con el `systemd-networkd`
+
+* Para instarlo con pacman:
+`sudo pacman -S iwd`
+
+* Para poder activar iwd:
+`sudo systemctl enable --now iwd`
+
+* Para poder conectarte:
+`iwctl`
+
+* Y te dara una informacion como este:
+`iwctl
+NetworkConfigurationEnabled: enabled
+StateDirectory: /var/lib/iwd
+Version: 3.9`
+
+### Que pasa si lo tengo como **disabled**?
+* Edita el archivo de iwd
+`sudo nano /etc/iwd/main.conf`
+* Luego le agregas esto dentro del archivo:
+
+\[General\]
+ 
+ EnableNetworkConfiguration=true
+
+\[Network\]
+ 
+ NameResolvingService=systemd
+
+* Despues reiniciamos iwd:
+`sudo systemctl restart iwd`
+
+* Y revisa el estado con `iwctl`
+
+En mi caso esto me funciono y ya no tuves que realizar mas proceso para que el estado me muestre en **enable**
+
+### Como conectarme a una red con iwd
+Una vez dentro de `iwctl`
+* Para escanear las redes wifi mas cercanas lo haces con:
+\[iwd\]\# `station wlan0 scan`
+* Despues para visualizar las redes escaneadas te lo muestra con:
+\[iwd\]\# `station wlan0 get-networks`
+* Para conectarte a tu red preferida lo haces con:
+\[iwd\]\# `station wlan0 connect TU_RED_WIFI`
+* Y por ultimo para salirte de `iwd` es con:
+`exit`
+
+y con eso ya estarias conectado a tu red WIFI :)
+
+
+---
 ## Pacman - Yay
 Bueno ya tienes instalado por defecto pacman (en el caso de arch)
 
-asi que para instalar con **pacman** es...
+* Asi que para instalar con **pacman** es...
 `sudo pacman -S (nombre del paquete)`
 
-y para desinstalar en mi caso ocupo este comando:
+* Para desinstalar en mi caso ocupo este comando:
 `sudo pacman -Rns (nombre del paquete)`
 
-pero en el caso de yay lo primero que tienes que instalar es **base-devel**
+* Pero en el caso de yay lo primero que tienes que instalar es **base-devel**
 `sudo pacman -S --needed base-devel git`
 
-para despues instalar **yay**
+* Para despues instalar **yay**
 `git clone https://aur.archlinux.org/yay.git`
 `cd yay`
 `makepkg -si`
 
-En **yay** para instalar cualquier paquete es lo mismo que pacman aqui te muestro
+* En **yay** para instalar cualquier paquete es lo mismo que pacman aqui te muestro
 `yay -S (nombre del paquete)`
 `yay pacman -Rns (nombre del paquete)`
 
 ---
 ## 7zip
-para extraer los documentos en la ruta actual donde estas usas este comando:
+* Para extraer los documentos en la ruta actual donde estas usas este comando:
 `7z e (el archivo a descomprimir).zip`
 
 ---
 ## Fonts
-Si no tienes una carpeta destinada para los fonts lo crear asi:
+* Si no tienes una carpeta destinada para los fonts lo crear asi:
 `mkdir ~/.local/share/fonts/`
 
-Una vez creado te vas a la ruta donde extraiste tu fuente y puedes copearlo asi:
+* Una vez creado te vas a la ruta donde extraiste tu fuente y puedes copearlo asi:
 `cp *.otf ~/.local/share/fonts/` o si  gustas moverlo puedes remplazar `cp` por `mv`
 
-Para revisar si el font esta instalado puedes verlo con le siguiente comando:
+* Para revisar si el font esta instalado puedes verlo con le siguiente comando:
 `fc-cache -fv`
 
-Para revisar un font en especifico usarias este comando:
+* Para revisar un font en especifico usarias este comando:
 `fc-list | grep "CodeNewRoman"`
 
 Listo puedes ocuparlo en tu sistema anotando el nombre de la fuente en cualquier software que vayas a utilizar :)
 
 ---
 ## Hyprland
-Para configurar tus propias binds puedes editar en el siguiente archivo
+* Para configurar tus propias binds puedes editar en el siguiente archivo
 `nvim .config/hypr/hyprland.conf`
-Si descargaste mis dotfiles o la carpeta de hypr entonces puedes cambiarlo aqui
+* Si descargaste mis dotfiles o la carpeta de hypr entonces puedes cambiarlo aqui
 `nvim .config/hypr/binds.conf`
-ya que lo dividi en subarchivos en el caso de que quieras modificar otra cosas puedes hacer
+* ya que lo dividi en subarchivos en el caso de que quieras modificar otra cosas puedes hacer
 `cd .config/hypr/`
-y con `ls` veras todos los archivos que quieras modificar con tu editor de texto preferido :)
+* y con `ls` veras todos los archivos que quieras modificar con tu editor de texto preferido :)
 
 ### Hyprsunset
 De acuerdo con la documentacion de hyprland hyprsunset es el manejo de la temperatura de tu monitor
