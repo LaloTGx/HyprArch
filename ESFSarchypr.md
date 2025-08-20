@@ -155,7 +155,7 @@ espero te funcione y no dejes de crear :)
 ---
 ## Swaync
 Para usar los botones de Swaync (sobre mi repositorio) debes tener
-instaladado **nmtui** tambien **blueman-manager** y **copyq** tambien agregye en el ultimo boton para tomar
+instaladado **nmtui** tambien **blueman-manager** y **copyq** tambien agreguè en el ultimo boton para tomar
 una captura pero necesitas instalarte **wl-copy** para que te permita tomar screenshot a tu pantalla :)
 
 para acceder a la carpeta `cd /etc/xdg/swaync`
