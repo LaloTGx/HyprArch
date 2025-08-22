@@ -6,13 +6,13 @@ Para poder instalar cualquier cosa se manejan por espejos y puedes editarlo con 
 dependiendo de tu zona puedes agregar el mirror
 
 <!-- por cierto este es listado de los servers oficiales mas rapidos segun la IA-->
-<!-- 
+<!--
 Server = https://mirror.rackspace.com/archlinux/$repo/os/$arch
 Server = https://mirror.rackspace.com/archlinux/$repo/os/$arch
 Server = https://mirror.rackspace.com/archlinux/$repo/os/$arch
 Server = https://mirror.math.princeton.edu/pub/archlinux/$repo/os/$arch
 Server = https://mirror.chaotic.cx/archlinux/$repo/os/$arch
-Server = https://mirror.archlinux.org/$repo/os/$arch 
+Server = https://mirror.archlinux.org/$repo/os/$arch
 
 Espero te funcione :)
 -->
@@ -45,11 +45,11 @@ Version: 3.9`
 * Luego le agregas esto dentro del archivo:
 
 \[General\]
- 
+
  EnableNetworkConfiguration=true
 
 \[Network\]
- 
+
  NameResolvingService=systemd
 
 * Despues reiniciamos iwd:
@@ -143,12 +143,12 @@ he visto en otros rice o en reddit que lo tienen dentro de **.config**
 asi que bueno si te descargas parte de mi rice quiero que sepa que siempre lo he tenido en esa ruta
 en el caso de que tu quieras pasarlo a `cd .config/waybar` esta bien espero que tambien pueda funcionarte :)
 
-En este caso para mi rice solo quiero dejarte con la parte de config.jscon y style.css si gustas hacerle 
+En este caso para mi rice solo quiero dejarte con la parte de config.jscon y style.css si gustas hacerle
 modificaciones puedes entrar y modificarlos archivos **config.jsonc** y style.css
 
 ### Si quieres agregarle scripts a waybar
 como mostrarte el clima y pasaralo con una API o crear tu media player de spotify solo genera una carpeta:
-`mkdir scripts` dentro de waybar 
+`mkdir scripts` dentro de waybar
 luego crea los archivos dentro de **scripts** con `touch script_example.sh`
 espero te funcione y no dejes de crear :)
 
@@ -161,6 +161,13 @@ una captura pero necesitas instalarte **wl-copy** para que te permita tomar scre
 para acceder a la carpeta `cd /etc/xdg/swaync`
 
 para instalarlo con pacman: `sudo pacman -S swaync`
+
+---
+## LSBLK
+Es para ver tu almacenamiento quizas algun dia lo llegues a ocupar para ver como esta particionado tu
+almacenamiento para ello solo necesitas ejecutar este codigo:
+`lsblk -o NAME,MODEL,SIZE,TYPE,MOUNTPOINT`
+espero te sirva de ayuda :)
 
 ---
 ## Referencias
