@@ -96,6 +96,15 @@ Bueno ya tienes instalado por defecto pacman (en el caso de arch)
 `yay pacman -Rns (nombre del paquete)`
 
 ---
+## Nvim
+* Es un gran editor de texto (y es mucho mejor con sus plugins) pero antes de instalarlo debes instalar primero
+`sudo pacman -S nodejs npm` estos dos son los encargados de descargar los plugins que vaya a ocupar.
+
+* Despues de instalarlo ahora si ya puedes instalar nvim `sudo pacman -S nvim` y despues agregar los plugins que
+para que te ayuden en tu rendimiento de escribir codigo tengo un poco de plugins en mi repo espero esto te sirva de
+ayuda :)
+
+---
 ## 7zip
 * Es una herramienta poderosa para extraccion de archivos zip para instarlarlo solo necesitas del comando:
 `sudo pacman -S 7zip`
