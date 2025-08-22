@@ -97,6 +97,8 @@ Bueno ya tienes instalado por defecto pacman (en el caso de arch)
 
 ---
 ## 7zip
+* Es una herramienta poderosa para extraccion de archivos zip para instarlarlo solo necesitas del comando:
+`sudo pacman -S 7zip`
 * Para extraer los documentos en la ruta actual donde estas usas este comando:
 `7z e (el archivo a descomprimir).zip`
 
