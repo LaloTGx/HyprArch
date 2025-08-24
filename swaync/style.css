@@ -480,6 +480,7 @@
   text-shadow: 0 0 2px #000000, 0 0 5px #000000;
   box-shadow: 0 0 2px #b5e65c, 0 0 5px #b5e65c;
   color: #000000;
+  font-size: 1rem;
 }
 
 .widget-buttons-grid flowboxchild > button.toggle:checked {

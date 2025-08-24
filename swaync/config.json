@@ -96,7 +96,7 @@
       "buttons-per-row": 4,
       "actions": [
         {
-          "label": "⏻",
+          "label": "",
           "type": "button",
           "command": "shutdown now"
         },
