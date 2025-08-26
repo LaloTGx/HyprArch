@@ -74,7 +74,7 @@ y con eso ya estarias conectado a tu red WIFI :)
 
 
 ---
-## Pacman - Yay
+## Pacman
 Bueno ya tienes instalado por defecto pacman (en el caso de arch)
 
 * Asi que para instalar con **pacman** es...
@@ -83,6 +83,25 @@ Bueno ya tienes instalado por defecto pacman (en el caso de arch)
 * Para desinstalar en mi caso ocupo este comando:
 `sudo pacman -Rns (nombre del paquete)`
 
+### Activar Multilib para pacman
+Al principio tenia duda de para que sirve **Multilib** pero es algo **(Opcional)** dependiendo de que quieras instalar
+en tu sistema, lo que hace al menos desde mi opinion es correr software de **32bits** en tu sistema. Como veras el
+sistema se maneja en dos versiones en **32bits** y en **64bits** casi la mayoria de ordenadores actuales manejan **64bits**
+por lo tanto, lo que hace multilib es descargar las dos versiones para que te permita ejecutarlo como los videojuegos o
+cualquier otro programa.
+
+* Para poder activarlo necesitas ejecutar el siguiente comando:
+`sudo nvim /etc/pacman.conf`
+Puedes usar el editor de texto al que estas adaptado como **nano** o cualquier otro.
+
+* Para poder activarlo solo busca en el documento **Multilib**:
+`[multilib]`
+`Include = /etc/pacman.d/mirrorlist`
+
+Lo descomentas y listo, ya podras descargar y ejecutar programas para los dos tipos de verisones, pero ojo por que tambien
+puede ocupar un poco mas de almacenacienamiento pero si en tu caso tienes mucho almacenamiento esto no seria un problema. :)
+
+## Yay
 * Pero en el caso de yay lo primero que tienes que instalar es **base-devel**
 `sudo pacman -S --needed base-devel git`
 
