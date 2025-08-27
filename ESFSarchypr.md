@@ -26,17 +26,19 @@ entonces regrese mejor con `systemd-networkd` es mas estable pero tambien mas co
 a ocupar para conectarte a una red asi que para evitarte investigar sobre como conectarte aqui te doy los pasos
 a seguir para que puedas conectarte a una red utilizando `iwd` con el `systemd-networkd`
 
-* Para instarlo con pacman:
+* Para instarlo con pacman:\
 `sudo pacman -S iwd`
-* Para poder activar iwd:
+* Para poder activar iwd:\
 `sudo systemctl enable --now iwd`
-* Para poder conectarte:
+* Para poder conectarte:\
 `iwctl`
 * Y te dara una informacion como este:
+    ```
     iwctl
     NetworkConfigurationEnabled: enabled
     StateDirectory: /var/lib/iwd
     Version: 3.9
+    ```
 
 ### Que pasa si lo tengo como **disabled**?
 * Edita el archivo de iwd
@@ -213,5 +215,5 @@ Este link es la documentacion de hyprland si quieres hacer algun cambio:\
 
 ### Arch
 Tambien busco por la wiki de arch, me funciona para poder entender un poco mas sobre el sistema aqui te dejo el listado
-de links que tambien espero que sea de tu ayuda. :)
-* [Mirrors](https://wiki.archlinux.org/title/Mirrors_(Espa%C3%B1ol))
+de links que tambien espero que sea de tu ayuda. :)\
+[Mirrors](https://wiki.archlinux.org/title/Mirrors_(Espa%C3%B1ol))
