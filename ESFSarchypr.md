@@ -41,16 +41,18 @@ a seguir para que puedas conectarte a una red utilizando `iwd` con el `systemd-n
     ```
 
 ### Que pasa si lo tengo como **disabled**?
-* Edita el archivo de iwd
+* Edita el archivo de iwd:\
 `sudo nano /etc/iwd/main.conf`
-* Luego le agregas esto dentro del archivo:\
-\[General\]\
- EnableNetworkConfiguration=true\
-\[Network\]\
- NameResolvingService=systemd
+* Luego le agregas esto dentro del archivo:
+```
+ [General]
+ EnableNetworkConfiguration = true
+ [Network]
+ NameResolvingService = systemd
+```
 * Despues reiniciamos iwd:\
 `sudo systemctl restart iwd`
-* Y revisa el estado con:
+* Y revisa el estado con:\
 `iwctl`\
 En mi caso esto me funciono y ya no tuves que realizar mas proceso para que el estado me muestre en **enable**
 
@@ -171,8 +173,10 @@ Para usar los botones de Swaync (sobre mi repositorio) debes tener instaladado *
 y **copyq** tambien agreguè en el ultimo boton para tomar una captura pero necesitas instalarte **wl-copy** para que
 te permita tomar screenshot a tu pantalla :)
 
-para acceder a la carpeta `cd /etc/xdg/swaync`\
-para instalarlo con pacman: `sudo pacman -S swaync`
+* Para instalarlo con pacman:\
+`sudo pacman -S swaync`
+* Para acceder a la carpeta de swaync:\
+`cd /etc/xdg/swaync`
 
 ---
 ## LSBLK
@@ -207,13 +211,13 @@ Espero te sirva de ayuda para ver el contenido de tu **USB**. :)
 <!-- Aqui mostrare las referencias que he estado ocupando -->
 <!-- Si eres el autor de alguna pagina muchas gracias por todo -->
 <!-- Obviamente tambien he llegado a utilizar IA pero hay cosas que prefiero verlo en las paginas web :) -->
+### Links Generales
 Este link me ayudo a escribir este Markdown:\
-[MarkDown Guide](https://www.markdownguide.org/basic-syntax/)
-
+[MarkDown Guide](https://www.markdownguide.org/basic-syntax/)\
 Este link es la documentacion de hyprland si quieres hacer algun cambio:\
 [Hyprland Wiki](https://wiki.hypr.land/Configuring/)
 
-### Arch
+### Links Especificos
 Tambien busco por la wiki de arch, me funciona para poder entender un poco mas sobre el sistema aqui te dejo el listado
 de links que tambien espero que sea de tu ayuda. :)\
 [Mirrors](https://wiki.archlinux.org/title/Mirrors_(Espa%C3%B1ol))
