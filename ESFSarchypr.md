@@ -45,11 +45,8 @@ Version: 3.9`
 * Luego le agregas esto dentro del archivo:
 
 \[General\]
-
  EnableNetworkConfiguration=true
-
 \[Network\]
-
  NameResolvingService=systemd
 
 * Despues reiniciamos iwd:
@@ -104,7 +101,6 @@ puede ocupar un poco mas de almacenacienamiento pero si en tu caso tienes mucho 
 ## Yay
 * Pero en el caso de yay lo primero que tienes que instalar es **base-devel**
 `sudo pacman -S --needed base-devel git`
-
 * Para despues instalar **yay**
 `git clone https://aur.archlinux.org/yay.git`
 `cd yay`
@@ -134,16 +130,12 @@ ayuda :)
 ## Fonts
 * Si no tienes una carpeta destinada para los fonts lo crear asi:
 `mkdir ~/.local/share/fonts/`
-
 * Una vez creado te vas a la ruta donde extraiste tu fuente y puedes copearlo asi:
 `cp *.otf ~/.local/share/fonts/` o si  gustas moverlo puedes remplazar `cp` por `mv`
-
 * Para revisar si el font esta instalado puedes verlo con le siguiente comando:
 `fc-cache -fv`
-
 * Para revisar un font en especifico usarias este comando:
 `fc-list | grep "CodeNewRoman"`
-
 Listo puedes ocuparlo en tu sistema anotando el nombre de la fuente en cualquier software que vayas a utilizar :)
 
 ---
@@ -200,11 +192,32 @@ almacenamiento para ello solo necesitas ejecutar este codigo:
 espero te sirva de ayuda :)
 
 ---
+## Montar una USB
+Si algo que tendras que ver en linux es sobre como montar o como ver el contenido de tu **USB**, es un poco laborioso
+pero no imposible.
+* Para poder leer tu memoria usb necesitas ejecutar el siguiente comando:
+`sudo pacman -S exfatprogs ntfs-3g`
+Esto sirve para que acepte cualquier tipo de formato que tenga tu **USB**.
+* Crea una carpeta donde puedas ver el contenido de **USB** ejecutando el comando:
+`sudo mkdir -p /mnt/usb`
+* Para ver los **Dispositivos de bloques (almacenamiento)** ejecutas lo siguiente:
+`lsblk`
+Aqui podras identificar tu **USB** y tambien el almacenamiento de tu laptop.
+* Una vez identificado el **USB** procedes a montarlo en mi caso su nombre era **"sdb"**
+`sudo mount /dev/sdb /mnt/usb`
+* Para ver el contenido del usb montado se encontra en la carpeta **/mnt/usb** esta hasta la raiz **"/"** puedes verlo con
+ls o tambien con tu explorador de archivos favorito.
+`ls /mnt/usb`
+* Por ultimo despues de ver el contenido de tu **USB** y para desmontarlo de la manera correcta puedes ejecutar lo siguiente:
+`sudo umount /mnt/usb`
+Espero te sirva de ayuda para ver el contenido de tu **USB**. :)
+
+---
 ## Referencias
 <!-- Aqui mostrare las referencias que he estado ocupando -->
 <!-- Si eres el autor de alguna pagina muchas gracias por todo -->
 <!-- Obviamente tambien he llegado a utilizar IA pero hay cosas que prefiero verlo en las paginas web :) -->
-Este link me ayudo a escribir este Markdown:
+Este link me ayudo a escribir este Markdown:\
 [MarkDown Guide](https://www.markdownguide.org/basic-syntax/)
 
 Este link es la documentacion de hyprland si quieres hacer algun cambio:
