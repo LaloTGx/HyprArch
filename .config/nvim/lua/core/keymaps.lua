@@ -12,3 +12,5 @@ vim.keymap.set("n", "<A-w>", "k") -- Alt+w → arriba
 vim.keymap.set("n", "<A-s>", "j") -- Alt+s → abajo
 vim.keymap.set("n", "<A-a>", "h") -- Alt+a → izquierda
 vim.keymap.set("n", "<A-d>", "l") -- Alt+d → derecha
+-- Da formato al archivo actual con Prettier
+vim.keymap.set("n", "<leader>f", ":!prettier --write %<CR>", { desc = "Formatear con Prettier" })
