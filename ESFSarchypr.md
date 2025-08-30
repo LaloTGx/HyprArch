@@ -121,6 +121,15 @@ ayuda :)
 `7z e (el archivo a descomprimir).zip`
 
 ---
+## Skim
+* Es una herramienta muy utilizado o almenos yo lo ocupo mucho, en el caso de que estes cansado de escribir:\
+`cd /La/Ruta/`
+* Si quieres ver el listado de tus directorios para abrir un archivo solo escribes:\
+`sk`
+* Y te muestra el listado de directorios a donde quieres ir para editar un archivo es un alivio si ya tienes muchos archivos y no recuerdas la ruta
+Espero te sirva de ayuda. :)
+
+---
 ## Fonts
 * Si no tienes una carpeta destinada para los fonts lo crear asi:\
 `mkdir ~/.local/share/fonts/`
