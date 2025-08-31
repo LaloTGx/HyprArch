@@ -21,52 +21,60 @@
   },
   "modules": [
     {
-    "type": "users",
-    "key": " ",
-    "format": "{name} :)",
-    "keyColor": "white"
-    },
-    {
-      "type": "datetime",
-      "key": " ",
-      "format": "Day #{day-in-year} of {year}",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "os",
-      "key": "󰣇 ",
-      "format": "{pretty-name}",
-      "keyColor": "blue"
-    },
-    {
-      "type": "wm",
-      "key": " ",
-      "format": "{pretty-name}",
-      "keyColor": "cyan"
+      "type": "users",
+      "key": " ",
+      "format": "{name} :)",
+      "keyColor": "red",
+      "outputColor": "bright_light_red"
     },
     {
       "type": "shell",
       "key": " ",
       "format": "{pretty-name}",
-      "keyColor": "blue"
+      "keyColor": "black",
+      "outputColor": "bright_light_black"
     },
     {
-      "type": "packages",
-      "key": "󰏖 ",
-      "format": "󰮯:{pacman} 󰏓:{flatpak-system}",
-      "keyColor": "cyan"
+      "type": "wm",
+      "key": " ",
+      "format": "{pretty-name}",
+      "keyColor": "cyan",
+      "outputColor": "bright_light_cyan"
     },
     {
-      "type": "disk",
-      "key": "󰋊 ",
-      "format": "{size-used}/{size-total}",
-      "keyColor": "blue"
+      "type": "os",
+      "key": "󰣇 ",
+      "format": "{pretty-name}",
+      "keyColor": "blue",
+      "outputColor": "bright_light_blue"
     },
     {
       "type": "wifi",
       "key": " ",
       "format": "{ssid} {signal-quality}",
-      "keyColor": "cyan"
+      "keyColor": "green",
+      "outputColor": "bright_light_green"
+    },
+    {
+      "type": "packages",
+      "key": "󰏖 ",
+      "format": "󰮯:{pacman}  󰏓:{flatpak-system}",
+      "keyColor": "yellow",
+      "outputColor": "bright_light_yellow"
+    },
+    {
+      "type": "disk",
+      "key": "󰋊 ",
+      "format": "{size-used}/{size-total}",
+      "keyColor": "magenta",
+      "outputColor": "bright_light_magenta"
+    },
+    {
+      "type": "datetime",
+      "key": " ",
+      "format": "Day #{day-in-year} of {year} at {hour-pretty}:{minute-pretty}",
+      "keyColor": "white",
+      "outputColor": "bright_light_white"
     },
     "break"
   ]
