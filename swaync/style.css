@@ -1,5 +1,5 @@
 :root {
-  --cc-bg: rgba(5, 5, 5, 0.5);
+  --cc-bg: rgba(5, 5, 5, 0.2);
   --noti-border-color: rgba(255, 255, 255, 0.15);
   --noti-bg: 48, 48, 48;
   --noti-bg-alpha: 0.8;
@@ -8,7 +8,7 @@
   --noti-bg-focus: rgba(68, 68, 68, 0.6);
   --noti-close-bg: rgb(78, 78, 78);
   --noti-close-bg-hover: rgb(94, 94, 94);
-  --text-color: #b5e65c;
+  --text-color: #e6f2ff;
   --text-color-disabled: rgb(150, 150, 150);
   --bg-selected: rgb(0, 128, 255);
   --notification-icon-size: 64px;
@@ -20,8 +20,20 @@
   font-family: DepartureMono Nerd Font, monospace;
   font-size: 13px;
   font-weight: bolder;
-  text-shadow: 0 0 2px #b5e65c, 0 0 5px #b5e65c;
+  /*text-shadow: 0 0 2px #b5e65c, 0 0 5px #b5e65c;*/
   /*animation: flicker 0.25s infinite;*/
+}
+
+@keyframes tpulse {
+  0%   { color: #e6f2ff; }
+  50%  { color: #9dafbf; text-shadow: none;}
+  100% { color: #e6f2ff; }
+}
+
+@keyframes bpulse {
+  0%   { background-color: #e6f2ff; }
+  50%  { background-color: #9dafbf; box-shadow: none;}
+  100% { background-color: #e6f2ff; }
 }
 
 @keyframes flicker {
@@ -34,9 +46,9 @@
   56%  { opacity: 1; }
   100% { opacity: 1; }
 
-  20%  { opacity: 0.8; }
+  20%  { opacity: 0.9; }
   24%  { opacity: 0.8; }
-  55%  { opacity: 0.8; }
+  55%  { opacity: 0.9; }
 }
 
 .close-button {
@@ -313,8 +325,7 @@
   /* The Control Center which contains the old notifications + widgets */
   background: var(--cc-bg);
   color: var(--text-color);
-  border-radius: 5px;
-  border-right: 2px dashed #546634;
+  border-radius: 0px;
 }
 
 .control-center .control-center-list-placeholder {
@@ -358,12 +369,18 @@
 /* Title widget */
 .widget-title > label {
   margin: 8px;
-  animation: flicker 0.25s infinite;
+  text-shadow: 0 0 2px #e6f2ff, 0 0 5px #e6f2ff;
+  animation: flicker 2s infinite, tpulse 3s ease-in-out infinite;
   font-size: 1.5rem;
 }
 
 .widget-title > button {
   margin: 8px;
+  color: #000000;
+  text-shadow: 0 0 2px #000000, 0 0 5px #000000;
+  background-color: #e6f2ff;
+  box-shadow: 0 0 2px #e6f2ff, 0 0 5px #e6f2ff;
+  animation: flicker 2s infinite, bpulse 3s ease-in-out infinite;
   border-radius: 12px;
 }
 
@@ -371,14 +388,16 @@
 .widget-dnd label {
   color: var(--text-color);
   margin: 8px;
-  font-size: 1.1rem;
-  animation: flicker 0.25s infinite;
+  font-size: 1.1rem; 
+  text-shadow: 0 0 2px #e6f2ff, 0 0 5px #e6f2ff;
+  animation: flicker 2s infinite, tpulse 3s ease-in-out infinite;
 }
 
 .widget-dnd switch {
   border-radius: 2px;
-  background-color: #b5e65c;
-  box-shadow: 0 0 2px #b5e65c, 0 0 5px #b5e65c;
+  background-color: #e6f2ff;
+  animation: flicker 2s infinite, bpulse 3s ease-in-out infinite;
+  box-shadow: 0 0 2px #e6f2ff;, 0 0 5px #e6f2ff;
   margin: 8px;
 }
 
@@ -391,13 +410,12 @@
 /* Label widget */
 .widget-label {
   margin: 8px;
-  animation: flicker 0.25s infinite;
-
+  animation: flicker 2s infinite, bpulse 3s ease-in-out infinite;
 }
 
 .widget-label > label {
-  font-size: 1.1rem;
-  animation: flicker 0.25s infinite;
+  font-size: 1.1rem;  
+  animation: flicker 2s infinite, tpulse 3s ease-in-out infinite;
 }
 
 /* Mpris widget */
@@ -440,14 +458,14 @@
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-title {
-  animation: flicker 0.25s infinite;
+  animation: flicker 2s infinite;
   font-weight: bold;
   font-size: 1.25rem;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-subtitle {
-   animation: flicker 0.25s infinite;
-   font-size: 1.1rem;
+  animation: flicker 2s infinite;
+  font-size: 1.1rem;
 }
 
 .widget-mpris .widget-mpris-player .mpris-overlay > box > button {
@@ -472,15 +490,15 @@
   margin: 8px;
   border-radius: 5px;
   text-shadow: 0 0 2px #000000, 0 0 5px #000000;
+  color: #000000;
+  font-size: 1rem;
 }
 
 .widget-buttons-grid flowboxchild > button {
   border-radius: 5px;
-  background-color: #b5e65c;
-  text-shadow: 0 0 2px #000000, 0 0 5px #000000;
-  box-shadow: 0 0 2px #b5e65c, 0 0 5px #b5e65c;
-  color: #000000;
-  font-size: 1rem;
+  background-color: #e6f2ff;;
+  box-shadow: 0 0 2px #e6f2ff, 0 0 5px #e6f2ff;
+  animation: flicker 2s infinite, bpulse 3s ease-in-out infinite;
 }
 
 .widget-buttons-grid flowboxchild > button.toggle:checked {
@@ -581,9 +599,11 @@
 .widget-inhibitors > label {
   margin: 8px;
   font-size: 1.5rem;
+  animation: flicker 2s infinite, tpulse 3s ease-in-out infinite;
 }
 
 .widget-inhibitors > button {
   margin: 8px;
   border-radius: 12px;
+  animation: flicker 2s infinite, bpulse 3s ease-in-out infinite;
 }

@@ -63,9 +63,8 @@
     "buttons-grid",
     "volume",
     "backlight",
-    "notifications",
-    "inhibitors",
     "title",
+    "notifications",
     "dnd"
   ],
   "widget-config": {

@@ -104,6 +104,16 @@ puede ocupar un poco mas de almacenacienamiento pero si en tu caso tienes mucho 
 `yay -S (nombre del paquete)`\
 `yay pacman -Rns (nombre del paquete)`
 
+## Flatpak
+* Para poder instalarlo debes ejecutar el siguiente comando:\
+`sudo pacman -S flatpak`
+* Despues reinicia la sesion para que se agreguen los cambios
+* Para instalar **"La tienda" Flathub** ejecutas el siguiente comando:\
+`sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo`
+* Y listo puedes instalar cual app de flatpak usando este sintaxis:\
+`flatpak install flathub com.project`
+Espero poder haberte ayudado. :)
+
 ---
 ## Nvim
 * Es un gran editor de texto (y es mucho mejor con sus plugins) pero antes de instalarlo debes instalar primero
