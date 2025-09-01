@@ -226,6 +226,27 @@ ls o tambien con tu explorador de archivos favorito.\
 Espero te sirva de ayuda para ver el contenido de tu **USB**. :)
 
 ---
+## Rclone
+Si alguna vez te has preocupado por si llegara a fallar tu SO y no hiciste un backup de tu informacion para esto funciona rclone
+para que almacene tu informacion en tu drive (de la nube) favorita. puedes guardar en Google Drive, OneDrive, Dropbox, etc.
+* Para instalarlo ejecuta el siguiente comando:\
+`sudo pacman -S rclone`
+* Para configurarlo y **agregar tu servicio de almacenamiento en la nube favorita** ejecutas el siguiente comando:\
+` rclone config`
+* Una vez configurado para subir tus documentos a tu **Drive** ejecutas el siguiente comando:\
+`rclone copy ~/Documents gdrive:BackupDocuments -P`\
+**Ojo** en mi caso solo quiero que una carpeta se almacene en mi **Drive**, puedes cambiar la ruta a tu gusto.
+* **(Opcional):** Si quieres que haga cambios de tu computadora, por ejemplo si eliminas algun archivo local y tambien quieres
+que se vea reflejado en tu **Drive** lo ejecutas con el siguiente comando:\
+`rclone sync ~/Documents gdrive:BackupDocuments`
+
+Por ultimo y mas importante **Rclone no sube automaticamente tus archivos** tienes que subirlo manualmente ejecutando:\
+`rclone sync ~/Documents gdrive:BackupDocuments`\
+Hay diferentes maneras de hacerlo de manera automatica con **Cron** o **Crontab**, tambien puedes haer un **Script** que ejecute
+el comando cada cierto tiempo pero ya es tu creatividad de como resolverlo, por el momento y para mi caso lo hare manual.
+Espero te sirva de ayuda para que no pierdas cosas importantes usando linux. :)
+
+---
 ## Referencias
 <!-- Aqui mostrare las referencias que he estado ocupando -->
 <!-- Si eres el autor de alguna pagina muchas gracias por todo -->
