@@ -161,6 +161,18 @@ Listo puedes ocuparlo en tu sistema anotando el nombre de la fuente en cualquier
 `cd .config/hypr/`
 * y con `ls` veras todos los archivos que quieras modificar con tu editor de texto preferido :)
 
+### Monitores
+* Para ver la lista de monitores ejecuta el siguiente comando:\
+`hyprctl monitors`
+* Despues instalas **wl-mirror** que es para duplicar tu pantalla a un **proyector con HDMI** ejecutando lo siguiente:\
+`sudo pacman -S wl-mirror`
+* Para verificar que lo tienes instalado solo ejecutas el siguiente comando:\
+`which wl-mirror` y en la salida deberia mostrarte `/usr/sbin/wl-mirror`
+* Para poder duplicar la pantalla lo harias de la siguiente manera:\
+`wl-mirror --fullscreen-output HDMI-A-1 eDP-1`\
+Donde **eDP-1** seria la pantalla de tu laptop y el **HDMI-A-1** el proyector al cual quieres proyectar para checar si es la
+entrada deberias de ejecutar el comando: `hyprctl monitors` y listo con esto ya mostraria tu monitor en el proyector. :)
+
 ### Hyprsunset
 De acuerdo con la documentacion de hyprland hyprsunset es el manejo de la temperatura de tu monitor
 para evitar que tus ojos se cansen de ver mucho la pantalla para poder instalarlo es con este comando
