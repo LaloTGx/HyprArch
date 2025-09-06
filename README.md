@@ -2,3 +2,13 @@
 Quiero mostrarte un poco sobre mi escritorio es un poco minimalista. :)
 
 ## Caracteristicas
+* **Window Manager:** Hyprland
+* **Status Bar:** Waybar
+* **Notification Center:** Swaync
+* **Launcher:** Rofi
+* **Terminal:** Kitty
+* **Shell:** Bash
+* **File Manager:** Yazi
+
+## Screenshot - Desktop
+![desktop](./screenshots/desk.png)
