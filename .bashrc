@@ -14,19 +14,31 @@ alias grep='grep --color=auto'
 
 # Icono de carpeta (Nerd Font)
 ICON_CLOCK=""
-ICON_USER=""
+ICON_USER="󰊠"
 ICON_HOST="󰌢"
 ICON_PATH=""
 
 # Colores
-COLOR_CLOCK="\[\e[1;97m\]"   # blanco brillante
-COLOR_USER="\[\e[91m\]"      # rojo brillante
-COLOR_HOST="\[\e[94m\]"      # cyan brillante
-COLOR_PATH="\[\e[93m\]"      # amarillo brillante
-COLOR_ENTRY="\[\e[92m\]"     # verde brillante
-COLOR_RESET="\[\e[0m\]"
+COLOR_LINE="\[\e[1;92m\]"    # Verde Brillante
+COLOR_LINEA="\[\e[1;32m\]"   # Verde
+COLOR_LINEB="\[\e[1;30m\]"   # Negro
 
-PS1="${COLOR_CLOCK}${ICON_CLOCK} \@ ${COLOR_USER}${ICON_USER} \u ${COLOR_HOST}${ICON_HOST} \h ${COLOR_PATH}${ICON_PATH} \w${COLOR_ENTRY}\n>${COLOR_RESET} "
+COLOR_BGCLOCK="\[\e[1;37m\]" # Blanco
+COLOR_CLOCK="\[\e[1;97m\]"   # Blanco brillante
+
+COLOR_BGUSER="\[\e[1;31m\]"  # Rojo
+COLOR_USER="\[\e[1;91m\]"    # Rojo brillante
+
+COLOR_BGHOST="\[\e[1;34m\]"  # Azul
+COLOR_HOST="\[\e[94m\]"      # Azul brillante
+
+COLOR_BGPATH="\[\e[1;33m\]"  # Amarillo
+COLOR_PATH="\[\e[93m\]"      # Amarillo brillante
+
+COLOR_ENTRY="\[\e[96m\]"     # cyan brillante
+COLOR_RESET="\[\e[0m\]"      # Reset
+
+PS1="   ${COLOR_LINEB}┏━${COLOR_LINEA}━━${COLOR_LINE}━━${COLOR_BGPATH}•${COLOR_PATH}•\n     ${COLOR_BGCLOCK}${ICON_CLOCK}${COLOR_CLOCK} \@ ${COLOR_BGHOST}${ICON_HOST} ${COLOR_HOST}\h ${COLOR_BGPATH}${ICON_PATH} ${COLOR_PATH}\w\n       ${COLOR_BGUSER}${ICON_USER} ${COLOR_USER}\u${COLOR_ENTRY}:${COLOR_RESET} "
 
 # Necesitas Instalar Fastfetch para correr al inicio
 fastfetch
