@@ -15,6 +15,8 @@ Quiero mostrarte un poco sobre mi escritorio es un poco minimalista. :)
 ![desktop](./screenshots/desk.png)
 * **Modules**
 ![modules](./screenshots/modules.png)
+* **Launcher**
+![launcher](./screenshots/launcher.png)
 
 ## Wallpaper
 **Download:**\
