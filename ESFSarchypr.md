@@ -67,6 +67,19 @@ Una vez dentro de `iwctl`
 * Y por ultimo para salirte de `iwd` es con:\
 `exit`\
 y con eso ya estarias conectado a tu red WIFI :)
+---
+## Git y SSH
+Antes de comenzar creo que es muy importante aprender git por que en cualquier momento lo podrias
+ocupar tanto para la programación como tambien para instalar o clonar algo de otros repositorios o de hasta tus
+proyectos que hay en github.
+* Para ello necesitas entrar a tu cuenta de **Github** con este comando:
+`~`
+
+### Camabio de URL a SSH
+* Para cambiar del tipo de repositorio (como pasar url a pasar a SSH para una mejor comodidad) ejecutas lo siguiente:\
+`git remote set-url origin git@github.com:Usuario/Repositorio.git`
+* Para verficar si aun estas ocupando la URL o el SSH, ejecutas el siguiente comando:\
+`git remote -v`
 
 ---
 ## Pacman
