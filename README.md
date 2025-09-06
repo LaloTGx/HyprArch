@@ -11,4 +11,11 @@ Quiero mostrarte un poco sobre mi escritorio es un poco minimalista. :)
 * **File Manager:** Yazi
 
 ## Screenshot - Desktop
+* **Desktop**
 ![desktop](./screenshots/desk.png)
+* **Modules**
+![modules](./screenshots/modules.png)
+
+## Wallpaper
+**Download:**\
+[Wallpaper Site](https://wallpapers-clan.com/desktop-wallpapers/kaws-urban-hypebeast/)
