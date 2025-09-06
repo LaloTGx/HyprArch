@@ -6,15 +6,15 @@
   font-family: DepartureMono Nerd Font, monospace;
   font-size: 13px;
   font-weight: bolder;
-  color: #e6f2ff;
+  color: #ffffff;
   text-shadow: 0 0 1px #e6f2ff, 0 0 3px #e6f2ff;
-  animation: pulse 3s ease-in-out infinite;
+  animation: pulse 5s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%   { color: #e6f2ff; }
+  0%   { color: #ffffff; }
   50%  { color: #9dafbf; text-shadow: none;}
-  100% { color: #e6f2ff; }
+  100% { color: #ffffff; }
 }
 
 @keyframes flicker {
@@ -38,7 +38,7 @@ window {
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.33);
     color: #b5e65c;
     /*border-bottom: 2px ridge #e6f2ff;*/
     transition-property: background-color;
@@ -127,11 +127,23 @@ button:hover {
     animation: none;
 }
 
+#pulseaudio-source.muted {
+    color: #9dafbf;
+    text-shadow: none;
+    animation: none;
+}
+
 #wireplumber.muted {
     color: #9dafbf;
     text-shadow: none;
     animation: none;
    }
+
+#wireplumber-source.muted {
+    color: #9dafbf;
+    text-shadow: none;
+    animation: none;
+}
 
 #battery.critical:not(.charging) {
     color: #9dafbf;
