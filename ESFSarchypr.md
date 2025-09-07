@@ -272,6 +272,25 @@ el comando cada cierto tiempo pero ya es tu creatividad de como resolverlo, por 
 Espero te sirva de ayuda para que no pierdas cosas importantes usando linux. :)
 
 ---
+## Rust
+* En el caso de que quieras programar en rust debes ejecutar lo siguiente:\
+`sudo pacman -S rustup`
+* En caso de usar nvim deberias instalar el lsp:\
+`sudo pacman -S rust-analyzer`
+* Para inicializarlo necesitas del comando:\
+`rustup default stable`
+* Para vericar si la instalacion fue correcta es con el siguiente comando:\
+`rustc --version` y tambien `cargo --version`
+* En donde **rustc** es el compilador y **cargo** es el gestor de proyectos, dependencias y la compilzación.
+
+### Creacion de proyectos en rust
+* Para crear un nuevo proyecto usaras el siguiente comando:\
+`cargo new hola_rust`
+* Despues te creará un directorio con lo necesario para ejecutar tu proyecto.
+* Dentro del directorio para poder ejecutar tu proyecto, lo haras con el siguiente comando:\
+`cargo run`
+
+---
 ## Referencias
 <!-- Aqui mostrare las referencias que he estado ocupando -->
 <!-- Si eres el autor de alguna pagina muchas gracias por todo -->
