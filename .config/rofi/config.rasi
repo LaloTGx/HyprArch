@@ -1,30 +1,31 @@
 * {
-    font: "DepartureMono Nerd Font 12";
+    font: "JetBrainsMono Nerd Font 15";
     g-spacing: 10px;
-    g-margin: 3px;
+    g-margin: 6px;
     b-color: #000000FF;
     fg-color:  #e6f2ffFF;
     fgp-color: #e6f2ffFF;
     b-radius: 0px;
-    g-padding: 12px;
+    g-padding: 40px;
     hl-color: rgba(230,242,255,0.9);
     hlt-color: #000000FF;
     alt-color: rgba(0,0,0,0.1);
     wbg-color: rgba(0,0,0,0.3);
     w-border: 0px solid;
     w-border-color: #9dafbfFF;
-    w-padding: 0px;
+    w-padding: 50px;
 }
 
 configuration {
     modi: "drun";
     show-icons: true;
     display-drun: " ";
+    drun-display-format: "{icon} {name}";
 }
 
 listview {
-    columns: 1;
-    lines: 10;
+    columns: 3;
+    lines: 20;
     fixed-height: true;
     fixed-columns: true;
     cycle: true;
@@ -34,7 +35,8 @@ listview {
 
 window {
     transparency: "real";
-    width: 550px;
+    width: 100%;
+    height: 100%;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;
