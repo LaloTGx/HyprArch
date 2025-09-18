@@ -291,6 +291,35 @@ Espero te sirva de ayuda para que no pierdas cosas importantes usando linux. :)
 `cargo run`
 
 ---
+## Java
+Para ejecutar java en tu computador y poder correrlo sin la necesidad de instalar un IDE (Netbeans o IntellijIdea).
+* Primero necesitas instalar el jdk de esta manera:\
+`sudo pacman -S jdk-openjdk`\
+Con el comando descargara la ultima version de java.
+* Para poder descargar una version especifica de java solo es necesario agregar el numero de version como el siguiente comando:\
+`sudo pacman -S jdk17-openjdk`
+* Para visualizar la version de java lo haces con el siguiente comando:\
+`java -version`
+* Para visualizar todas las versiones instaladas de java (en el caso de arch-linux) puedes usar el siguiente comando:\
+`archlinux-java status`
+* Para seleccionar la version de java lo haces con el siguiente comando:\
+`sudo archlinux-java set java-21-openjdk`\
+el 21 puedes cambiarlo es la version de java.
+* Y para verificarlo utilizas el mismo comando:\
+`archlinux-java status`
+* Para seleccionar la version de java lo haces con el siguiente comando:\
+* Despues de tener instalado java puedes crear una carpeta para tu proyecto.
+* Luego puedes crear los archivos por ejemplo: `HolaMundo.java` y programarlo con tu editor de texto preferido.
+* Para poder compilar tu codigo ejecutas el siguiente comando:\
+`javac HolaMundo.java`
+* Despues de compilarlo te deberia generar otro archivo `.class` (el bytecode)
+* Por ultimo ya podras ejecutar el codigo con el siguiente comando:\
+`java HolaMundo.java`
+
+Por el momento aun no te puedo decir si se puede trabajar en proyectos grandes de java o el uso de SpringBoot pero si
+te puedo decir que es bueno para los comienzos como hacer ejercicios de (hackerrank o leetcode). Espero que esta seccion te ayude. :)
+
+---
 ## Referencias
 <!-- Aqui mostrare las referencias que he estado ocupando -->
 <!-- Si eres el autor de alguna pagina muchas gracias por todo -->
