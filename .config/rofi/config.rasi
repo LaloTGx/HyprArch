@@ -1,15 +1,15 @@
 * {
-    font: "JetBrainsMono Nerd Font 15";
-    g-spacing: 10px;
-    g-margin: 6px;
+    font: "JetBrainsMono Nerd Font 12";
+    g-spacing: 0px;
+    g-margin: 0px;
     b-color: #000000FF;
-    fg-color:  #e6f2ffFF;
-    fgp-color: #e6f2ffFF;
+    fg-color:  #e6f2ff90;
+    fgp-color: #e6f2ff10;
     b-radius: 0px;
     g-padding: 40px;
-    hl-color: rgba(230,242,255,0.9);
-    hlt-color: #000000FF;
-    alt-color: rgba(0,0,0,0.1);
+    hl-color: rgba(230,242,255,0.1);
+    hlt-color: #FFFFFFFF;
+    alt-color: rgba(0,0,0,0.0);
     wbg-color: rgba(0,0,0,0.3);
     w-border: 0px solid;
     w-border-color: #9dafbfFF;
@@ -19,7 +19,7 @@
 configuration {
     modi: "drun";
     show-icons: true;
-    display-drun: " ";
+    display-drun: "  ";
     drun-display-format: "{icon} {name}";
 }
 
@@ -29,6 +29,8 @@ listview {
     fixed-height: true;
     fixed-columns: true;
     cycle: true;
+    dynamic: true;
+    layout: vertical;
     scrollbar: false;
     border: 0px solid;
 }
@@ -70,11 +72,24 @@ element {
     spacing: @g-spacing;
     margin: @g-margin;
     padding: @g-padding;
-    border: 2px solid;
+    border: 0px solid;
     border-radius: @b-radius;
     border-color:  #9dafbf70;
     background-color: transparent;
     text-color: @fg-color;
+    orientation: vertical;
+}
+
+element-icon {
+    	size: 60px;
+    	horizontal-align: 0.5;
+}
+
+element-text {
+    	expand: true;
+    	horizontal-align: 0.5;
+    	vertical-align: 0.5;
+    	margin: 0.5% 0.5% -0.5% 0.5%;
 }
 
 element normal.normal {
