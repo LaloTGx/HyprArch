@@ -9,7 +9,7 @@ Quiero mostrarte un poco sobre mi escritorio es un poco minimalista. :)
 * **Terminal:** Kitty
 * **Shell:** Bash
 * **File Manager:** Yazi
-* **Background Manager:** Hyprpaper
+* **Background Manager:** SWWW
 
 ## Screenshot - Desktop
 * **Desktop**
