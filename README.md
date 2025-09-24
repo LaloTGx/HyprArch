@@ -18,7 +18,3 @@ Quiero mostrarte un poco sobre mi escritorio es un poco minimalista. :)
 ![modules](./screenshots/modules.png)
 * **Launcher**
 ![launcher](./screenshots/launcher.png)
-
-## Wallpaper
-**Download:**\
-[Wallpaper Site](https://wallpapers-clan.com/desktop-wallpapers/kaws-urban-hypebeast/)
