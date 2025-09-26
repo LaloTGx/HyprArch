@@ -316,6 +316,10 @@ el 21 puedes cambiarlo es la version de java.
 * Por ultimo ya podras ejecutar el codigo con el siguiente comando:\
 `java HolaMundo.java`
 
+### Gradle
+* Para correr tu estructura de gradle vas la inicio de tu proyecto y ejecutas el siguiente comando:\
+`./gradlew clean run`
+
 Por el momento aun no te puedo decir si se puede trabajar en proyectos grandes de java o el uso de SpringBoot pero si
 te puedo decir que es bueno para los comienzos como hacer ejercicios de (hackerrank o leetcode). Espero que esta seccion te ayude. :)
 
