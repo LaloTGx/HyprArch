@@ -3,11 +3,11 @@
 
 /* Anything */
 * {
-  font-family: DepartureMono Nerd Font, monospace;
+  font-family: JetBrainsMono Nerd Font, monospace;
   font-size: 13px;
-  font-weight: bolder;
+  font-weight: 600;
   color: #ffffff;
-  text-shadow: 0 0 1px #e6f2ff, 0 0 3px #e6f2ff;
+  text-shadow: 0 0 1px #fff, 0 0 4px #fff;
   animation: pulse 5s ease-in-out infinite;
 }
 
