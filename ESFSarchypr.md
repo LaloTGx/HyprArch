@@ -161,7 +161,9 @@ Espero te sirva de ayuda. :)
 * Para revisar si el font esta instalado puedes verlo con le siguiente comando:\
 `fc-cache -fv`
 * Para revisar un font en especifico usarias este comando:\
-`fc-list | grep "CodeNewRoman"`\
+`fc-list | grep "CodeNewRoman"`
+* Para mostrar iconos/emojis en la terminal necesitas instalarte:\
+`sudo pacman -S noto-fonts-emoji`\
 Listo puedes ocuparlo en tu sistema anotando el nombre de la fuente en cualquier software que vayas a utilizar :)
 
 ---
