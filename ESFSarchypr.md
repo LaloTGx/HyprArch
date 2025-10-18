@@ -163,7 +163,9 @@ Espero te sirva de ayuda. :)
 * Para revisar un font en especifico usarias este comando:\
 `fc-list | grep "CodeNewRoman"`
 * Para mostrar iconos/emojis en la terminal necesitas instalarte:\
-`sudo pacman -S noto-fonts-emoji`\
+`sudo pacman -S noto-fonts-emoji`
+* Para poder pegar en tu campo de texto necesitas instalar lo siguiente:\
+`sudo pacman -S wtype`\
 Listo puedes ocuparlo en tu sistema anotando el nombre de la fuente en cualquier software que vayas a utilizar :)
 
 ---
@@ -196,6 +198,22 @@ a la hora que se aplique el filtro o si quieres probarlo puedes intentarlo con e
 pero si ya tienes mi archivo corriendo deber hacer `pkill hyprsunset` antes para que pueda correr el primer comando ya que
 primero verifica si ya tienes perfiles creados por lo que no te permite ejecutar sin antes eleminar ese proceso o tarea
 pero tranqui obviamente no sera permantes solo sera en ese uso si reinicias otra vez se ejecutara los perfiles :)
+
+### Permisos para ejecución
+* Para hacer que tu script se pueda ejecutar solo necesitas ejecutar este comando:
+`chmod +x [la ruta de tu script (tipo de archivo .sh)]`
+* Para revocar los permisos debes agregar el siguiente comando:
+`chmod a-x [script]`\
+Ahora si entramos en un poco especificos...
+* Quita el permiso de ejecución a todos (user/group/others):
+`chmod a-x`
+* Quita solo al dueño (user):
+`chmod u-x`
+* Quita solo al grupo:
+`chmod g-x`
+* Quita solo a otros:
+`chmod o-x`
+Espero te funcione para que puedas ejecutar tus scripts. :)
 
 ---
 ## Waybar

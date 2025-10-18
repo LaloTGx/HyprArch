@@ -38,7 +38,7 @@ COLOR_PATH="\[\e[93m\]"      # Amarillo brillante
 COLOR_ENTRY="\[\e[96m\]"     # cyan brillante
 COLOR_RESET="\[\e[0m\]"      # Reset
 
-PS1="   ${COLOR_LINEB}┏━${COLOR_LINEA}━━${COLOR_LINE}━━${COLOR_BGPATH}•${COLOR_PATH}•\n     ${COLOR_BGCLOCK}${ICON_CLOCK}${COLOR_CLOCK} \@ ${COLOR_BGHOST}${ICON_HOST} ${COLOR_HOST}\h ${COLOR_BGPATH}${ICON_PATH} ${COLOR_PATH}\w\n       ${COLOR_BGUSER}${ICON_USER} ${COLOR_USER}\u${COLOR_ENTRY}:${COLOR_RESET} "
+PS1="   ${COLOR_LINEB}┏━${COLOR_LINEA}━━━━━${COLOR_LINE}━━━━━${COLOR_BGPATH} •${COLOR_PATH}•\n     ${COLOR_BGCLOCK}${ICON_CLOCK}${COLOR_CLOCK} \@ ${COLOR_BGHOST}${ICON_HOST} ${COLOR_HOST}\h ${COLOR_BGPATH}${ICON_PATH} ${COLOR_PATH}\w\n       ${COLOR_BGUSER}${ICON_USER} ${COLOR_USER}\u${COLOR_ENTRY}:${COLOR_RESET} "
 
 # Necesitas Instalar Fastfetch para correr al inicio
 fastfetch
