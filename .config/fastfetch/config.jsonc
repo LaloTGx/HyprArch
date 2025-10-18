@@ -11,22 +11,22 @@
     "position": "top",
     "padding": {
       "right": 1,
-      "left": 11,
-      "top": 2
+      "left": 5,
+      "top": 1
     }
   },
   "display": {
     "bar": {
     "char": {
       "elapsed": "•",
-      "total": "·"
+      "total": "◦"
     },
     "color": {
         "elapsed": "bright_light_red",
         "total": "bright_red"
     },
     "border": null,
-    "width": 13
+    "width": 20
     },
     "percent": {
       "type": 3,
@@ -40,34 +40,27 @@
     "separator": "  ",
     "color": "white",
     "key": {
-      "paddingLeft": 4
+      "paddingLeft": 5
     }
   },
   "modules": [
     {
         "type": "custom",
-        "format": " {#yellow}--{#red}___________________{#light_red}___________________{#yellow}--"
+        "format": "   {#bright_black}┏━{#red}━━━━━{#light_red}━━━━━{#yellow} •{#light_yellow}•"
     },
-    {
-	  "type": "custom",
-      "key": "󰏘",
-      "keyColor": "bright_yellow",
-	  "format": "\u001b[1m\u001b[30m \u001b[1m\u001b[31m \u001b[1m\u001b[33m \u001b[1m\u001b[32m \u001b[1m\u001b[36m \u001b[1m\u001b[34m \u001b[1m\u001b[35m \u001b[1m\u001b[37m  \u001b[1m\u001b[90m \u001b[1m\u001b[91m \u001b[1m\u001b[93m \u001b[1m\u001b[92m \u001b[1m\u001b[96m \u001b[1m\u001b[94m \u001b[1m\u001b[95m \u001b[1m\u001b[97m "
-	},
-    "break",
     {
       "type": "users",
       "key": "",
-      "format": "{name} {#bright_light_yellow}:)",
-      "keyColor": "red",
-      "outputColor": "bright_light_red"
+      "format": "{name} {#bright_blue}:)",
+      "keyColor": "blue",
+      "outputColor": "bright_light_blue"
     },
     {
       "type": "kernel",
       "key":"",
       "format":"{1} {#light_red}{2}",
-      "keyColor": "white",
-      "outputColor": "bright_light_white"
+      "keyColor": "bright_light_blue",
+      "outputColor": "bright_light_cyan"
     },
     {
       "type": "os",
@@ -84,32 +77,37 @@
       "outputColor": "bright_light_cyan"
     },
     {
+      "type": "lm",
+      "key": "󰙊",
+      "format": "{service}",
+      "keyColor": "bright_blue",
+      "outputColor":"bright_light_blue"
+    },
+    {
+      "type": "shell",
+      "key": "",
+      "format": "{pretty-name}",
+      "keyColor": "bright_light_blue",
+      "outputColor": "bright_light_cyan"
+    },
+    {
+      "type": "processes",
+      "key": "",
+      "keyColor": "bright_yellow",
+      "outputColor": "bright_light_yellow"
+    },
+    {
       "type":"uptime",
       "key": "󱐋",
       "keyColor":"yellow",
       "outputColor": "Bright_light_yellow"
     },
-    "break",
-    {
-      "type": "disk",
-      "key": "",
-      "keyColor": "yellow",
-      "outputColor": "bright_light_magenta",
-      "format": "{size-percentage-bar} {#light_red}{size-used}{#bright_yellow}/{#red}{size-total}"
-    },
-    {
-      "type": "media",
-      "key": "",
-      "keyColor": "cyan",
-      "format": "{1}{#} {?3}",
-      "outputColor": "bright_light_blue"
-    },
     {
       "type": "wifi",
       "key": "",
-      "format": "{ssid} {#magenta}{signal-quality}",
-      "keyColor": "white",
-      "outputColor": "bright_light_magenta"
+      "format": "{ssid} {#bright_light_yellow}{signal-quality}",
+      "keyColor": "bright_light_red",
+      "outputColor": "bright_yellow"
     },
     {
       "type": "packages",
@@ -119,26 +117,87 @@
       "outputColor": "bright_light_yellow"
     },
     {
-      "type": "shell",
-      "key": "",
-      "format": "{pretty-name}",
-      "keyColor": "bright_light_green",
-      "outputColor": "bright_light_white"
+      "type": "memory",
+      "key": "",
+      "keyColor": "yellow",
+      "outputColor":"bright_light_white",
+      "format": "{percentage-bar} {#light_red}{used}{#bright_yellow}/{#red}{total}"
     },
     {
-      "type": "processes",
-      "key": "",
-      "keyColor": "bright_light_blue",
-      "outputColor": "bright_light_green"
+      "type": "disk",
+      "key": "",
+      "keyColor": "yellow",
+      "outputColor": "bright_light_magenta",
+      "format": "{size-percentage-bar} {#light_red}{size-used}{#bright_yellow}/{#red}{size-total}"
     },
-    "break",
+    {
+      "type": "command",
+      "key": "󰃰",
+      "keyColor": "bright_light_white",
+      "shell": "/bin/bash",
+      "param": "-c",
+      "text": "day=$(date +%j); year=$(date +%Y); days_in_year=$(date -d \"12/31/$year\" +%j); percent=$((day * 100 / days_in_year)); filled=$((percent / 5)); bar=$(printf '•%.0s' $(seq 1 $filled)); empty=$(printf '◦%.0s' $(seq 1 $((20 - filled)))); echo \"${bar}${empty} ${year} is ${percent}% complete\"",
+      "format": "{result}",
+      "outputColor": "bright_light_white"
+    },
     {
       "type": "datetime",
       "key": "",
-      "format": "{#bright_light_white}{weekday} {#bright_light_red}{day-in-month} {#bright_light_blue}{month-name} {#magenta}{year} {#bright_light_white}at {#cyan}{hour-pretty}:{minute-pretty}",
-      "keyColor": "magenta",
-      "outputColor": "bright_light_white"
+      "format": "{#bright_light_blue}{weekday} {#bright_light_white}{day-in-month} {#bright_light_white}{month-name} {#bright_light_white}{year} {#bright_light_blue}at {#bright_light_blue}{hour-pretty}:{minute-pretty}",
+      "keyColor": "bright_light_white",
+      "outputColor": "bright_light_blue"
     },
+    {
+  "type": "command",
+  "key": "󰃶",
+  "keyColor": "bright_light_white",
+  "shell": "/bin/bash",
+  "param": "-c",
+  "text": "month=$(date +%m); zone=$(cat /etc/timezone 2>/dev/null || echo ''); if [[ \"$zone\" =~ (Australia|Argentina|Brazil|Chile|South) ]]; then hemi='south'; else hemi='north'; fi; if [ \"$hemi\" = 'north' ]; then if [ $month -ge 3 ] && [ $month -le 5 ]; then season='󰉊 Spring'; elif [ $month -ge 6 ] && [ $month -le 8 ]; then season='󰖨 Summer'; elif [ $month -ge 9 ] && [ $month -le 11 ]; then season=' Fall'; else season=' Winter'; fi; else if [ $month -ge 3 ] && [ $month -le 5 ]; then season=' Fall'; elif [ $month -ge 6 ] && [ $month -le 8 ]; then season=' Winter'; elif [ $month -ge 9 ] && [ $month -le 11 ]; then season='󰉊 Spring'; else season='󰖨 Summer'; fi; fi; echo $season",
+  "format": "{result}",
+  "outputColor": "bright_light_white"
+},
+
+// Muestra el titulo del audio completo
+//    {
+//      "type": "media",
+//      "key": "",
+//      "keyColor": "cyan",
+//      "format": "{1}{#} {?3}",
+//      "outputColor": "bright_light_blue"
+//    },
+// Muestra el titulo del audio cortado (custom command)
+    {
+      "type": "command",
+      "shell": "/bin/bash",
+      "param": "-c",
+      "text": "title=$(playerctl metadata xesam:title 2>/dev/null); echo ${title:0:20}${title:+...}",
+      "key": "",
+      "keyColor": "magenta",
+      "format": "{result}",
+      "outputColor": "bright_light_magenta"
+    },
+    {
+      "type": "player",
+      "key": "",
+      "keyColor": "bright_magenta",
+      "format":"{player} {#bright_blue}",
+      "outputColor":"bright_light_magenta"
+    },
+    "break",
+     {
+	  "type": "custom",
+      "key": "󰏘",
+      "keyColor": "bright_light_green",
+	  "format": "\u001b[1m\u001b[30m \u001b[1m\u001b[31m \u001b[1m\u001b[33m \u001b[1m\u001b[32m \u001b[1m\u001b[36m \u001b[1m\u001b[34m \u001b[1m\u001b[35m \u001b[1m\u001b[37m  \u001b[1m\u001b[90m \u001b[1m\u001b[91m \u001b[1m\u001b[93m \u001b[1m\u001b[92m \u001b[1m\u001b[96m \u001b[1m\u001b[94m \u001b[1m\u001b[95m \u001b[1m\u001b[97m "
+	},
+//    {
+//      "type": "player",
+//      "key": "",
+//      "keyColor": "cyan",
+//      "format":"{url}",
+//      "outputColor":"bright_blue"
+//    },
 //    {
 //      "type": "weather",
 //      "key":"",
@@ -147,10 +206,6 @@
 //      //"location":"Mexico",
 //      "outputFormat": "%t+%C",
 //      "timeout": 2000
-//    },
-    {
-        "type": "custom",
-        "format": " {#yellow}--{#red}___________________{#light_red}___________________{#yellow}--"
-    }
-  ]
+//    }
+      ]
 }
