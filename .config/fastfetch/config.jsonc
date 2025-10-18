@@ -11,8 +11,8 @@
     "position": "top",
     "padding": {
       "right": 1,
-      "left": 5,
-      "top": 1
+      "left": 0,
+      "top": 0
     }
   },
   "display": {
@@ -40,13 +40,13 @@
     "separator": "  ",
     "color": "white",
     "key": {
-      "paddingLeft": 5
+      "paddingLeft": 0
     }
   },
   "modules": [
     {
         "type": "custom",
-        "format": "   {#bright_black}┏━{#red}━━━━━{#light_red}━━━━━{#yellow} •{#light_yellow}•"
+        "format": "{#bright_black}┏━{#red}━━━━━{#light_red}━━━━━{#yellow} •{#light_yellow}•"
     },
     {
       "type": "users",
@@ -184,7 +184,6 @@
       "format":"{player} {#bright_blue}",
       "outputColor":"bright_light_magenta"
     },
-    "break",
      {
 	  "type": "custom",
       "key": "󰏘",
