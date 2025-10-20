@@ -164,6 +164,8 @@ Espero te sirva de ayuda. :)
 `fc-list | grep "CodeNewRoman"`
 * Para mostrar iconos/emojis en la terminal necesitas instalarte:\
 `sudo pacman -S noto-fonts-emoji`
+* Para mostrar cualquier tipo de lenguaje o expresion matematica (para tu navegador) es necesario instalar lo siguiente:\
+`sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-dejavu`
 * Para poder pegar en tu campo de texto necesitas instalar lo siguiente:\
 `sudo pacman -S wtype`\
 Listo puedes ocuparlo en tu sistema anotando el nombre de la fuente en cualquier software que vayas a utilizar :)
@@ -239,6 +241,8 @@ te permita tomar screenshot a tu pantalla :)
 
 * Para instalarlo con pacman:\
 `sudo pacman -S swaync`
+* Ojo para poder enviar notificaciones debes instalarte aparte notify-send con este comando:\
+`sudo pacman -S libnotify` para poder hacer test desde la terminal de tus notificaciones.
 * Para acceder a la carpeta de swaync:\
 `cd /etc/xdg/swaync`
 
