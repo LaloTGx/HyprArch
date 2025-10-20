@@ -19,7 +19,7 @@
 configuration {
     modi: "drun";
     show-icons: true;
-    display-drun: "  ";
+    display-drun: "    Run App";
     drun-display-format: "{icon} {name}";
 }
 
@@ -46,23 +46,30 @@ window {
     padding: @w-padding;
 }
 
-prompt {
-    text-color: @fg-color;
-}
-
 inputbar {
     children: ["prompt", "entry"];
+    orientation: horizontal;
     spacing: @g-spacing;
+    horizontal-align: 0.5;
+}
+
+prompt {
+    text-color: @fg-color;
+    margin:0px 10px 0px 20%;
+    horizontal-align: 0.5;
 }
 
 entry {
     placeholder: "Search";
     text-color: @fg-color;
     placeholder-color: @fgp-color;
+    expand:true;
+    horizontal-align: 0.5;
+    margin:0px 28% 0px 0px;
 }
 
 mainbox {
-    spacing: @g-spacing;
+    spacing: 30px;
     margin: @g-margin;
     padding: @g-padding;
     children: ["inputbar", "listview", "message"];
