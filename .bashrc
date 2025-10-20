@@ -150,8 +150,8 @@ dir_folder() {
 # https://dev.to/ifenna__/adding-colors-to-bash-scripts-48g4
 
 # Iconos Utilizados (Nerd Font y noto-emoji)
-#ICON_USER="󰊠 "
-ICON_USER="🥷🏼 "
+ICON_USER="󰊠 "
+#ICON_USER="🥷🏼 "
 ICON_HOST="󰌢 "
 ICON_PATH=" "
 ICON_PATHR="󰪺 "
