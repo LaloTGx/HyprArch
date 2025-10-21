@@ -1,0 +1,18 @@
+󰓃 Altavoces
+[]  [J]     Silenciar altavoz (toggle)
+[]  [K]     Bajar volumen
+[]  [L]     Subir volumen
+
+ Micrófono
+[]  [U]     Silenciar micrófono (toggle)
+[]  [I]     Bajar volumen del micrófono
+[]  [O]     Subir volumen del micrófono
+
+󰛨 Brillo
+[Fn]  [↑]    Subir brillo
+[Fn]  [↓]    Bajar brillo
+
+ Reproducción multimedia
+[Fn]  [F11]  Play/Pause (toggle)
+[Fn]  [F10]  Anterior
+[Fn]  [F12]  Siguiente
