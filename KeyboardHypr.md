@@ -11,9 +11,11 @@
 <kbd>WIN</kbd>+<kbd>Q</kbd> = Abre la terminal (kitty)\
 <kbd>WIN</kbd>+<kbd>X</kbd> = Abre el navegador web (Mozilla)\
 <kbd>WIN</kbd>+<kbd>E</kbd> = Abre el explorador de archivos (yazi)\
-<kbd>WIN</kbd>+<kbd>W</kbd> = Abre el lanzador de aplicaciones (rofi)\
 <kbd>WIN</kbd>+<kbd>Z</kbd> = Abre el reproductor de musica\
-<kbd>WIN</kbd>+<kbd>R</kbd> = Abre el lanzador de Wallpapers(rofi)\
+<kbd>WIN</kbd>+<kbd>W</kbd> = Abre el lanzador de aplicaciones (rofi)\
+<kbd>WIN</kbd>+<kbd>/</kbd> = Abre el lanzador de Wallpapers(rofi)\
+<kbd>WIN</kbd>+<kbd>.</kbd> = Abre el lanzador de Emojis(rofi)\
+<kbd>WIN</kbd>+<kbd>,</kbd> = Abre el lanzador de Comandos(rofi)\
 <kbd>WIN</kbd>+<kbd>TAB</kbd> = Abre el centro de notificaciones\
 <kbd>WIN</kbd>+<kbd>G</kbd> = Toma captura de pantalla
 

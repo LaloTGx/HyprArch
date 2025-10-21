@@ -75,7 +75,7 @@ proyectos que hay en github.
 * Para ello necesitas entrar a tu cuenta de **Github** con este comando:
 `~`
 
-### Camabio de URL a SSH
+### Cambio de URL a SSH
 * Para cambiar del tipo de repositorio (como pasar url a pasar a SSH para una mejor comodidad) ejecutas lo siguiente:\
 `git remote set-url origin git@github.com:Usuario/Repositorio.git`
 * Para verficar si aun estas ocupando la URL o el SSH, ejecutas el siguiente comando:\
