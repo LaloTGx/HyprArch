@@ -151,7 +151,6 @@ dir_folder() {
 
 # Iconos Utilizados (Nerd Font y noto-emoji)
 ICON_USER="󰊠 "
-#ICON_USER="🥷🏼 "
 ICON_HOST="󰌢 "
 ICON_PATH=" "
 ICON_PATHR="󰪺 "
@@ -182,9 +181,9 @@ COLOR_ENTRY="\[\e[1;96m\]"     # cyan brillante
 COLOR_RESET="\[\e[0m\]"        # Reset
 
 # Entrada de Comando
-PS1="${COLOR_LINEB}┏━${COLOR_LINEA}━━━━━${COLOR_LINE}━━━━━${COLOR_BGPATH} •${COLOR_PATH}•\n\$(clock_icon)\@ ${COLOR_BGHOST}${ICON_HOST}${COLOR_HOST}\h \$(dir_folder)\$(project_icon)${COLOR_BGPATH}\$(git_iconpath)${ICON_PATH}${COLOR_PATH}\$(git_iconpath)\$(dir_summary) \w\n  ${COLOR_BGUSER}${ICON_USER}${COLOR_USER}\$(git_icon)\u${COLOR_PATH}:${COLOR_RESET} "
+PS1="${COLOR_LINEB}┏━${COLOR_LINEA}━━━━━${COLOR_LINE}━━━━━${COLOR_BGPATH} •${COLOR_PATH}•\n\$(clock_icon)\@ ${COLOR_LINEA}${ICON_HOST}${COLOR_LINE}\h \$(dir_folder)\$(project_icon)${COLOR_BGPATH}\$(git_iconpath)${ICON_PATH}${COLOR_PATH}\$(git_iconpath)\$(dir_summary) \w\n  ${COLOR_LINEA}${ICON_USER}${COLOR_USER}\$(git_icon)${COLOR_LINE}\u${COLOR_PATH}:${COLOR_LINE} "
 # Resultado del Comando
-PS0="${COLOR_LINEB}┏━${COLOR_BGHOST}━━━━━${COLOR_HOST}━━━━━${COLOR_BGDOT} •${COLOR_DOT}• ${COLOR_USER}\n${ICON_RESULT}\# ${COLOR_DOT}${ICON_TERM}${COLOR_BGDOT}\s: \l${COLOR_RESET}\n"
+PS0="${COLOR_LINEB}┏━${COLOR_BGHOST}━━━━━${COLOR_HOST}━━━━━${COLOR_BGDOT} •${COLOR_DOT}• ${COLOR_USER}\n${ICON_RESULT}\# ${COLOR_DOT}${ICON_TERM}${COLOR_BGDOT}\s: \l${COLOR_HOST}\n"
 
 # Necesitas Instalar Fastfetch para correr al inicio
 fastfetch
