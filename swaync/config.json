@@ -48,7 +48,7 @@
     },
     "example-action-script": {
       "exec": "echo 'Do something actionable!'",
-      "urgency": "Normal",
+      "urgency": "Critical",
       "run-on": "action"
     }
   },
@@ -58,7 +58,7 @@
       "app-name": "Spotify"
     }
   },
-  "widgets": [
+  "widgets": [  
     "mpris",
     "buttons-grid",
     "volume",
@@ -76,20 +76,20 @@
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "Clear All"
+      "button-text": "󰃢"
     },
     "dnd": {
       "text": "Do Not Disturb"
     },
     "label": {
       "max-lines": 5,
-      "text": "Label Text"
+      "text": "En reproducción:"
     },
     "mpris": {
       "blacklist": [],
-      "autohide": false,
+      "autohide": true,
       "show-album-art": "always",
-      "loop-carousel": false
+      "loop-carousel": true
     },
     "buttons-grid": {
       "buttons-per-row": 4,
@@ -105,21 +105,6 @@
           "command": "reboot"
         },
 	{
-          "label": "",
-          "type": "button",
-          "command": "systemctl suspend"
-        },
-	{
-          "label": "",
-          "type": "button",
-          "command": "systemctl hibernate"
-        },
-	{
-          "label": "",
-          "type": "button",
-          "command": "nmtui"
-        },
-	{
           "label": "󰂯",
           "type": "button",
           "command": "blueman-manager"
@@ -128,11 +113,6 @@
           "label": "",
           "type": "button",
           "command": "copyq show"
-	},
-	{
-          "label": "󰹑",
-          "type": "button",
-          "command": "grim -g \"$(slurp)\" ~/Pictures/screenshot_$(date +'%Y-%m-%d_%H-%M').png | wl-copy"
 	}
       ]
     },

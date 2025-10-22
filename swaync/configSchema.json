@@ -437,7 +437,7 @@
     "mpris": {
       "type": "object",
       "description": "A widget that displays multiple music players",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "image-size": {
           "type": "integer",
