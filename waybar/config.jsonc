@@ -10,14 +10,14 @@
     "custom/power",
     "cpu",
     "memory",
-    "disk",
+    //"disk",
     "backlight",
     "pulseaudio"
     //"tray",
     //"custom/media"
   ],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["hyprland/window", "hyprland/language", "network", "clock"],
+  "modules-right": ["hyprland/language", "network", "clock"],
   "hyprland/workspaces": {
     "disable-scroll": true,
     "on-click": "activate",
