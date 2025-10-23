@@ -1,8 +1,8 @@
 :root {
   --cc-bg: rgba(5, 5, 5, 0.3);
-  --noti-border-color: rgba(255, 255, 255, 0.15);
-  --noti-bg: 48, 48, 48;
-  --noti-bg-alpha: 0.8;
+  --noti-border-color: rgba(0,0,0, 0.1);
+  --noti-bg: 0, 0, 0;
+  --noti-bg-alpha: 0.6;
   --noti-bg-darker: rgb(38, 38, 38);
   --noti-bg-hover: rgb(56, 56, 56);
   --noti-bg-focus: rgba(68, 68, 68, 0.6);
@@ -18,7 +18,7 @@
 
 * {
   font-family: DepartureMono Nerd Font, monospace;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bolder;
   /*text-shadow: 0 0 2px #b5e65c, 0 0 5px #b5e65c;*/
   /*animation: flicker 0.25s infinite;*/
@@ -88,9 +88,9 @@
 
 .notification-row .notification-background .notification {
   /* The actual notification */
-  border-radius: 12px;
+  border-radius: 1px;
   border: 1px solid var(--noti-border-color);
-  padding: 0;
+  padding: 4px 0px;
   transition: background 0.15s ease-in-out;
   background: rgba(var(--noti-bg), var(--noti-bg-alpha));
 }
@@ -215,7 +215,7 @@
   margin-left: 4px;
   background: rgba(var(--noti-bg), var(--noti-bg-alpha));
   border: 1px solid var(--noti-border-color);
-  border-radius: 12px;
+  border-radius: 0px;
   color: var(--text-color);
 }
 

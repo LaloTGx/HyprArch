@@ -3,8 +3,8 @@
   "ignore-gtk-theme": true,
   "cssPriority": "highest",
 
-  "positionX": "left",
-  "positionY": "top",
+  "positionX": "right",
+  "positionY": "bottom",
 
   "layer": "overlay",
   "layer-shell": true,
@@ -31,7 +31,7 @@
   "notification-inline-replies": false,
   "notification-body-image-height": 100,
   "notification-body-image-width": 200,
-  "notification-window-width": 500,
+  "notification-window-width": 300,
   "notification-grouping": true,
   
   "image-visibility": "when-available",
