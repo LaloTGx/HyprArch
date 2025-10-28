@@ -180,6 +180,35 @@ Listo puedes ocuparlo en tu sistema anotando el nombre de la fuente en cualquier
 `cd .config/hypr/`
 * y con `ls` veras todos los archivos que quieras modificar con tu editor de texto preferido :)
 
+### Lo mas importante y la razon por la cual te gustaria linux en general y mas especifico en Grub
+* Esto me paso, un dia no me funcionaba dos teclas el dos y la "w" y mi contraseña esta el dos y sinceramente pense:\
+"ya no voy a poder entrar a mi sistema" pero lo bueno de Grub es que desde el inicio cuando seleccionas el sistema\
+te permite entrar como root asi normal y desde ahi pude cambiar mi contraseña y creo que esto es demasiado bueno aunque igual
+peligroso por si te llegan a cambiar la contraseña... aunque bueno tendrias tu el control por que eres tu quien prende la\
+computadora y accedes rapido. bueno te doy los comandos por si algun dia te quedas varado y esto te sirva de ayuda :)
+
+Primero el Grub te muestra como:
+* Arch linux
+* advance options
+
+Cuando estes en arch linux presionas `e` para entrar a la configuracion de entrada\
+Despues te mostrara una lista de codigos que permite ejecutar tu Sistema Operativo (Segun la distro que hayas seleccionado)\
+Y buscaras la siguiente linea de codigo:\
+`linux /boot/vmlinuz-linux ...`\
+Y al final de esa linea de codigo ingresa esto:\
+`init=/bin/bash`\
+Por ultimo para guardar presiona
+`Crtl+` o igual `F10`\
+De esta manera entraras al modo root cuando reinicie el dispositivo :)\
+Ahora para montar donde se almacena las contraseñas escribe el siguente comando:\
+`mount -o remount,rw /`\
+Despues busca tu usuario para cambiar la contraseña con lo siguiente:\
+`passwd <Usuario>`\
+Luego te pedira tu nueva contraseña dos veces\
+Ya por ultimo executa el siguiente comando para iniciar de nuevo con tu nueva contraseña
+`exec /sbin/init`\
+listo ya habras cambiado tu contraseña al entrar desde Grub :)
+
 ### Monitores
 * Para ver la lista de monitores ejecuta el siguiente comando:\
 `hyprctl monitors`
