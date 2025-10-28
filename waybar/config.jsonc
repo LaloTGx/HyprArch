@@ -33,9 +33,9 @@
     },
     "format": "{icon}",
     "format-icons": {
-      "active": "<span font='12'>󰮯</span>",
-      "empty": "<span font='8'></span>",
-      "persistent": "󰊠"
+      "active": "<span font='14'>󱓻</span>",
+      "empty": "<span font='8'></span>",
+      "persistent": "<span font='12'>󱨈</span>"
     }
   },
   "mpd": {
