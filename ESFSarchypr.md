@@ -274,6 +274,16 @@ te permita tomar screenshot a tu pantalla :)
 `sudo pacman -S libnotify` para poder hacer test desde la terminal de tus notificaciones.
 * Para acceder a la carpeta de swaync:\
 `cd /etc/xdg/swaync`
+---
+## Matugen
+Matugen recopila los colores de tu fondo de pantalla y te hace un listado de colores esto se complemente bastantae bien\
+con `Swww` que permite cambiar de imagenes.
+* Para poder instalarlo debes ejecutar el siguiente comando:\
+`yay -S matugen`
+* Para realizar pruebas con matugen necesitas ejecuta el siguiente comando:\
+`matugen image /ruta/de/tu/imagen --show-colors`
+* Con mi rice ya hasta el codigo para ejecutar en el script cuando se cambie de fondo de pantalla.
+Espero te sirva de ayuda. :)
 
 ---
 ## LSBLK
