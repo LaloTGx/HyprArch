@@ -1,14 +1,16 @@
+@import '~/.config/rofi/matugen/matugen-rofi.rasi'
+
 * {
-    font: "JetBrainsMono Nerd Font 12";
+    font: "JetBrainsMono Nerd Font Bold 13";
     g-spacing: 0px;
     g-margin: 0px;
     b-color: #000000FF;
-    fg-color:  #e6f2ff90;
+    fg-color:  #e6f2ff50;
     fgp-color: #e6f2ffFF;
     b-radius: 0px;
     g-padding: 40px;
-    hl-color: rgba(230,242,255,0.1);
-    hlt-color: #FFFFFFFF;
+    hl-color: @primary-fixed-alpha;
+    hlt-color: @tertiary;
     alt-color: rgba(0,0,0,0.0);
     wbg-color: rgba(0,0,0,0.3);
     w-border: 0px solid;

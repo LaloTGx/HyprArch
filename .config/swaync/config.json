@@ -1,0 +1,127 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "cssPriority": "highest",
+
+  "positionX": "right",
+  "positionY": "bottom",
+
+  "layer": "overlay",
+  "layer-shell": true,
+  "layer-shell-cover-screen": false,
+
+  "control-center-layer": "top",
+  "control-center-margin-top": 0,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-right": 0,
+  "control-center-margin-left": 0,
+  "control-center-width": 300,
+  "control-center-height": 600,
+ 
+  "timeout": 3,
+  "timeout-low": 1,
+  "timeout-critical": 0,
+
+  "fit-to-screen": true,
+  "relative-timestamps": true,
+  
+  "keyboard-shortcuts": true,
+ 
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "notification-window-width": 300,
+  "notification-grouping": true,
+  
+  "image-visibility": "when-available",
+  "transition-time": 200,  
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  
+  "text-empty": "No Notifications",
+  "script-fail-notify": true,
+  "scripts": {
+    "example-script": {
+      "exec": "echo 'Do something...'",
+      "urgency": "Normal"
+    },
+    "example-action-script": {
+      "exec": "echo 'Do something actionable!'",
+      "urgency": "Critical",
+      "run-on": "action"
+    }
+  },
+  "notification-visibility": {
+    "example-name": {
+      "urgency": "Normal",
+      "app-name": "Spotify"
+    }
+  },
+  "widgets": [  
+    "mpris",
+    "buttons-grid",
+    "volume",
+    "backlight",
+    "title",
+    "notifications",
+    "dnd"
+  ],
+  "widget-config": {
+    "inhibitors": {
+      "text": "Inhibitors",
+      "button-text": "Clear All",
+      "clear-all-button": true
+    },
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "󰃢"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "label": {
+      "max-lines": 5,
+      "text": "En reproducción:"
+    },
+    "mpris": {
+      "blacklist": [],
+      "autohide": true,
+      "show-album-art": "always",
+      "loop-carousel": true
+    },
+    "buttons-grid": {
+      "buttons-per-row": 4,
+      "actions": [
+        {
+          "label": "",
+          "type": "button",
+          "command": "shutdown now"
+        },
+	{
+          "label": "",
+          "type": "button",
+          "command": "reboot"
+        },
+	{
+          "label": "󰂯",
+          "type": "button",
+          "command": "blueman-manager"
+        },
+	{
+          "label": "",
+          "type": "button",
+          "command": "copyq show"
+	}
+      ]
+    },
+    "volume": {
+      "label": "󰕾",
+        "show-per-app": true
+    },
+    "backlight": {
+      "label": "󱍖"
+    }
+  }
+}
