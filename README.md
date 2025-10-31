@@ -17,6 +17,7 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 * **Launcher:** Rofi
 * **Terminal:** Kitty
 * **Shell:** Bash 5.3.3++
+* **Colors Manager:** Matugen
 * **File Manager:** Yazi
 * **Data Sync:** Rclone
 * **Package Managers:** Pacman / Flatpak / Yay / NPM (`JS`)
