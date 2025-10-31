@@ -1,20 +1,21 @@
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 /* Este archivo se ubica en /etc/xdg/waybar*/
+@import "matugen/matugen-waybar.css";
 
 /* Anything */
 * {
   font-family: JetBrainsMono Nerd Font, monospace;
   font-size: 13px;
   font-weight: 600;
-  color: #ffffff;
-  text-shadow: 0 0 1px #fff, 0 0 4px #fff;
+  color: @tertiary;
+  text-shadow: 0 0 1px @tertiary, 0 0 4px @tertiary;
   animation: pulse 5s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%   { color: #ffffff; }
-  50%  { color: #9dafbf; text-shadow: none;}
-  100% { color: #ffffff; }
+  0%   { color: @tertiary; }
+  50%  { color: @primary; text-shadow: none;}
+  100% { color: @tertiary; }
 }
 
 @keyframes flicker {
@@ -77,8 +78,8 @@ window#waybar.chromium {
 }*/
 
 /* Button */
-button {   
-    box-shadow: inset 0 -3px transparent; 
+button {
+    box-shadow: inset 0 -3px transparent;
     border: none;
     border-radius: 0;
 }
@@ -111,42 +112,42 @@ button:hover {
 #language,
 #network,
 #clock
-{    
+{
     margin: 5px 5px;
 }
 
 #network.disconnected {
-    color: #9dafbf;
+    color: @primary;
     text-shadow: none;
     animation: none;
 }
 
 #pulseaudio.muted {
-    color: #9dafbf;
+    color: @primary;
     text-shadow: none;
     animation: none;
 }
 
 #pulseaudio-source.muted {
-    color: #9dafbf;
+    color: @primary;
     text-shadow: none;
     animation: none;
 }
 
 #wireplumber.muted {
-    color: #9dafbf;
+    color: @primary;
     text-shadow: none;
     animation: none;
    }
 
 #wireplumber-source.muted {
-    color: #9dafbf;
+    color: @primary;
     text-shadow: none;
     animation: none;
 }
 
 #battery.critical:not(.charging) {
-    color: #9dafbf;
+    color: @primary;
     text-shadow: none;
     animation: none;
    }

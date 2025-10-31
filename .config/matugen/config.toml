@@ -11,11 +11,6 @@ version_check = false
 input_path = '~/.config/matugen/templates/matugen-kitty.conf'
 output_path = '~/.config/kitty/matugen/colors-matugen.conf'
 
-# Spicetify
-[templates.spicetify]
-input_path = '~/.config/matugen/templates/spotify-colors.ini'
-output_path = '~/.config/spicetify/Themes/Comfy/color.ini'
-
 # Rofi
 [templates.rofi]
 input_path = '~/.config/matugen/templates/matugen-rofi.rasi'
