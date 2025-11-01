@@ -7,6 +7,8 @@
 # Welcome to My Hyprland Rice
 I want to show you a bit of my desktop — it’s a little minimalist. :)
 
+![CheatSheet](./KeyboardHypr.md)
+
 ## Tools
 
 * **Window Manager:** Hyprland
