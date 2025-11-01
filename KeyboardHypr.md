@@ -72,8 +72,8 @@
 <kbd>WIN</kbd>+<kbd>]</kbd> = Move window to next workspace
 
 ### Special workspace (overlay)
-<kbd>WIN</kbd>+<kbd>`</kbd> = Move window to special workspace\
-<kbd>ALT</kbd>+<kbd>`</kbd> = Show special workspace
+<kbd>WIN</kbd>+<kbd>\`</kbd> = Move window to special workspace\
+<kbd>ALT</kbd>+<kbd>\`</kbd> = Show special workspace
 
 ### Switch workspace with mouse
 <kbd>WIN</kbd>+<kbd>Scroll Up</kbd> = Previous workspace\
