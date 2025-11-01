@@ -1,9 +1,9 @@
-Add Commands|kitty -e nvim ~/.config/hypr/scripts/r_menu/menu.txt|Addcommand.png
+Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_menu/menu.txt|Addcommand.png
 Mirror|wl-mirror --fullscreen-output HDMI-A-1 LVDS-1|Mirror.png
-Update Packages|kitty -e sudo pacman -Syu|Update.png
-Open Terminal|kitty|Terminal.png
+Suspend|kitty -e systemctl suspend|Suspend.png
 Update Emojis|kitty -e bash ~/.config/hypr/scripts/r_emoji/emoji-picker.sh --update|Emoji.png
 Disable Warm Color Filter|kitty -e pkill hyprsunset|Hyprsunset.png
+Update Packages|kitty -e sudo pacman -Syu|Update.png
 View Disks|kitty -e bash -c "lsblk -f; echo; read -p 'Press Enter to exit...'"|Disk.png
 Sync Documents|kitty -e rclone copy ~/Documents gdrive:BackupDocuments -P|Cloud.png
 CheatSheet Hyprland|kitty -e bash .config/hypr/scripts/r_menu/cheatsheet/cheatsheet.sh|Keyboard.png
