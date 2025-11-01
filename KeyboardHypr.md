@@ -1,43 +1,45 @@
-# Atajos del teclado para navegar dentro de Hyprland :)
+# Keyboard Shortcuts to Navigate in Hyprland :)
+
+![Go Back Readme](./README.md)
 
 ## mainMod
 <kbd>WIN</kbd>
 
-## Sesion del sistema
-<kbd>WIN</kbd>+<kbd>ESC</kbd> = Salir de la sesion actual\
-<kbd>WIN</kbd>+<kbd>BACKSPACE</kbd> = Apagar el sistema
+## System session
+<kbd>WIN</kbd>+<kbd>ESC</kbd> = Log out from current session\
+<kbd>WIN</kbd>+<kbd>BACKSPACE</kbd> = Shut down the system
 
-## Lanzadores y herramientas
-<kbd>WIN</kbd>+<kbd>Q</kbd> = Abre la terminal (kitty)\
-<kbd>WIN</kbd>+<kbd>X</kbd> = Abre el navegador web (firefox)\
-<kbd>WIN</kbd>+<kbd>E</kbd> = Abre el explorador de archivos (yazi)\
-<kbd>WIN</kbd>+<kbd>Z</kbd> = Abre el reproductor de música (spotify-launcher)\
-<kbd>WIN</kbd>+<kbd>\;</kbd> = Abre el lanzador de aplicaciones (rofi)\
-<kbd>WIN</kbd>+<kbd>\.</kbd> = Abre el lanzador de Emojis (rofi)\
-<kbd>WIN</kbd>+<kbd>\/</kbd> = Abre el lanzador de Wallpapers (rofi)\
-<kbd>WIN</kbd>+<kbd>\,</kbd> = Abre el menú rápido de comandos (rofi)\
-<kbd>WIN</kbd>+<kbd>\'</kbd> = Abre el selector de teclado (rofi)\
-<kbd>WIN</kbd>+<kbd>G</kbd> = Toma captura de pantalla\
-<kbd>WIN</kbd>+<kbd>TAB</kbd> = Abre el centro de notificaciones
+## Launchers and tools
+<kbd>WIN</kbd>+<kbd>Q</kbd> = Open terminal (kitty)\
+<kbd>WIN</kbd>+<kbd>X</kbd> = Open web browser (firefox)\
+<kbd>WIN</kbd>+<kbd>E</kbd> = Open file manager (yazi)\
+<kbd>WIN</kbd>+<kbd>Z</kbd> = Open music player (spotify-launcher)\
+<kbd>WIN</kbd>+<kbd>;</kbd> = Open application launcher (rofi)\
+<kbd>WIN</kbd>+<kbd>.</kbd> = Open emoji picker (rofi)\
+<kbd>WIN</kbd>+<kbd>/</kbd> = Open wallpaper selector (rofi)\
+<kbd>WIN</kbd>+<kbd>,</kbd> = Open quick command menu (rofi)\
+<kbd>WIN</kbd>+<kbd>'</kbd> = Open keyboard layout selector (rofi)\
+<kbd>WIN</kbd>+<kbd>G</kbd> = Take a screenshot\
+<kbd>WIN</kbd>+<kbd>TAB</kbd> = Open notification center
 
-## Gestion de ventanas
-<kbd>WIN</kbd>+<kbd>S</kbd> = Cierra la ventana actual\
-<kbd>WIN</kbd>+<kbd>A</kbd> = Cambia a ventana flotante\
-<kbd>WIN</kbd>+<kbd>F</kbd> = Alterna pseudo modo (ventanas compactas en mosaico)\
-<kbd>WIN</kbd>+<kbd>D</kbd> = Cambia la orientación de las ventanas (horizontal/vertical)
+## Window management
+<kbd>WIN</kbd>+<kbd>S</kbd> = Close current window\
+<kbd>WIN</kbd>+<kbd>A</kbd> = Toggle floating window\
+<kbd>WIN</kbd>+<kbd>F</kbd> = Toggle pseudo mode (compact tiled windows)\
+<kbd>WIN</kbd>+<kbd>D</kbd> = Change window orientation (horizontal/vertical)
 
-### Navegación de foco (cuando hay varias ventanas)
-<kbd>WIN</kbd>+<kbd>←</kbd> = Foco a la ventana izquierda\
-<kbd>WIN</kbd>+<kbd>→</kbd> = Foco a la ventana derecha\
-<kbd>WIN</kbd>+<kbd>↑</kbd> = Foco a la ventana superior\
-<kbd>WIN</kbd>+<kbd>↓</kbd> = Foco a la ventana inferior
+### Focus navigation (when multiple windows are open)
+<kbd>WIN</kbd>+<kbd>←</kbd> = Focus left window\
+<kbd>WIN</kbd>+<kbd>→</kbd> = Focus right window\
+<kbd>WIN</kbd>+<kbd>↑</kbd> = Focus upper window\
+<kbd>WIN</kbd>+<kbd>↓</kbd> = Focus lower window
 
-### Mover y redimensionar ventana
-<kbd>WIN</kbd>+<kbd>Left Click</kbd> = Mover ventana\
-<kbd>WIN</kbd>+<kbd>Right Click</kbd> = Redimensionar ventana
+### Move and resize window
+<kbd>WIN</kbd>+<kbd>Left Click</kbd> = Move window\
+<kbd>WIN</kbd>+<kbd>Right Click</kbd> = Resize window
 
-## Cambiar de workspace
-### Pasar entre workspaces
+## Switch workspace
+### Jump between workspaces
 <kbd>ALT</kbd>+<kbd>1</kbd> = Workspace 1\
 <kbd>ALT</kbd>+<kbd>2</kbd> = Workspace 2\
 <kbd>ALT</kbd>+<kbd>3</kbd> = Workspace 3\
@@ -49,52 +51,52 @@
 <kbd>ALT</kbd>+<kbd>9</kbd> = Workspace 9\
 <kbd>ALT</kbd>+<kbd>0</kbd> = Workspace 10
 
-### Pasar entre workspace anterior y siguiente
-<kbd>ALT</kbd>+<kbd>\[</kbd> = Ir al workspace anterior\
-<kbd>ALT</kbd>+<kbd>\]</kbd> = Ir al siguiente workspace
+### Move to previous or next workspace
+<kbd>ALT</kbd>+<kbd>[</kbd> = Go to previous workspace\
+<kbd>ALT</kbd>+<kbd>]</kbd> = Go to next workspace
 
-### Mover ventanas activas entre workspaces
-<kbd>WIN</kbd>+<kbd>1</kbd> = Mover ventana al workspace 1\
-<kbd>WIN</kbd>+<kbd>2</kbd> = Mover ventana al workspace 2\
-<kbd>WIN</kbd>+<kbd>3</kbd> = Mover ventana al workspace 3\
-<kbd>WIN</kbd>+<kbd>4</kbd> = Mover ventana al workspace 4\
-<kbd>WIN</kbd>+<kbd>5</kbd> = Mover ventana al workspace 5\
-<kbd>WIN</kbd>+<kbd>6</kbd> = Mover ventana al workspace 6\
-<kbd>WIN</kbd>+<kbd>7</kbd> = Mover ventana al workspace 7\
-<kbd>WIN</kbd>+<kbd>8</kbd> = Mover ventana al workspace 8\
-<kbd>WIN</kbd>+<kbd>9</kbd> = Mover ventana al workspace 9\
-<kbd>WIN</kbd>+<kbd>0</kbd> = Mover ventana al workspace 10
+### Move active window between workspaces
+<kbd>WIN</kbd>+<kbd>1</kbd> = Move window to workspace 1\
+<kbd>WIN</kbd>+<kbd>2</kbd> = Move window to workspace 2\
+<kbd>WIN</kbd>+<kbd>3</kbd> = Move window to workspace 3\
+<kbd>WIN</kbd>+<kbd>4</kbd> = Move window to workspace 4\
+<kbd>WIN</kbd>+<kbd>5</kbd> = Move window to workspace 5\
+<kbd>WIN</kbd>+<kbd>6</kbd> = Move window to workspace 6\
+<kbd>WIN</kbd>+<kbd>7</kbd> = Move window to workspace 7\
+<kbd>WIN</kbd>+<kbd>8</kbd> = Move window to workspace 8\
+<kbd>WIN</kbd>+<kbd>9</kbd> = Move window to workspace 9\
+<kbd>WIN</kbd>+<kbd>0</kbd> = Move window to workspace 10
 
-### Mover ventana a workspace anterior o siguiente
-<kbd>WIN</kbd>+<kbd>\[</kbd> = Mover ventana al workspace anterior\
-<kbd>WIN</kbd>+<kbd>\]</kbd> = Mover ventana al siguiente workspace
+### Move window to previous or next workspace
+<kbd>WIN</kbd>+<kbd>[</kbd> = Move window to previous workspace\
+<kbd>WIN</kbd>+<kbd>]</kbd> = Move window to next workspace
 
-### Workspace especial (superpuesto)
-<kbd>WIN</kbd>+<kbd>\`</kbd> = Mover ventana al workspace especial\
-<kbd>ALT</kbd>+<kbd>\`</kbd> = Mostrar workspace especial
+### Special workspace (overlay)
+<kbd>WIN</kbd>+<kbd>`</kbd> = Move window to special workspace\
+<kbd>ALT</kbd>+<kbd>`</kbd> = Show special workspace
 
-### Cambiar workspace activo con el mouse
-<kbd>WIN</kbd>+<kbd>Scroll Up</kbd> = Workspace anterior\
-<kbd>WIN</kbd>+<kbd>Scroll Down</kbd> = Workspace siguiente
+### Switch workspace with mouse
+<kbd>WIN</kbd>+<kbd>Scroll Up</kbd> = Previous workspace\
+<kbd>WIN</kbd>+<kbd>Scroll Down</kbd> = Next workspace
 
 ## Audio
-### Altavoces (salida)
-<kbd>WIN</kbd>+<kbd>J</kbd> = Silenciar altavoces (toggle)\
-<kbd>WIN</kbd>+<kbd>K</kbd> = Bajar volumen altavoces\
-<kbd>WIN</kbd>+<kbd>L</kbd> = Subir volumen altavoces
+### Speakers (output)
+<kbd>WIN</kbd>+<kbd>J</kbd> = Mute speakers (toggle)\
+<kbd>WIN</kbd>+<kbd>K</kbd> = Decrease speaker volume\
+<kbd>WIN</kbd>+<kbd>L</kbd> = Increase speaker volume
 
-### Micrófono (entrada)
-<kbd>WIN</kbd>+<kbd>U</kbd> = Silenciar micrófono (toggle)\
-<kbd>WIN</kbd>+<kbd>I</kbd> = Bajar volumen micrófono\
-<kbd>WIN</kbd>+<kbd>O</kbd> = Subir volumen micrófono
+### Microphone (input)
+<kbd>WIN</kbd>+<kbd>U</kbd> = Mute microphone (toggle)\
+<kbd>WIN</kbd>+<kbd>I</kbd> = Decrease microphone volume\
+<kbd>WIN</kbd>+<kbd>O</kbd> = Increase microphone volume
 
-## Brillo
-* En laptops con teclas de función:\
-<kbd>Fn</kbd>+<kbd>↑</kbd> = Subir brillo\
-<kbd>Fn</kbd>+<kbd>↓</kbd> = Bajar brillo
+## Brightness
+* On laptops with function keys:\
+<kbd>Fn</kbd>+<kbd>↑</kbd> = Increase brightness\
+<kbd>Fn</kbd>+<kbd>↓</kbd> = Decrease brightness
 
-## Reproducción multimedia
-* En laptops con teclas de función:\
-<kbd>Fn</kbd>+<kbd>F10</kbd> = Pista anterior\
+## Media playback
+* On laptops with function keys:\
+<kbd>Fn</kbd>+<kbd>F10</kbd> = Previous track\
 <kbd>Fn</kbd>+<kbd>F11</kbd> = Play/Pause\
-<kbd>Fn</kbd>+<kbd>F12</kbd> = Pista siguiente
+<kbd>Fn</kbd>+<kbd>F12</kbd> = Next track
