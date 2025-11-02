@@ -1,4 +1,5 @@
 Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_menu/menu.txt|Addcommand.png
+View packages (pacman)|kitty -e bash -c "pacman -Q; echo; read -p 'Press Enter to exit...'"|pacman.png
 Mirror|wl-mirror --fullscreen-output HDMI-A-1 LVDS-1|Mirror.png
 Suspend|kitty -e systemctl suspend|Suspend.png
 Update Emojis|kitty -e bash ~/.config/hypr/scripts/r_emoji/emoji-picker.sh --update|Emoji.png
