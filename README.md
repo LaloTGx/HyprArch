@@ -8,6 +8,7 @@
 I want to show you a bit of my desktop — it’s a little minimalist. :)
 
 ![CheatSheet](./KeyboardHypr.md)
+![First Steps in Arch / Hyprland - Spanish](./ESFSarchypr.md)
 
 ## Tools
 
@@ -48,6 +49,9 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 
 * **Launcher Command**
 ![launcher](./screenshots/launchercmd.png)
+
+* **Launcher Remember**
+![launcher](./screenshots/launcherrem.png)
 
 * **Launcher Wallpaper**
 ![launcher](./screenshots/launcherwall.png)
