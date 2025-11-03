@@ -7,7 +7,7 @@
 # Welcome to My Hyprland Rice
 I want to show you a bit of my desktop — it’s a little minimalist. :)
 
-![CheatSheet](./KeyboardHypr.md)
+![CheatSheet](./KeyboardHypr.md)\
 ![First Steps in Arch / Hyprland - Spanish](./ESFSarchypr.md)
 
 ## Tools
