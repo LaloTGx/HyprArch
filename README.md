@@ -62,4 +62,4 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 
 ## Command Icons
 The command icons used in the launcher were found on this website — feel free to download more for your own setup:
-[**Flaticon**](https://www.flaticon.com/)
+[**Flaticon**](https://www.flaticon.com/) | [**Freepik**](https://www.freepik.com/)

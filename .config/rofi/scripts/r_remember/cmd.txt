@@ -1,0 +1,9 @@
+Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_remember/cmd.txt|Addcommand.png
+C++| g++ main.cpp -o app -lSDL2 -lGLEW -lGL|compilecpp.png
+C++| ./app|runcpp.png
+Java| javac|compilejava.png
+Java| java|runjava.png
+Java| ./gradlew clean run|compilegradle.png
+Rust| cargo new|createrust.png
+Rust| cargo run|compilerust.png
+Rust| cargo clean|cleanrust.png

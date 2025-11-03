@@ -16,6 +16,7 @@
 <kbd>WIN</kbd>+<kbd>Z</kbd> = Open music player (spotify-launcher)\
 <kbd>WIN</kbd>+<kbd>;</kbd> = Open application launcher (rofi)\
 <kbd>WIN</kbd>+<kbd>.</kbd> = Open emoji picker (rofi)\
+<kbd>WIN</kbd>+<kbd>\\</kbd> = Open remember picker (rofi)\
 <kbd>WIN</kbd>+<kbd>/</kbd> = Open wallpaper selector (rofi)\
 <kbd>WIN</kbd>+<kbd>,</kbd> = Open quick command menu (rofi)\
 <kbd>WIN</kbd>+<kbd>'</kbd> = Open keyboard layout selector (rofi)\
