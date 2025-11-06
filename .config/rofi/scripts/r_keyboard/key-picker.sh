@@ -18,14 +18,20 @@ if [[ "$CHOICE" == "Add Commands"* ]]; then
     edit_commands
 fi
 
-# Extraer el primer campo (la tecla real)
-KEY=$(echo "$CHOICE" | awk '{print $1}')
+# Extraer la parte antes del ">"
+KEY=$(echo "$CHOICE" | cut -d '>' -f1 | sed 's/[[:space:]]*$//')
 
-# Copiar o escribirla directamente
+# Copiar al portapapeles
+if command -v copyq &>/dev/null; then
+    copyq copy "$KEY"
+    notify-send "Teclado Virtual" "‘$KEY’ copiado al portapapeles"
+else
+    echo -n "$KEY" | wl-copy
+    notify-send "Teclado Virtual" "‘$KEY’ copiado con wl-copy"
+fi
+
+# Escribir directamente si existe wtype (solo si estás en Wayland)
 if command -v wtype &>/dev/null; then
     sleep 0.15
     wtype "$KEY"
-else
-    echo -n "$KEY" | wl-copy
-    notify-send "Teclado Virtual" "$KEY copiado"
 fi
