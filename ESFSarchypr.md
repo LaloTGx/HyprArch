@@ -387,6 +387,16 @@ Por el momento aun no te puedo decir si se puede trabajar en proyectos grandes d
 te puedo decir que es bueno para los comienzos como hacer ejercicios de (hackerrank o leetcode). Espero que esta seccion te ayude. :)
 
 ---
+## Android Studio
+* Como sabras puedes instalarte la IDE de android studio con el siguiente comando:\
+`yay -S android-studio`
+* Despues si hay actualizaciones disponibles pero como no tiene privilegios te mandara este mensaje:\
+`Studio does not have write access to /opt/android-studio. Please run it by a privileged user to update`
+* Para poder solucionarlo solo necesitara cambiar los permisos de la carpeta opt para que android pueda actualizarse:\
+`sudo chown -R $USER:$USER /opt/android-studio`
+* Y listo con eso podras actualizar tu android studio sin problemas. :)
+
+---
 ## Referencias
 <!-- Aqui mostrare las referencias que he estado ocupando -->
 <!-- Si eres el autor de alguna pagina muchas gracias por todo -->
