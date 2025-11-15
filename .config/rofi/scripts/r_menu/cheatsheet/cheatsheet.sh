@@ -10,7 +10,7 @@ BGBLACK="\e[40m"
 RESET="\033[0m"
 
 # Rutas base
-BASE_DIR="$HOME/.config/hypr/scripts/r_menu/cheatsheet"
+BASE_DIR="$HOME/.config/rofi/scripts/r_menu/cheatsheet"
 PAGES_DIR="$BASE_DIR/pages"
 
 # Mostrar título
