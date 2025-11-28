@@ -1,37 +1,28 @@
-// -*- mode: jsonc -*-
-// Este archivo se ubica en /etc/xdg/waybar
+// Este archivo se ubica en /etc/xdg/waybar o en .config/waybar
 {
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   //"height": 30,     // Waybar height (to be removed for auto height)
   "width": 1366, // Waybar width
   "spacing": "0px", // Gaps between modules (4px)
-  "modules-left": [
-    "custom/power",
-    "cpu",
-    "memory",
-    //"disk",
-    "backlight",
-    "pulseaudio"
-    //"tray",
-    //"custom/media"
-  ],
-  "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["hyprland/language", "network", "clock"],
+  "modules-left": ["hyprland/workspaces","hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio","backlight","hyprland/language","memory","cpu","battery","network","custom/power"],
   "hyprland/workspaces": {
     "disable-scroll": true,
     "on-click": "activate",
     "all-outputs": true,
     "active-only": true,
     "warp-on-scroll": false,
-    "persistent-workspaces": {
-      "1": "[]",
-      "2": "[]",
-      "3": "[]",
-      "4": "[]",
-      "5": "[]"
-    },
-    "format": "{icon}",
+    //"persistent-workspaces": {
+      //"1": "[]",
+      //"2": "[]",
+      //"3": "[]",
+      //"4": "[]",
+      //"5": "[]"
+   // },
+   //"format": "{icon}",
+    "format": "󰕮 {id}",
     "format-icons": {
       "active": "<span font='14'>󱓻</span>",
       "empty": "<span font='8'></span>",
@@ -65,7 +56,7 @@
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "hyprland/language": {
-    "format": " {}",
+    "format": "󰥻 {}",
     "format-en": "US",
     "format-es": "ES"
   },
@@ -74,12 +65,11 @@
     "spacing": 10
     // "icons": {
     //   "blueman": "bluetooth",
-    //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
     // }
   },
   "clock": {
     "tooltip": true,
-    "format": " {:%A %d %b %I:%M %p}",
+    "format": "{:%A %d %b %I:%M %p}",
     //"timezone": "America/New_York"
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
     "format-alt": "{:%d %m %Y}"
@@ -97,9 +87,9 @@
     "unit": "GB"
   },
   "hyprland/window": {
-    "format": " {}",
+    "format": "󱙝 {}",
     "separate-outputs": true,
-    "max-length": 20,
+    "max-length": 40,
     "tooltip": false
   },
   "backlight": {
@@ -109,7 +99,7 @@
   },
   "battery": {
     "states": {
-      //"good": 95,
+      "good": 95,
       "warning": 30,
       "critical": 15
     },
@@ -173,7 +163,7 @@
     },
     "escape": true
     //"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    //"exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
   "custom/power": {
     "format": "󰣇",

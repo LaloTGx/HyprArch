@@ -70,7 +70,8 @@ window#waybar.chromium {
 }
 
 #workspaces button {
-    padding: 0 10px;
+    /*padding: 0 10px;*/
+    padding: 0 0px;
     background-color: transparent;
 }
 
@@ -114,6 +115,14 @@ button:hover {
 #clock
 {
     margin: 5px 5px;
+}
+
+#custom-power{
+    margin: 0 15px 0 0;
+}
+
+#workspaces{
+    margin: 0 5px 0 15px;
 }
 
 #network.disconnected {
