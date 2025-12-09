@@ -1,8 +1,7 @@
-     MMMMM   MMMMM     
-     WXWXW   WXWXW     
-     WWXWW   WWXWW     
-     WXWXW   WXWXW     
-     WWWWW   WWWWW     
-MMM                 MMM
-WWWxxxxxxxxxxxxxxxxxWWW
-   WWWWWWWWWWWWWWWWW   
+      █████░  █████░
+      █████░  █████░
+      █████░  █████░
+      █████░  █████░
+████░                ████░
+█████████████████████████░
+    █████████████████░

@@ -7,12 +7,12 @@
   "logo": {
     "type": "file",
     "source": "~/.config/fastfetch/ascii.txt",
-    "color": {"1": "bright_light_white"},
-    "position": "top",
+    "color": {"1": "bright_light_red"},
+    "position": "left",
     "padding": {
       "right": 1,
       "left": 0,
-      "top": 0
+      "top": 5
     }
   },
   "display": {
@@ -51,14 +51,14 @@
     {
       "type": "users",
       "key": "",
-      "format": "{name} {#bright_blue}:)",
-      "keyColor": "blue",
-      "outputColor": "bright_light_blue"
+      "format": "{name} {#bright_light_white}:)",
+      "keyColor": "red",
+      "outputColor": "bright_light_red"
     },
     {
       "type": "kernel",
       "key":"",
-      "format":"{1} {#light_red}{2}",
+      "format":"{1} {#cyan}{2}",
       "keyColor": "bright_light_blue",
       "outputColor": "bright_light_cyan"
     },
