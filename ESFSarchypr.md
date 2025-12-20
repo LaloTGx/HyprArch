@@ -90,14 +90,14 @@ proyectos que hay en github.
         1. Crea un titulo para reconocer tu llave de tu dispositivo.
         2. En la seccion de key agrega el contenido que copeaste anteriormente
     2. Una vez agregado la llave te pedira una verificacion de que eres tu quien agrega esa llave
-3. Ya podras usar ssh para hacer commits, push, pull, etc.
+3. Ya podras usar ssh
 
 ### Verificacion
 * Para confirmar si quedo todo perfecto ejecuta lo siguiente:\
 `ssh -T git@github.com`
 
 ### Git
-En el caso de que quieras iniciar desde Github necesitas ejecutar los siguientes comandos:
+Es necesario poder identificarte tambien en git (para hacer commits, push, etc) con los siguientes comandos:
 1. `git config --global user.name "Tu Nombre o Nick"`
 2. `git config --global user.email "tu_email@ejemplo.com"`
 
