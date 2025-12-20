@@ -67,19 +67,48 @@ Una vez dentro de `iwctl`
 * Y por ultimo para salirte de `iwd` es con:\
 `exit`\
 y con eso ya estarias conectado a tu red WIFI :)
+
 ---
-## Git y SSH
+## Sobre repositorios SSH y Git
+### SSH
 Antes de comenzar creo que es muy importante aprender git por que en cualquier momento lo podrias
 ocupar tanto para la programación como tambien para instalar o clonar algo de otros repositorios o de hasta tus
 proyectos que hay en github.
-* Para ello necesitas entrar a tu cuenta de **Github** con este comando:
-`~`
+* Para no entrar desde git sino desde ssh necesitar primero instalarte lo siguiente:\
+`sudo pacman -S git openssh`
+* Despues en tu carpeta `/~` lo conectas con este comando:\
+`ssh-keygen -t ed25519 -C "tu_correo@ejemplo.com"`
+* Para iniciar el SSH agent lo haces con lo siguiente:\
+`eval "$(ssh-agent -s)"`\
+`ssh-add ~/.ssh/id_ed25519`
+
+### Vincular la llave SSH a Github
+1. Deberas copear lo que te muestre con el siguiente comando:\
+`cat ~/.ssh/id_ed25519.pub`
+2. Entra a settings de Github (en mi caso lo abri en el navegador)
+    1. Luego dirigete a SSH y GPG keys
+        1. Crea un titulo para reconocer tu llave de tu dispositivo.
+        2. En la seccion de key agrega el contenido que copeaste anteriormente
+    2. Una vez agregado la llave te pedira una verificacion de que eres tu quien agrega esa llave
+3. Ya podras usar ssh para hacer commits, push, pull, etc.
+
+### Verificacion
+* Para confirmar si quedo todo perfecto ejecuta lo siguiente:\
+`ssh -T git@github.com`
+
+### Git
+En el caso de que quieras iniciar desde Github necesitas ejecutar los siguientes comandos:
+1. `git config --global user.name "Tu Nombre o Nick"`
+2. `git config --global user.email "tu_email@ejemplo.com"`
 
 ### Cambio de URL a SSH
 * Para cambiar del tipo de repositorio (como pasar url a pasar a SSH para una mejor comodidad) ejecutas lo siguiente:\
 `git remote set-url origin git@github.com:Usuario/Repositorio.git`
 * Para verficar si aun estas ocupando la URL o el SSH, ejecutas el siguiente comando:\
 `git remote -v`
+
+### Clonar repositorios de github
+`git clone git@github.com:usuario/repositorio.git`
 
 ---
 ## Pacman
