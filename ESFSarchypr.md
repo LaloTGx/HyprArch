@@ -69,6 +69,84 @@ Una vez dentro de `iwctl`
 y con eso ya estarias conectado a tu red WIFI :)
 
 ---
+## AMD
+Para poder usar perfectamente el procesador que tienes (en este caso AMD)
+* Necesitas instalar lo siguiente:\
+`sudo pacman -S xf86-video-amdgpu`
+* Y tambien lo importante (tambien en el caso de intel):\
+`sudo pacman -S mesa`
+
+---
+## RTX
+Para usar rtx (en mi caso es una 4050) al principio tenia problemas con **archinstall** asi que, si utilizas este componente cuando quieras instalarte arch linux con hyprland
+selecciona el tipo en minimalista lo que hara sera instalarte arch linux normal (En vista TTY o terminal) y es normal de ahi en adelante usando la terminal instala lo necesario
+que llegues a ocupar en tu dia a dia (en mi caso yazi, git, neovim, etc) para poder moverte con mayor facilidad desde la terminal despues puedes iniciar con el proceso
+de instalacion de drivers para usar la rtx. :)
+* Para instalar los drives necesitas de los siguientes comandos:
+1. `sudo pacman -S linux-headers`
+2. `sudo pacman -S nvidia-dkms` aunque si llegas a actualizar removera `nvidia-dkms` y te actualizara a uno mas actual `nvidia-open-dkms` a mi opinion llega a ser lo mismo, me funciona los dos.
+3. `sudo pacman -S nvidia-utils`
+4. `sudo pacman -S lib32-nvidia-utils`
+5. `sudo pacman -S nvidia-settings`
+
+**Advertencia:** Para instalar `lib32-nvdia-utils` **necesitas activar el repositorio Multilib** para ello ve al titulo de [PACMAN](#pacman) en el subtitulo [Activar Multilib para pacman](#activar-multilib-para-pacman)
+te explico de manera rapida como activarlo solo tienes que descomentar dos lineas de codigo para que puedas descargarlo. :)
+
+Hyprland necesita que el KMS (Kernel Mode Setting) este activo para Nvidia para ello necesitas editar en esta ruta:\
+Dependiendo del Editor de texto que uses `sudo [nano]` o `sudo [nvim]`+`/etc/default/grub`
+
+* En la linea GRUB_CMDLINE_LINUX_DEFAULT, añades lo siguiente:\
+`nvidia-drm.modeset=1`
+* Para regenerar el grub ejecutas el siguiente comando:
+`sudo grub-mkconfig -o /boot/grub/grub.cfg`
+
+* Para asegurar que los modulos se carguen al arrancar entra al archivo con el siguiente comando:\
+`sudo nvim /etc/modules-load.d/nvidia.conf`
+* Y escribe lo siguiente
+```
+nvidia
+nvidia_modeset
+nvidia_uvm
+nvidia_drm
+```
+* **Es probable que tras agregar los modulos, deberias reinstalar otra vez los drivers para regenerar los archivos**
+* **Nota:** Para mi futuro yo quizas no es necesario reinstalar los paquetes solo deberias ejecutar el siguiente comando:\
+``sudo mkinitcpio -P``
+* En el caso de que **No funcione** el comando anterior, entonces **si reinstala** los paquetes/drivers jaja
+
+**// ------**
+**// Tambien es necesario que despues de instalar y hacer los pasos anteriores deberas reiniciar tu computadora para que funcione :)**
+
+* Para ver si se instalo correctamente puedes visualizarlo con lo siguiente:\
+`nvidia-smi`
+
+### NVIDIA-PRIME
+* Para ejecutar cualquier aplicacion con la grafica RTX necesitas instalarte:\
+`sudo pacman -S nvidia-prime`
+
+* Para que la aplicacion abra con la tarjeta grafica necesitas ejecutar:\
+`prime-run app` en donde **app** es el nombre de la aplicacion que quieres abrir.
+
+**Nota:** digo que lo abra de esta manera ya que en mi caso uso una laptop que tiene grafica integrada AMD radeon graphics por lo que esa tarjeta se dedica a mostrar el escritorio
+y la rtx se dedicaria a las aplicaciones pesadas. :)
+
+---
+## NVTOP
+* Para ver el uso de la(s) tarjeta(s) puedes instalarte:\
+`sudo pacman -S nvtop`
+* Y verlo con el siguiente comando:\
+`nvtop`
+
+* **Despues ya podras seguir instalando tus demas instalaciones** como: hyprland, wayland, rofi, etc. :)
+---
+## HTOP
+Esta herramienta funciona para ver el manejo de los nucleos del procesador y las tareas/aplicaciones que se estan ocupando en ese instante (tambien tareas secundarias)
+* Para descargar la herramienta solo necesitas el siguiente comando:\
+`sudo pacman -S htop`
+* Para entrar y visualizar el contenido solo ejecutas el siguiente comando:\
+`htop`
+
+---
 ## Sobre repositorios SSH y Git
 ### SSH
 Antes de comenzar creo que es muy importante aprender git por que en cualquier momento lo podrias
@@ -97,7 +175,7 @@ proyectos que hay en github.
 `ssh -T git@github.com`
 
 ### Git
-Es necesario poder identificarte tambien en git (para hacer commits, push, etc) con los siguientes comandos:
+**Es necesario poder identificarte** tambien en git (para hacer commits, push, etc) con los siguientes comandos:
 1. `git config --global user.name "Tu Nombre o Nick"`
 2. `git config --global user.email "tu_email@ejemplo.com"`
 
@@ -132,8 +210,11 @@ Puedes usar el editor de texto al que estas adaptado como **nano** o cualquier o
 * Para poder activarlo solo busca en el documento **Multilib**:\
 `[multilib]`\
 `Include = /etc/pacman.d/mirrorlist`\
-Lo descomentas y listo, ya podras descargar y ejecutar programas para los dos tipos de verisones, pero ojo por que tambien
-puede ocupar un poco mas de almacenacienamiento pero si en tu caso tienes mucho almacenamiento esto no seria un problema. :)
+
+* Para sincronizar los repositorios ejecutas lo siguiente:\
+`sudo pacman -Sy`
+
+Y listo, ya podras descargar y ejecutar programas. :)
 
 ## Yay
 * Pero en el caso de yay lo primero que tienes que instalar es **base-devel**:\
