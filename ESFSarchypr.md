@@ -147,6 +147,13 @@ Esta herramienta funciona para ver el manejo de los nucleos del procesador y las
 `htop`
 
 ---
+## TLP
+En el caso de que estes utilizando una laptop y no un PC Desk, para prolongar un poco mas la vida util de la bateria y la laptop en general trata de instalar el siguiente paquete con el siguiente comando:\
+`sudo pacman -S tlp`\
+Lo que hace este paquete en pocas palabras es un ahorrador de consumo, apaga los ventiladores si no le estas dando un uso rudo, en este paquete no es necesario hacer modificaciones ni nada solamente
+lo instalas y lo hace de manera automatica. :)
+
+---
 ## Sobre repositorios SSH y Git
 ### SSH
 Antes de comenzar creo que es muy importante aprender git por que en cualquier momento lo podrias
