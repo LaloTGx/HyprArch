@@ -12,27 +12,31 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 
 ## Tools
 
+### Important
+* **Package Managers:** Pacman / Flatpak / Yay / NPM (`JS`)
 * **Window Manager:** Hyprland
 * **Warm Color Filter:** Hyprsunset
-* **Status Bar:** Waybar
 * **Notification Center:** Swaync
-* **IDE:** Neovim
 * **Launcher:** Rofi
+* **JSON Parser / CLI Filter:** jq
+* **Clipboard:** Wl-Copy and CopyQ
+* **Bluetooth Manager:** Blueman
+* **Audio Control:** Pavucontrol
 * **Terminal:** Kitty
 * **Shell:** Bash 5.3.3++
 * **Colors Manager:** Matugen
+* **Status Bar:** Waybar **(Tray):** xdg-desktop-portal-gtk / xdg-desktop-portal / xdg-desktop-portal-hyprland
+
+### Optional
+* **IDE:** Neovim
 * **File Manager:** Yazi
 * **Data Sync:** Rclone
-* **Package Managers:** Pacman / Flatpak / Yay / NPM (`JS`)
 * **Background Manager:** SWWW
 * **Media Player:** MPV
 * **PDF Reader:** Zathura
-* **Bluetooth Manager:** Blueman
-* **Audio Control:** Pavucontrol
 * **Image Viewer:** IMV
 * **Markdown Previewer:** Glow
 * **Fuzzy Finder:** Skim (`sk`)
-* **JSON Parser / CLI Filter:** jq
 
 ---
 
