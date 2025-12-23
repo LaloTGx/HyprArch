@@ -8,7 +8,7 @@
 I want to show you a bit of my desktop — it’s a little minimalist. :)
 
 ![CheatSheet](./KeyboardHypr.md)\
-![First Steps in Arch / Hyprland - Spanish](./ESFSarchypr.md)
+![First Steps in Arch / Hyprland - Spanish](/PrimerosPasosArch.md)
 
 ## Tools
 

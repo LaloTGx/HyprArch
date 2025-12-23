@@ -92,13 +92,11 @@ de instalacion de drivers para usar la rtx. :)
 **Advertencia:** Para instalar `lib32-nvdia-utils` **necesitas activar el repositorio Multilib** para ello ve al titulo de [PACMAN](#pacman) en el subtitulo [Activar Multilib para pacman](#activar-multilib-para-pacman)
 te explico de manera rapida como activarlo solo tienes que descomentar dos lineas de codigo para que puedas descargarlo. :)
 
-Hyprland necesita que el KMS (Kernel Mode Setting) este activo para Nvidia para ello necesitas editar en esta ruta:\
-Dependiendo del Editor de texto que uses `sudo [nano]` o `sudo [nvim]`+`/etc/default/grub`
+Hyprland necesita que el KMS (Kernel Mode Setting) este activo para Nvidia para ello necesitas editar el gestor de arranque [GRUB](#grub-gestor-de-arranque) donde te hice un capitulo de como editarlo:\
 
-* En la linea GRUB_CMDLINE_LINUX_DEFAULT, añades lo siguiente:\
+* Adentro en la linea GRUB_CMDLINE_LINUX_DEFAULT, añades lo siguiente:\
 `nvidia-drm.modeset=1`
-* Para regenerar el grub ejecutas el siguiente comando:
-`sudo grub-mkconfig -o /boot/grub/grub.cfg`
+* Despues actualizas **GRUB** con el comando que te mencione en el capitulo de [GRUB](#grub-gestor-de-arranque)
 
 * Para asegurar que los modulos se carguen al arrancar entra al archivo con el siguiente comando:\
 `sudo nvim /etc/modules-load.d/nvidia.conf`
@@ -127,7 +125,7 @@ nvidia_drm
 * Para que la aplicacion abra con la tarjeta grafica necesitas ejecutar:\
 `prime-run app` en donde **app** es el nombre de la aplicacion que quieres abrir.
 
-**Nota:** digo que lo abra de esta manera ya que en mi caso uso una laptop que tiene grafica integrada AMD radeon graphics por lo que esa tarjeta se dedica a mostrar el escritorio
+**NOTA:** Lo que mencione anteriormente sobre abrirlo de esta manera ya que en mi caso uso una laptop que tiene grafica integrada AMD radeon graphics por lo que esa tarjeta se dedica a mostrar el escritorio
 y la rtx se dedicaria a las aplicaciones pesadas. :)
 
 ---
@@ -152,6 +150,16 @@ En el caso de que estes utilizando una laptop y no un PC Desk, para prolongar un
 `sudo pacman -S tlp`\
 Lo que hace este paquete en pocas palabras es un ahorrador de consumo, apaga los ventiladores si no le estas dando un uso rudo, en este paquete no es necesario hacer modificaciones ni nada solamente
 lo instalas y lo hace de manera automatica. :)
+
+---
+## GRUB (Gestor de arranque)
+Grub es lo primero que veras cuando enciendes tu laptop hay varios gestores de arranque que puedes utilizar dependiendo de lo que vas a necesitar (limine para varios SO y kernels, systemd-boot, etc)
+Por lo mientras ando utilizando GRUB como gestor de arranque en mi laptop yo lo instalo desde un principio pero utilizo **Archinstall** pero el comando de instalacio seria:\
+`pacman -S grub efibootmgr`
+* En el caso de que quieras configurar grub lo haces con el siguiente comando:\
+`sudo nvim /etc/default/grub`
+* Para actualizar la configuración del bootloader lo ejecutas con el comando:\
+` sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
 ---
 ## Sobre repositorios SSH y Git
@@ -254,22 +262,6 @@ para que te ayuden en tu rendimiento de escribir codigo tengo un poco de plugins
 ayuda :)
 
 ---
-## 7zip
-* Es una herramienta poderosa para extraccion de archivos zip para instarlarlo solo necesitas del comando:\
-`sudo pacman -S 7zip`
-* Para extraer los documentos en la ruta actual donde estas usas este comando:\
-`7z e (el archivo a descomprimir).zip`
-
----
-## Skim
-* Es una herramienta muy utilizado o almenos yo lo ocupo mucho, en el caso de que estes cansado de escribir:\
-`cd /La/Ruta/`
-* Si quieres ver el listado de tus directorios para abrir un archivo solo escribes:\
-`sk`
-* Y te muestra el listado de directorios a donde quieres ir para editar un archivo es un alivio si ya tienes muchos archivos y no recuerdas la ruta
-Espero te sirva de ayuda. :)
-
----
 ## Fonts
 * Si no tienes una carpeta destinada para los fonts lo crear asi:\
 `mkdir ~/.local/share/fonts/`
@@ -297,7 +289,7 @@ Listo puedes ocuparlo en tu sistema anotando el nombre de la fuente en cualquier
 `cd .config/hypr/`
 * y con `ls` veras todos los archivos que quieras modificar con tu editor de texto preferido :)
 
-### Lo mas importante y la razon por la cual te gustaria linux en general y mas especifico en Grub
+### Lo mas importante y la razon por la cual te gustaria linux en general
 * Esto me paso, un dia no me funcionaba dos teclas el dos y la "w" y mi contraseña esta el dos y sinceramente pense:\
 "ya no voy a poder entrar a mi sistema" pero lo bueno de Grub es que desde el inicio cuando seleccionas el sistema\
 te permite entrar como root asi normal y desde ahi pude cambiar mi contraseña y creo que esto es demasiado bueno aunque igual
@@ -431,6 +423,13 @@ ls o tambien con tu explorador de archivos favorito.\
 Espero te sirva de ayuda para ver el contenido de tu **USB**. :)
 
 ---
+## 7zip
+* Es una herramienta poderosa para extraccion de archivos zip para instarlarlo solo necesitas del comando:\
+`sudo pacman -S 7zip`
+* Para extraer los documentos en la ruta actual donde estas usas este comando:\
+`7z e (el archivo a descomprimir).zip`
+
+---
 ## Rclone
 Si alguna vez te has preocupado por si llegara a fallar tu SO y no hiciste un backup de tu informacion para esto funciona rclone
 para que almacene tu informacion en tu drive (de la nube) favorita. puedes guardar en Google Drive, OneDrive, Dropbox, etc.
@@ -450,6 +449,15 @@ Por ultimo y mas importante **Rclone no sube automaticamente tus archivos** tien
 Hay diferentes maneras de hacerlo de manera automatica con **Cron** o **Crontab**, tambien puedes haer un **Script** que ejecute
 el comando cada cierto tiempo pero ya es tu creatividad de como resolverlo, por el momento y para mi caso lo hare manual.
 Espero te sirva de ayuda para que no pierdas cosas importantes usando linux. :)
+
+---
+## Skim
+* Es una herramienta muy utilizado o almenos yo lo ocupo mucho, en el caso de que estes cansado de escribir:\
+`cd /La/Ruta/`
+* Si quieres ver el listado de tus directorios para abrir un archivo solo escribes:\
+`sk`
+* Y te muestra el listado de directorios a donde quieres ir para editar un archivo es un alivio si ya tienes muchos archivos y no recuerdas la ruta
+Espero te sirva de ayuda. :)
 
 ---
 ## Rust
