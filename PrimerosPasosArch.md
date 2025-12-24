@@ -451,6 +451,38 @@ el comando cada cierto tiempo pero ya es tu creatividad de como resolverlo, por 
 Espero te sirva de ayuda para que no pierdas cosas importantes usando linux. :)
 
 ---
+## Reproductores de musica
+La intencion de poner un capitulo sobre los reproductores de musica es sencillo he utilizado mi navegador para escuchar musica pero he notado que consume mucha memoria (aparte de la GPU)
+por lo que es mejor optar por otras alternativas para escuchar musica y sin que consuma demasiada memoria y es descargar tu propia musica y reproducirla en la terminal donde consumiria menos
+que escuchar musica en el navegador, si estas utilizando una laptop esto puede ser beneficioso por que consumiria menos bateria.
+Solo es una opinion mia y por lo que he visto al menos con nvtop.
+
+### MDP y NCMPCPP
+* Para instalar los dos necesitas ejecutar los siguientes comandos:
+1. `sudo pacman -S mpd`
+2. `sudo pacman -S ncmpcpp`
+* Para iniciar el servicio de **MPD** necesitas ejecutar lo siguiente:
+1. `systemctl --user enable mpd`
+2. `systemctl --user start mpd`
+* En el caso de que **falle el segundo comando:** `systemctl --user start mpd` necesitas revisar si esta activado y corriendo con el siguiente comando:\
+`systemctl --user status mpd`
+* Para recargar o dar reset al servicio lo puedes hacer con los siguientes comandos:
+1. `systemctl --user daemon-reload`
+2. `systemctl --user restart mpd`
+* **NOTA:** Para configurarlo necesitas de dotfiles para que realicen una conexion entre estos dos paquetes y de esta manera se puede reproducir la musica.
+* Para ejecutar el reproductor solo necesitas ejecutar el siguiente comando en tu terminal:\
+`ncmpcpp`
+
+### YT-DLP
+Este paquete es un tesoro bien cuidado jaja, lo que hace es alamcenar los videos de youtube en un formato diferente (el cual tu gustes como .MP3 o .FLAC por eso necesita de ffmpeg para hacer la conversion)
+* Para descargarlo necesitas el siguente comando:\
+`sudo pacman -S yt-dlp ffmpeg`
+
+* Para usar yt-dlp necesitas de un script para que te pregunta en cada descarga en que formalo lo quieres y quizas hasta reducir menos comandos solo agregar el link a almacenar y el script se encarga de lo demas.
+En el caso de quieras hacer la descarga por tu propia cuenta con yt-dlp lee el manual para saber que atributos quieres almacenar en el comando:\
+`yt-dlp -help` y tambien te muestra un link directo al repositorio para leer toda la documentacion.
+
+---
 ## Skim
 * Es una herramienta muy utilizado o almenos yo lo ocupo mucho, en el caso de que estes cansado de escribir:\
 `cd /La/Ruta/`
