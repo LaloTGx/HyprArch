@@ -321,14 +321,11 @@ listo ya habras cambiado tu contraseña al entrar desde Grub :)
 ### Monitores
 * Para ver la lista de monitores ejecuta el siguiente comando:\
 `hyprctl monitors`
-* Despues instalas **wl-mirror** que es para duplicar tu pantalla a un **proyector con HDMI** ejecutando lo siguiente:\
-`sudo pacman -S wl-mirror`
-* Para verificar que lo tienes instalado solo ejecutas el siguiente comando:\
-`which wl-mirror` y en la salida deberia mostrarte `/usr/sbin/wl-mirror`
-* Para poder duplicar la pantalla lo harias de la siguiente manera:\
-`wl-mirror --fullscreen-output HDMI-A-1 eDP-1`\
-Donde **eDP-1** seria la pantalla de tu laptop y el **HDMI-A-1** el proyector al cual quieres proyectar para checar si es la
-entrada deberias de ejecutar el comando: `hyprctl monitors` y listo con esto ya mostraria tu monitor en el proyector. :)
+* En la lista notaras **eDP-1** el cual seria la pantalla de tu laptop y el **HDMI-A-1** el proyector
+* Para duplicar tu pantalla solo necesitas ejecutar el siguiente comando:\
+`hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"`
+* Para usarlo como segundo monitor necesitas ejecutar el siguiente comando:\
+`hyprctl keyword monitor "HDMI-A-1,1920x1080@60,1920x0,1"` lo que hara es mostrarlo en nuevo workspace vacio de esta manera lo hace dinamico.
 
 ### Hyprsunset
 De acuerdo con la documentacion de hyprland hyprsunset es el manejo de la temperatura de tu monitor
@@ -472,6 +469,17 @@ Solo es una opinion mia y por lo que he visto al menos con nvtop.
 * **NOTA:** Para configurarlo necesitas de dotfiles para que realicen una conexion entre estos dos paquetes y de esta manera se puede reproducir la musica.
 * Para ejecutar el reproductor solo necesitas ejecutar el siguiente comando en tu terminal:\
 `ncmpcpp`
+### MPC
+Aunque tengas instalado **MDP y NCMPCPP** no podras controlar la musica que reproduces por que solo reproducira la plyalist actual sin poder regresar a la musica.
+* Para ello necesitas instalarte un comunicador para el **MDP** que se llama **MPC** para instalarlo necesitas ejecutar el siguiente comando:
+`sudo pacman -S mpc`
+* Para ver si esta activo solo necesitas ejecutar el siguiente codigo:\
+`mpc status`
+* Para poder usarlo solo necesitas ejecutar los siguientes comandos:
+1. mpc play
+2. mpc pause
+3. mpc next
+4. mpc prev
 
 ### YT-DLP
 Este paquete es un tesoro bien cuidado jaja, lo que hace es alamcenar los videos de youtube en un formato diferente (el cual tu gustes como .MP3 o .FLAC por eso necesita de ffmpeg para hacer la conversion)
