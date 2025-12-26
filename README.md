@@ -10,34 +10,35 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 ![CheatSheet](./KeyboardHypr.md)\
 ![First Steps in Arch / Hyprland - Spanish](/PrimerosPasosArch.md)
 
-## Tools
-
+## Stack
 ### Important
+#### System
 * **Package Managers:** Pacman / Flatpak / Yay / NPM (`JS`)
+* **Bluetooth Manager:** Blueman
+* **Audio Control:** Pavucontrol
 * **Window Manager:** Hyprland
+* **Shell:** Bash 5.3.3++
+* **Terminal:** Kitty
+#### Tools Hyprland
 * **Warm Color Filter:** Hyprsunset
 * **Notification Center:** Swaync
+* **Background Manager:** SWWW
+* **File Manager:** Yazi
 * **Launcher:** Rofi
 * **JSON Parser / CLI Filter:** jq
 * **Clipboard:** Wl-Copy and CopyQ
-* **Bluetooth Manager:** Blueman
-* **Audio Control:** Pavucontrol
-* **Terminal:** Kitty
-* **Shell:** Bash 5.3.3++
+#### Multimedia
+* **Player Music:** MPD / NCMPCPP / MPC
+* **Media Player:** MPV
+* **Image Viewer:** IMV
 * **Colors Manager:** Matugen
 * **Status Bar:** Waybar **(Tray):** xdg-desktop-portal-gtk / xdg-desktop-portal / xdg-desktop-portal-hyprland
-
 ### Optional
 * **IDE:** Neovim
-* **File Manager:** Yazi
 * **Data Sync:** Rclone
-* **Background Manager:** SWWW
-* **Media Player:** MPV
 * **PDF Reader:** Zathura
-* **Image Viewer:** IMV
 * **Markdown Previewer:** Glow
 * **Fuzzy Finder:** Skim (`sk`)
-
 ---
 
 ## Screenshots – Desktop
