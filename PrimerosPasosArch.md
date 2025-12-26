@@ -66,7 +66,21 @@ Una vez dentro de `iwctl`
 \[iwd\]\# `station wlan0 connect TU_RED_WIFI`
 * Y por ultimo para salirte de `iwd` es con:\
 `exit`\
-y con eso ya estarias conectado a tu red WIFI :)
+y con eso ya estarias conectado a tu red
+
+### Como conectarme a una red oculta con iwd
+Solemos hacer el mismo proceso aunque casi por lo regular con el comando: \[iwd\]\# `station wlan0 get-networks`\
+no muestra las redes ocultas, y esto es normal, ya que no anuncian su SSID.\
+**Nota:** En mi experiencia, usando exactamente la misma configuración y sistema en dos laptops distintas, mi laptop vieja no logra
+conectarse a redes ocultas, mientras que la más nueva sí.
+Esto apunta a una limitación del adaptador WiFi antiguo y su soporte en Linux.\
+En Windows 10 sí podía conectarme, pero en Linux el soporte depende más directamente del hardware y su driver.\
+Por eso, si no puedes conectarte a una red oculta desde una laptop vieja, no es necesariamente un problema de configuración.\
+Aun así, vale la pena intentarlo para salir de la duda.
+
+* Para conectarte a una red oculta:\
+`station wlan0 connect-hidden NOMBRE_DEL_SSID`
+* Te pedirá la contraseña y, si el adaptador lo soporta, quedará conectado.
 
 ---
 ## AMD
