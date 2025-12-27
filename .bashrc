@@ -8,6 +8,8 @@ alias grep='grep --color=auto'
 
 #---------------------------------
 # Funcion para cambiar icono segun la hora
+export QT_QPA_PLATFORMTHEME=qt6ct
+
 clock_icon() {
     local hour=$(date +%I)
     local ampm=$(date +%p)
@@ -15,12 +17,12 @@ clock_icon() {
 
        if [[ "$ampm" == "AM" ]]; then
         case "$hour" in
-            12) color="\e[1;34m" ;;
-            01) color="\e[1;36m" ;;
+            12) color="\e[1;94m" ;;
+            01) color="\e[1;96m" ;;
             02) color="\e[1;96m" ;;
             03) color="\e[1;92m" ;;
             04) color="\e[1;93m" ;;
-            05) color="\e[1;33m" ;;
+            05) color="\e[1;93m" ;;
             06) color="\e[1;97m" ;;
             07) color="\e[1;97m" ;;
             08) color="\e[1;97m" ;;
@@ -31,17 +33,17 @@ clock_icon() {
     else
         case "$hour" in
             12) color="\e[1;93m" ;;
-            01) color="\e[1;33m" ;;
+            01) color="\e[1;93m" ;;
             02) color="\e[1;91m" ;;
-            03) color="\e[1;31m" ;;
-            04) color="\e[1;35m" ;;
+            03) color="\e[1;91m" ;;
+            04) color="\e[1;95m" ;;
             05) color="\e[1;94m" ;;
-            06) color="\e[1;34m" ;;
-            07) color="\e[1;34m" ;;
-            08) color="\e[1;34m" ;;
-            09) color="\e[1;34m" ;;
-            10) color="\e[1;34m" ;;
-            11) color="\e[1;34m" ;;
+            06) color="\e[1;94m" ;;
+            07) color="\e[1;94m" ;;
+            08) color="\e[1;94m" ;;
+            09) color="\e[1;94m" ;;
+            10) color="\e[1;94m" ;;
+            11) color="\e[1;94m" ;;
         esac
     fi
     # Icono según la hora)
@@ -95,7 +97,7 @@ project_icon() {
 printf "\e[1;91m "
     # Java
     elif [ -f pom.xml ] || [ -d src ] && ls src/*.java &>/dev/null; then
-        printf "\e[1;31m󰬷 "
+        printf "\e[1;91m󰬷 "
     # Android Studio
     elif [ -f build.gradle ] || [ -f settings.gradle ] || [ -d app/src ]; then
         printf "\e[1;92m "
@@ -132,7 +134,7 @@ dir_folder() {
         printf "\e[1;95m "
 
     elif [[ "$PWD" =~ [Pp]ublic ]]; then
-        printf "\e[1;34m "
+        printf "\e[1;94m "
 
     elif [[ "$PWD" =~ [Rr]epos ]]; then
         printf "\e[1;91m "
@@ -160,7 +162,7 @@ ICON_TERM=" "
 # Colores
 COLOR_LINE="\[\e[1;92m\]"      # Verde Brillante
 COLOR_LINEA="\[\e[1;32m\]"     # Verde
-COLOR_LINEB="\[\e[1;30m\]"     # Negro
+COLOR_LINEB="\[\e[1;90m\]"     # Negro
 
 COLOR_BGCLOCK="\[\e[1;37m\]"   # Blanco
 COLOR_CLOCK="\[\e[1;97m\]"     # Blanco brillante
@@ -181,9 +183,9 @@ COLOR_ENTRY="\[\e[1;96m\]"     # cyan brillante
 COLOR_RESET="\[\e[0m\]"        # Reset
 
 # Entrada de Comando
-PS1="${COLOR_LINEB}┏━${COLOR_LINEA}━━━━━${COLOR_LINE}━━━━━${COLOR_BGPATH} •${COLOR_PATH}•\n\$(clock_icon)\@ ${COLOR_LINEA}${ICON_HOST}${COLOR_LINE}\h \$(dir_folder)\$(project_icon)${COLOR_BGPATH}\$(git_iconpath)${ICON_PATH}${COLOR_PATH}\$(git_iconpath)\$(dir_summary) \w\n  ${COLOR_LINEA}${ICON_USER}${COLOR_USER}\$(git_icon)${COLOR_LINE}\u${COLOR_PATH}:${COLOR_LINE} "
+PS1="${COLOR_LINEB}┏━${COLOR_LINEA}━━━━━${COLOR_LINE}━━━━━${COLOR_BGPATH} •${COLOR_PATH}•\n\$(clock_icon)\@ ${COLOR_USER}${ICON_HOST}${COLOR_USER}\h \$(dir_folder) \$(project_icon)${COLOR_PATH}\$(git_iconpath)${ICON_PATH}${COLOR_PATH}\$(git_iconpath)\$(dir_summary) \w\n  ${COLOR_HOST}${ICON_USER}${COLOR_USER}\$(git_icon)${COLOR_LINE}\u${COLOR_PATH}:${COLOR_LINE} "
 # Resultado del Comando
-PS0="${COLOR_LINEB}┏━${COLOR_BGHOST}━━━━━${COLOR_HOST}━━━━━${COLOR_BGDOT} •${COLOR_DOT}• ${COLOR_USER}\n${ICON_RESULT}\# ${COLOR_DOT}${ICON_TERM}${COLOR_BGDOT}\s: \l${COLOR_HOST}\n"
+PS0="${COLOR_LINEB}┏━${COLOR_BGHOST}━━━━━${COLOR_HOST}━━━━━${COLOR_BGDOT} •${COLOR_DOT}• ${COLOR_USER}\n${ICON_RESULT}\# ${COLOR_PATH}${ICON_TERM}${COLOR_PATH}\s: \l${COLOR_HOST}\n"
 
 # Necesitas Instalar Fastfetch para correr al inicio
 fastfetch
