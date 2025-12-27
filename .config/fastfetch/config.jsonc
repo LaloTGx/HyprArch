@@ -7,23 +7,23 @@
   "logo": {
     "type": "file",
     "source": "~/.config/fastfetch/ascii.txt",
-    "color": {"1": "bright_light_red"},
+    "color": {"1": "bright_light_yellow"},
     "position": "left",
     "padding": {
-      "right": 1,
-      "left": 0,
-      "top": 5
+      "right": 3,
+      "left": 1,
+      "top": 4
     }
   },
   "display": {
     "bar": {
     "char": {
-      "elapsed": "•",
-      "total": "◦"
+      "elapsed": "█",
+      "total": "░"
     },
     "color": {
-        "elapsed": "bright_light_red",
-        "total": "bright_red"
+        "elapsed": "bright_light_cyan",
+        "total": "bright_blue"
     },
     "border": null,
     "width": 20
@@ -31,7 +31,7 @@
     "percent": {
       "type": 3,
       "color": {
-        "green": "light_red",
+        "green": "light_cyan",
         "yellow": "blue",
         "red": "black"
     },
@@ -46,117 +46,110 @@
   "modules": [
     {
         "type": "custom",
-        "format": "{#bright_black}┏━{#red}━━━━━{#light_red}━━━━━{#yellow} •{#light_yellow}•"
+        "format": "{#bright_light_black}┏━{#yellow}━━━━━{#light_yellow}━━━━━{#light_magenta} •{#light_white}•"
     },
     {
       "type": "users",
       "key": "",
       "format": "{name} {#bright_light_white}:)",
-      "keyColor": "red",
-      "outputColor": "bright_light_red"
+      "keyColor": "light_yellow",
+      "outputColor": "bright_light_yellow"
+    },
+    {
+      "type": "command",
+      "key": "󰃶",
+      "keyColor": "bright_light_yellow",
+      "shell": "/bin/bash",
+      "param": "-c",
+      "text": "month=$(date +%m); zone=$(cat /etc/timezone 2>/dev/null || echo ''); if [[ \"$zone\" =~ (Australia|Argentina|Brazil|Chile|South) ]]; then hemi='south'; else hemi='north'; fi; if [ \"$hemi\" = 'north' ]; then if [ $month -ge 3 ] && [ $month -le 5 ]; then season='󰉊 Spring'; elif [ $month -ge 6 ] && [ $month -le 8 ]; then season='󰖨 Summer'; elif [ $month -ge 9 ] && [ $month -le 11 ]; then season=' Fall'; else season=' Winter'; fi; else if [ $month -ge 3 ] && [ $month -le 5 ]; then season=' Fall'; elif [ $month -ge 6 ] && [ $month -le 8 ]; then season=' Winter'; elif [ $month -ge 9 ] && [ $month -le 11 ]; then season='󰉊 Spring'; else season='󰖨 Summer'; fi; fi; echo $season",
+      "format": "{result}",
+      "outputColor": "bright_light_yellow"
+    },
+    {
+      "type": "datetime",
+      "key": "",
+      "format": "{#bright_light_yellow}{weekday} {#bright_light_red}{day-in-month} {#bright_light_yellow}{month-name} {#bright_light_yellow}{year} {#bright_light_red}at {hour-pretty}:{minute-pretty}",
+      "keyColor": "bright_light_yellow",
+      "outputColor": "bright_light_yellow"
+    },
+    {
+      "type": "command",
+      "key": "󰃰",
+      "keyColor": "bright_light_cyan",
+      "shell": "/bin/bash",
+      "param": "-c",
+      "text": "day=$(date +%j); year=$(date +%Y); days_in_year=$(date -d \"12/31/$year\" +%j); percent=$((day * 100 / days_in_year)); filled=$((percent / 5)); bar=$(printf '█%.0s' $(seq 1 $filled)); empty=$(printf '░%.0s' $(seq 1 $((20 - filled)))); echo \"${bar}${empty} ${year} is ${percent}% complete\"",
+      "format": "{result}",
+      "outputColor": "bright_light_cyan"
     },
     {
       "type": "kernel",
       "key":"",
-      "format":"{1} {#cyan}{2}",
-      "keyColor": "bright_light_blue",
-      "outputColor": "bright_light_cyan"
+      "format":"{1} {#light_red}{2}",
+      "keyColor": "bright_light_green",
+      "outputColor": "bright_light_green"
     },
     {
       "type": "os",
       "key": "󰣇",
       "format": "{pretty-name}",
-      "keyColor": "blue",
-      "outputColor": "bright_light_blue"
+      "keyColor": "bright_light_green",
+      "outputColor": "bright_light_green"
     },
     {
       "type": "wm",
       "key": "",
       "format": "{pretty-name}",
-      "keyColor": "cyan",
-      "outputColor": "bright_light_cyan"
-    },
-    {
-      "type": "lm",
-      "key": "󰙊",
-      "format": "{service}",
-      "keyColor": "bright_blue",
-      "outputColor":"bright_light_blue"
+      "keyColor": "bright_light_green",
+      "outputColor": "bright_light_green"
     },
     {
       "type": "shell",
       "key": "",
       "format": "{pretty-name}",
-      "keyColor": "bright_light_blue",
-      "outputColor": "bright_light_cyan"
-    },
-    {
-      "type": "processes",
-      "key": "",
-      "keyColor": "bright_yellow",
-      "outputColor": "bright_light_yellow"
-    },
-    {
-      "type":"uptime",
-      "key": "󱐋",
-      "keyColor":"yellow",
-      "outputColor": "Bright_light_yellow"
-    },
-    {
-      "type": "wifi",
-      "key": "",
-      "format": "{ssid} {#bright_light_yellow}{signal-quality}",
-      "keyColor": "bright_light_red",
-      "outputColor": "bright_yellow"
-    },
-    {
-      "type": "packages",
-      "key": "󰏖",
-      "format": "{#yellow}󰮯:{#light_yellow}{pacman}  {#blue}󰏓:{#light_blue}{flatpak-system}",
-      "keyColor": "bright_light_red",
-      "outputColor": "bright_light_yellow"
+      "keyColor": "bright_light_green",
+      "outputColor": "bright_light_green"
     },
     {
       "type": "memory",
       "key": "",
-      "keyColor": "yellow",
-      "outputColor":"bright_light_white",
-      "format": "{percentage-bar} {#light_red}{used}{#bright_yellow}/{#red}{total}"
+      "keyColor": "bright_light_cyan",
+      "outputColor":"bright_blue",
+      "format": "{percentage-bar} {#light_cyan}{used}{#bright_light_green}/{#light_blue}{total}"
+    },
+    {
+	  "type": "custom",
+      "key": "󰏘",
+      "keyColor": "bright_light_blue",
+	  "format": "\u001b[1m\u001b[30m \u001b[1m\u001b[31m \u001b[1m\u001b[33m \u001b[1m\u001b[32m \u001b[1m\u001b[36m \u001b[1m\u001b[34m \u001b[1m\u001b[35m \u001b[1m\u001b[37m  \u001b[1m\u001b[90m \u001b[1m\u001b[91m \u001b[1m\u001b[93m \u001b[1m\u001b[92m \u001b[1m\u001b[96m \u001b[1m\u001b[94m \u001b[1m\u001b[95m \u001b[1m\u001b[97m "
+	},
+    {
+      "type":"uptime",
+      "key": "󱐋",
+      "keyColor":"bright_light_blue",
+      "outputColor": "Bright_light_blue"
+    },
+    {
+      "type": "wifi",
+      "key": "",
+      "format": "{ssid} {#bright_light_cyan}{signal-quality}",
+      "keyColor": "bright_light_blue",
+      "outputColor": "bright_light_blue"
+    },
+    {
+      "type": "packages",
+      "key": "󰏖",
+      "format": "{#light_blue}󰮯:{#light_cyan}{pacman}  {#light_blue}󰏓:{#light_cyan}{flatpak-system}",
+      "keyColor": "bright_light_blue",
+      "outputColor": "bright_light_yellow"
     },
     {
       "type": "disk",
       "key": "",
-      "keyColor": "yellow",
-      "outputColor": "bright_light_magenta",
-      "format": "{size-percentage-bar} {#light_red}{size-used}{#bright_yellow}/{#red}{size-total}"
+      "keyColor": "bright_light_cyan",
+      "outputColor": "bright_blue",
+      "format": "{size-percentage-bar} {#light_cyan}{size-used}{#bright_light_green}/{#light_blue}{size-total}"
     },
-    {
-      "type": "command",
-      "key": "󰃰",
-      "keyColor": "bright_light_white",
-      "shell": "/bin/bash",
-      "param": "-c",
-      "text": "day=$(date +%j); year=$(date +%Y); days_in_year=$(date -d \"12/31/$year\" +%j); percent=$((day * 100 / days_in_year)); filled=$((percent / 5)); bar=$(printf '•%.0s' $(seq 1 $filled)); empty=$(printf '◦%.0s' $(seq 1 $((20 - filled)))); echo \"${bar}${empty} ${year} is ${percent}% complete\"",
-      "format": "{result}",
-      "outputColor": "bright_light_white"
-    },
-    {
-      "type": "datetime",
-      "key": "",
-      "format": "{#bright_light_blue}{weekday} {#bright_light_white}{day-in-month} {#bright_light_white}{month-name} {#bright_light_white}{year} {#bright_light_blue}at {#bright_light_blue}{hour-pretty}:{minute-pretty}",
-      "keyColor": "bright_light_white",
-      "outputColor": "bright_light_blue"
-    },
-    {
-  "type": "command",
-  "key": "󰃶",
-  "keyColor": "bright_light_white",
-  "shell": "/bin/bash",
-  "param": "-c",
-  "text": "month=$(date +%m); zone=$(cat /etc/timezone 2>/dev/null || echo ''); if [[ \"$zone\" =~ (Australia|Argentina|Brazil|Chile|South) ]]; then hemi='south'; else hemi='north'; fi; if [ \"$hemi\" = 'north' ]; then if [ $month -ge 3 ] && [ $month -le 5 ]; then season='󰉊 Spring'; elif [ $month -ge 6 ] && [ $month -le 8 ]; then season='󰖨 Summer'; elif [ $month -ge 9 ] && [ $month -le 11 ]; then season=' Fall'; else season=' Winter'; fi; else if [ $month -ge 3 ] && [ $month -le 5 ]; then season=' Fall'; elif [ $month -ge 6 ] && [ $month -le 8 ]; then season=' Winter'; elif [ $month -ge 9 ] && [ $month -le 11 ]; then season='󰉊 Spring'; else season='󰖨 Summer'; fi; fi; echo $season",
-  "format": "{result}",
-  "outputColor": "bright_light_white"
-},
 
 // Muestra el titulo del audio completo
 //    {
@@ -171,25 +164,24 @@
       "type": "command",
       "shell": "/bin/bash",
       "param": "-c",
-      "text": "title=$(playerctl metadata xesam:title 2>/dev/null); echo ${title:0:20}${title:+...}",
+      "text": "title=$(playerctl metadata xesam:title 2>/dev/null); echo ${title:0:25}${title:+...}",
       "key": "",
-      "keyColor": "magenta",
+      "keyColor": "bright_light_red",
       "format": "{result}",
-      "outputColor": "bright_light_magenta"
+      "outputColor": "bright_light_red"
     },
     {
       "type": "player",
       "key": "",
-      "keyColor": "bright_magenta",
-      "format":"{player} {#bright_blue}",
-      "outputColor":"bright_light_magenta"
+      "keyColor": "bright_light_red",
+      "format":"{player} {#bright_light_red}",
+      "outputColor":"bright_light_red"
     },
-     {
-	  "type": "custom",
-      "key": "󰏘",
-      "keyColor": "bright_light_green",
-	  "format": "\u001b[1m\u001b[30m \u001b[1m\u001b[31m \u001b[1m\u001b[33m \u001b[1m\u001b[32m \u001b[1m\u001b[36m \u001b[1m\u001b[34m \u001b[1m\u001b[35m \u001b[1m\u001b[37m  \u001b[1m\u001b[90m \u001b[1m\u001b[91m \u001b[1m\u001b[93m \u001b[1m\u001b[92m \u001b[1m\u001b[96m \u001b[1m\u001b[94m \u001b[1m\u001b[95m \u001b[1m\u001b[97m "
-	},
+    {
+        "type": "custom",
+        "format": "{#bright_light_black}┗━{#yellow}━━━━━{#light_yellow}━━━━━{#light_magenta} •{#light_white}•"
+    }
+
 //    {
 //      "type": "player",
 //      "key": "",
