@@ -1,30 +1,47 @@
 #!/bin/bash
 
-# Carpeta de wallpapers
-WALL_DIR="$HOME/.config/hypr/bg"
+# Directorios
+BG_BASE="$HOME/.config/hypr/bg"
+DARK_DIR="$BG_BASE/bgdark"
+LIGHT_DIR="$BG_BASE/bglight"
 
-# Verificar y crear directorios necesarios
+# Crea la carpeta de matugen por si no hay ninguna caroeta
 mkdir -p ~/.config/matugen/templates
 mkdir -p ~/.cache/matugen
 
-cd "$WALL_DIR" || exit 1
-IFS=$'\n'
+# Si no hay imagenes no mostrara nada
+shopt -s nullglob
 
-# Mostrar imágenes como íconos en Rofi
-SELECTED_WALL=$(for a in *.jpg *.png *.jpeg; do
-    echo -en "$a\0icon\x1f$WALL_DIR/$a\n"
-done | rofi -dmenu -p "   Wallpaper:  ")
+# Mostrar los wallpapers como iconos en rofi
+SELECTED_WALL=$({
+    cd "$DARK_DIR" || exit
+    for a in *.jpg *.png *.jpeg; do
+        echo -en "$a\0icon\x1f$DARK_DIR/$a\n"
+    done
 
-# Aplicar fondo con transición si se selecciona uno
-if [ -n "$SELECTED_WALL" ]; then
-    transitions=("grow" "outer" "left" "right" "top" "bottom" "center" "wipe" "wave")
-    transition=${transitions[$RANDOM % ${#transitions[@]}]}
+    cd "$LIGHT_DIR" || exit
+    for a in *.jpg *.png *.jpeg; do
+        echo -en "$a\0icon\x1f$LIGHT_DIR/$a\n"
+    done
+} | rofi -dmenu -p " Wallpaper: ")
 
-    # Cambiar fondo
-    swww img "$WALL_DIR/$SELECTED_WALL" --transition-type "$transition" --transition-step 90
+[ -z "$SELECTED_WALL" ] && exit 0
 
-    notify-send " 🖼️ Wallpaper" " $SELECTED_WALL"
-
-    # Generar esquema de colores con Matugen
-    matugen image "$WALL_DIR/$SELECTED_WALL" -j hex > ~/.cache/matugen/colors.json
+# Deteccion de directorios para generar la paleta (modo oscuro, modo claro)
+if [ -f "$DARK_DIR/$SELECTED_WALL" ]; then
+    FULL_PATH="$DARK_DIR/$SELECTED_WALL"
+    MODE="dark"
+elif [ -f "$LIGHT_DIR/$SELECTED_WALL" ]; then
+    FULL_PATH="$LIGHT_DIR/$SELECTED_WALL"
+    MODE="light"
+else
+    exit 1
 fi
+
+# Genera la trancision, notificacion y la paleta de colores del wallpaper seleccionado
+transitions=("grow" "outer" "left" "right" "top" "bottom" "center" "wipe" "wave")
+transition=${transitions[$RANDOM % ${#transitions[@]}]}
+
+swww img "$FULL_PATH" --transition-type "$transition" --transition-step 90
+notify-send "🖼️ Wallpaper" "$SELECTED_WALL"
+matugen image "$FULL_PATH" --mode "$MODE" -j hex > ~/.cache/matugen/colors.json
