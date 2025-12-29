@@ -79,7 +79,7 @@ mainbox {
 
 element {
     spacing: @g-spacing;
-    margin: @g-margin;
+    margin: 40px;
     padding: @g-padding;
     border: 0px solid;
     border-radius: @b-radius;
@@ -90,7 +90,7 @@ element {
 }
 
 element-icon {
-    	size: 60px;
+    	size: 80px;
     	horizontal-align: 0.5;
 }
 
