@@ -71,16 +71,12 @@ y con eso ya estarias conectado a tu red
 ### Como conectarme a una red oculta con iwd
 Solemos hacer el mismo proceso aunque casi por lo regular con el comando: \[iwd\]\# `station wlan0 get-networks`\
 no muestra las redes ocultas, y esto es normal, ya que no anuncian su SSID.\
-**Nota:** En mi experiencia, usando exactamente la misma configuración y sistema en dos laptops distintas, mi laptop vieja no logra
-conectarse a redes ocultas, mientras que la más nueva sí.
-Esto apunta a una limitación del adaptador WiFi antiguo y su soporte en Linux.\
-En Windows 10 sí podía conectarme, pero en Linux el soporte depende más directamente del hardware y su driver.\
-Por eso, si no puedes conectarte a una red oculta desde una laptop vieja, no es necesariamente un problema de configuración.\
-Aun así, vale la pena intentarlo para salir de la duda.
 
 * Para conectarte a una red oculta:\
 `station wlan0 connect-hidden NOMBRE_DEL_SSID`
-* Te pedirá la contraseña y, si el adaptador lo soporta, quedará conectado.
+* Si se conecta te pedirá la contraseña en el caso de que no lo encuentre te mostrará que la red no ha sido encontrada.
+
+**TIP:** Para que detecte bien tu red oculta puedes acercarte un poco mas a tu router para tener mas señal y asi pueda encontrar mas rapido tu red oculta. :)
 
 ---
 ## AMD
@@ -411,6 +407,12 @@ Es para ver tu almacenamiento quizas algun dia lo llegues a ocupar para ver como
 almacenamiento para ello solo necesitas ejecutar este codigo:\
 `lsblk -o NAME,MODEL,SIZE,TYPE,MOUNTPOINT`\
 espero te sirva de ayuda :)
+
+---
+## Ver Uso de almacenamiento
+Si te preocupar tu almacenamiento de que se llene puedes usar el siguiente comando:\
+`sudo du -hxd1 / | sort -h`
+Esto permitira visualizar las carpetas estan ocupando una cierta cantidad de espacio en tu ordenador. :)
 
 ---
 ## Montar una USB
