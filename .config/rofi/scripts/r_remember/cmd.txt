@@ -1,4 +1,5 @@
 Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_remember/cmd.txt|Addcommand.png
+Clone Repos|git clone git@github.com:usuario/repositorio.git|
 C++| g++ main.cpp -o app -lSDL2 -lGLEW -lGL|compilecpp.png
 C++| ./app|runcpp.png
 Java| javac|compilejava.png
@@ -7,3 +8,6 @@ Java| ./gradlew clean run|compilegradle.png
 Rust| cargo new|createrust.png
 Rust| cargo run|compilerust.png
 Rust| cargo clean|cleanrust.png
+Monitor| hyprctl monitors
+Monitor| hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"
+Monitor| hyprctl keyword monitor "HDMI-A-1,1920x1080@60,1920x0,1"
