@@ -15,7 +15,7 @@
     wbg-color: rgba(0,0,0,0.3);
     w-border: 0px solid;
     w-border-color: #9dafbfFF;
-    w-padding: 50px;
+    w-padding: 1em;
 }
 
 configuration {
@@ -57,7 +57,7 @@ inputbar {
 
 prompt {
     text-color: @fg-color;
-    margin:0px 10px 0px 20%;
+    margin:0px 1em 0px 20%;
     horizontal-align: 0.5;
 }
 
@@ -71,16 +71,16 @@ entry {
 }
 
 mainbox {
-    spacing: 30px;
+    spacing: 0.1em;
     margin: @g-margin;
     padding: @g-padding;
     children: ["inputbar", "listview", "message"];
 }
 
 element {
-    spacing: @g-spacing;
-    margin: 40px;
-    padding: @g-padding;
+    spacing: 0.3em;
+    margin: 0.3em;
+    padding: 0.5em;
     border: 0px solid;
     border-radius: @b-radius;
     border-color:  #9dafbf70;
@@ -90,7 +90,7 @@ element {
 }
 
 element-icon {
-    	size: 80px;
+    	size: 5em;
     	horizontal-align: 0.5;
 }
 
