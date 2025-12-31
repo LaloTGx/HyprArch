@@ -78,7 +78,7 @@
       "keyColor": "bright_light_cyan",
       "shell": "/bin/bash",
       "param": "-c",
-      "text": "day=$(date +%j); year=$(date +%Y); days_in_year=$(date -d \"12/31/$year\" +%j); percent=$((day * 100 / days_in_year)); filled=$((percent / 5)); bar=$(printf '█%.0s' $(seq 1 $filled)); empty=$(printf '░%.0s' $(seq 1 $((20 - filled)))); echo \"${bar}${empty} ${year} is ${percent}% complete\"",
+      "text": "day=$(date +%j); year=$(date +%Y); days_in_year=$(date -d \"12/31/$year\" +%j); percent=$((day * 100 / days_in_year)); filled=$((percent / 5)); bar=$(printf '█%.0s' $(seq 1 $filled)); empty=$(printf '░%.0s' $(seq 1 $((20 - filled)))); if [ \"${percent}\" -eq 100 ]; then echo \"${bar} ${year} is ${percent}% complete\" ;else echo \"${bar}${empty} ${year} is ${percent}% complete\"; fi",
       "format": "{result}",
       "outputColor": "bright_light_cyan"
     },
