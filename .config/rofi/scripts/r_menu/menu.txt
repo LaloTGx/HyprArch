@@ -1,5 +1,6 @@
 Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_menu/menu.txt|Addcommand.png
 Conf Kitty|kitty -e nvim ~/.config/kitty/kitty.conf|Terminal.png
+Primeros Pasos|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosArch.md|
 View packages (pacman)|kitty -e bash -c "pacman -Q; echo; read -p 'Press Enter to exit...'"|pacman.png
 Mirror|hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"|Mirror.png
 Suspend|kitty -e systemctl suspend|Suspend.png
@@ -7,7 +8,7 @@ Update Emojis|kitty -e bash ~/.config/hypr/scripts/r_emoji/emoji-picker.sh --upd
 Disable Warm Color Filter|kitty -e pkill hyprsunset|Hyprsunset.png
 Update Packages|kitty -e sudo pacman -Syu|Update.png
 Clean cache|sudo pacman -Sc|cleancache.png
-View Disks|kitty -e bash -c "lsblk -f; echo; read -p 'Press Enter to exit...'"|Disk.png
+View Storage|kitty -e bash .config/rofi/scripts/r_menu/storage/storage.sh|Disk.png
 Sync Documents|kitty -e rclone copy ~/Documents gdrive:BackupDocuments -P|Cloud.png
 CheatSheet Hyprland|kitty -e bash .config/rofi/scripts/r_menu/cheatsheet/cheatsheet.sh|Keyboard.png
-Download Music|kitty -e bash .config/rofi/scripts/r_menu/dmusic.sh|Downloadmusic.png
+Download Music|kitty -e bash .config/rofi/scripts/r_menu/dmusic/dmusic.sh|Downloadmusic.png
