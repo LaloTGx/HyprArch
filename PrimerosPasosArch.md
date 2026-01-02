@@ -443,6 +443,14 @@ Espero te sirva de ayuda para ver el contenido de tu **USB**. :)
 `7z e (el archivo a descomprimir).zip`
 
 ---
+## Wacom
+* Para que funcione tu tableta para dibujar necesitas intalarte lo siguiente:\
+`sudo pacman -S xf86-input-wacom`
+* Si quieres que te muestren de manera visual:\
+`sudo pacman -S kcm-wacomtablet`\
+Con eso podras ver los botones, la presion pero si viene por parte de kde pero funciona en arch+hyprland aunque si solo buscas lo necesario (que funcione la tableta) puedes solo instalar lo primero y funcionara sin problema. :)
+
+---
 ## Rclone
 Si alguna vez te has preocupado por si llegara a fallar tu SO y no hiciste un backup de tu informacion para esto funciona rclone
 para que almacene tu informacion en tu drive (de la nube) favorita. puedes guardar en Google Drive, OneDrive, Dropbox, etc.
