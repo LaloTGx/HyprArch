@@ -27,6 +27,7 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 * **Launcher:** Rofi
 * **JSON Parser / CLI Filter:** jq
 * **Clipboard:** Wl-Copy and CopyQ
+* **Screenshot:** grim and slurp
 #### Multimedia
 * **Player Music:** MPD / NCMPCPP / MPC
 * **Media Player:** MPV
