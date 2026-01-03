@@ -7,8 +7,8 @@
     b-color: #000000FF;
     fg-color:  #e6f2ff50;
     fgp-color: #e6f2ffFF;
-    b-radius: 0px;
-    g-padding: 40px;
+    b-radius: 10px;
+    g-padding: 4em;
     hl-color: @primary-fixed-alpha;
     hlt-color: @tertiary;
     alt-color: rgba(0,0,0,0.0);
@@ -57,7 +57,7 @@ inputbar {
 
 prompt {
     text-color: @fg-color;
-    margin:0px 1em 0px 20%;
+    margin:1em 1em 0px 20%;
     horizontal-align: 0.5;
 }
 
@@ -67,19 +67,19 @@ entry {
     placeholder-color: @fgp-color;
     expand:true;
     horizontal-align: 0.5;
-    margin:0px 28% 0px 0px;
+    margin:1em 28% 0px 0px;
 }
 
 mainbox {
     spacing: 0.1em;
-    margin: @g-margin;
-    padding: @g-padding;
+    margin: 0em;
+    padding: 0em;
     children: ["inputbar", "listview", "message"];
 }
 
 element {
     spacing: 0.3em;
-    margin: 0.3em;
+    margin: 3em 7em;
     padding: 0.5em;
     border: 0px solid;
     border-radius: @b-radius;
@@ -90,7 +90,7 @@ element {
 }
 
 element-icon {
-    	size: 5em;
+    	size: 3.5em;
     	horizontal-align: 0.5;
 }
 
