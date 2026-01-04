@@ -1,6 +1,6 @@
 Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_menu/menu.txt|Addcommand.png
 Conf Kitty|kitty -e nvim ~/.config/kitty/kitty.conf|Terminal.png
-Primeros Pasos|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosArch.md|
+Primeros Pasos|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosArch.md|Firststeps.png
 View packages (pacman)|kitty -e bash -c "pacman -Q; echo; echo 'Press any key to exit...'; read -n 1"|pacman.png
 Mirror|hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"|Mirror.png
 Suspend|kitty -e systemctl suspend|Suspend.png
