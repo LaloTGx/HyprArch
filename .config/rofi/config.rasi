@@ -78,8 +78,8 @@ mainbox {
 }
 
 element {
-    spacing: 0.3em;
-    margin: 3em 7em;
+    spacing: 0%;
+    margin: 4% 10%;
     padding: 0.5em;
     border: 0px solid;
     border-radius: @b-radius;
