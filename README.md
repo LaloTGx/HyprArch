@@ -21,7 +21,7 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 * **Terminal:** Kitty
 #### Tools Hyprland
 * **Warm Color Filter:** Hyprsunset
-* **Notification Center:** Swaync
+* **Notification:** Mako
 * **Background Manager:** SWWW
 * **File Manager:** Yazi
 * **Launcher:** Rofi
