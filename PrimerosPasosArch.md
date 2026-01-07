@@ -253,13 +253,17 @@ Y listo, ya podras descargar y ejecutar programas. :)
 `yay pacman -Rns (nombre del paquete)`
 
 ## Flatpak
-* Para poder instalarlo debes ejecutar el siguiente comando:\
+* Para instalarlo debes ejecutar el siguiente comando:\
 `sudo pacman -S flatpak`
-* Despues reinicia la sesion para que se agreguen los cambios
-* Para instalar **"La tienda" Flathub** ejecutas el siguiente comando:\
-`sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo`
-* Y listo puedes instalar cual app de flatpak usando este sintaxis:\
+* Y listo puedes instalar cual app de flatpak usando el siguiente comando:\
 `flatpak install flathub com.project`
+* Para ver el listado de los paquetes instalados por flatpak ejecuta lo siguiente:\
+`flatpak list`
+* Para eliminar paquetes de flatpak puedes usar el siguiente comando:\
+`flatpak uninstall com.project`
+* Para eliminar paquetes que no estan siendo utilizados puedes ejecutar el siguiente comando:\
+`flatpak uninstall --unused`
+
 Espero poder haberte ayudado. :)
 
 ---
