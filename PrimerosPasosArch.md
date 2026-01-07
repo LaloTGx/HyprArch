@@ -294,6 +294,39 @@ ayuda :)
 Listo puedes ocuparlo en tu sistema anotando el nombre de la fuente en cualquier software que vayas a utilizar :)
 
 ---
+## Greetings
+Para poder ingrear a tu sesion de hyprland necesitas ingresar para ello hay diferentes paquetes que pueden ser de tu gustó
+te muestró la lista de los que he llegado a probar. :)
+
+### Ly
+Ly es un greeting minimalista solo tiene texto con un fondo negro solo cumple su función es perfecto por si solo quieres tener algo con que ingresar sin que pienses en la personalización.
+* Para instalar ly solo necesitas ejecutar el siguiente comando:
+`sudo pacman -S ly`
+
+### SDDM
+SDDM es lo contrario a Ly es personalizable y puedes encontrar diferentes temas en la comunidad o en repositorios solo es necesario tener los componentes necesarios para que funcione correctamente el tema.
+Casi por lo regular en el repositorio del tema te menciona los paquetes necesarios para que funcione correctamente el tema.
+* Para instalar SDDM necesitas ejecutar el siguiente comando:
+`sudo pacman -S sddm`
+con esto te mostrará el tema por default cuando reinicies tu computadora.
+* Un ejemplo para instalar un tema yo ocupe silent:\
+`yay -S sddm-silent-theme`
+* Para ver los paquetes necesarios que tenia que instalar vi el repositorio que esta en este link:\
+[Repositorio de Silent](https://github.com/uiriansan/SilentSDDM?tab=readme-ov-file)
+* Una ves instalado los paquetes necesarios tenia que confirmar la instalación si mostraba el nombre del tema, para verificar necesitas ejecutar el siguiente comando:\
+`ls /usr/share/sddm/themes`
+* Despues de ver el nombre del tema tuve que modificar el archivo de **SDDM**:\
+`sudo nvim /etc/sddm.conf`
+* Para indicarle que tema utilizarás:
+```
+[Theme]
+Current=silent
+```
+* En donde **silent** es el nombre de la carpeta donde contiene el tema, el nombre del tema debe coincidir **exactamente**.
+
+**En mi opinion:** Estos dos Greetings lo he utilizado desde que comencé con arch linux son dos conceptos diferentes por lo que es perfecto para cada personalidad minimalista / personalizable.
+
+---
 ## Hyprland
 * Para configurar tus propias binds puedes editar en el siguiente archivo\
 `nvim .config/hypr/hyprland.conf`
