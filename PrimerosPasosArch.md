@@ -20,12 +20,7 @@ Espero te funcione :)
 -->
 ---
 ## Conectarte a una red (WIFI/Ethernet)
-En mi caso para mi es mas estable `sudo systemctl enable --now systemd-networkd` ya que en mi caso `networkmanager`
-no tenia tan estable mi wifi a cada rato se iba y aveces no se conectaba a mi red de internet (ocuapaba `nmtui`).
-entonces regrese mejor con `systemd-networkd` es mas estable pero tambien mas complejo por los comandos que llegues
-a ocupar para conectarte a una red asi que para evitarte investigar sobre como conectarte aqui te doy los pasos
-a seguir para que puedas conectarte a una red utilizando `iwd` con el `systemd-networkd`
-
+### IWD
 * Para instarlo con pacman:\
 `sudo pacman -S iwd`
 * Para poder activar iwd:\
@@ -40,7 +35,7 @@ a seguir para que puedas conectarte a una red utilizando `iwd` con el `systemd-n
     Version: 3.9
     ```
 
-### Que pasa si lo tengo como **disabled**?
+#### Que pasa si lo tengo como **disabled**?
 * Edita el archivo de iwd:\
 `sudo nano /etc/iwd/main.conf`
 * Luego le agregas esto dentro del archivo:
@@ -56,7 +51,7 @@ a seguir para que puedas conectarte a una red utilizando `iwd` con el `systemd-n
 `iwctl`\
 En mi caso esto me funciono y ya no tuves que realizar mas proceso para que el estado me muestre en **enable**
 
-### Como conectarme a una red con iwd
+#### Como conectarme a una red con iwd
 Una vez dentro de `iwctl`
 * Para escanear las redes wifi mas cercanas lo haces con:\
 \[iwd\]\# `station wlan0 scan`
@@ -68,7 +63,7 @@ Una vez dentro de `iwctl`
 `exit`\
 y con eso ya estarias conectado a tu red
 
-### Como conectarme a una red oculta con iwd
+#### Como conectarme a una red oculta con iwd
 Solemos hacer el mismo proceso aunque casi por lo regular con el comando: \[iwd\]\# `station wlan0 get-networks`\
 no muestra las redes ocultas, y esto es normal, ya que no anuncian su SSID.\
 
@@ -77,6 +72,41 @@ no muestra las redes ocultas, y esto es normal, ya que no anuncian su SSID.\
 * Si se conecta te pedirá la contraseña en el caso de que no lo encuentre te mostrará que la red no ha sido encontrada.
 
 **TIP:** Para que detecte bien tu red oculta puedes acercarte un poco mas a tu router para tener mas señal y asi pueda encontrar mas rapido tu red oculta. :)
+
+## Network Manager y nm-applet
+Quizas te guste manejar tus redes inalambricas con interfaz y no hacerlo desde la terminal.
+**Network Manager** es una herramienta de terminal pero la gente lo ha llegado a usar con **nm-applet** para facilitar conectarte a cualquier red.
+* Para instalarlo necesitas ejecutar el siguiente comando:\
+`sudo pacman -S networkmanager network-manager-applet`
+
+**En el caso de usar iwd anteriormente**
+* Necesitas desactivar los servicios de iwd con el siguiente comando:\
+`sudo systemctl disable iwd`
+* Para activar los servicios de Network Manager ejecutas los siguientes comandos:\
+`sudo systemctl enable NetworkManager`
+`sudo systemctl start NetworkManager`
+
+### Como usar nm-applet para ver la GUI
+* Para usarlo desde la terminal solo ejecuta el siguiente comando:\
+`nm-applet &`
+
+#### nm-applet
+Para usar **nm-applet** necesitas tener waybar (con el tray activado) y tambien hyprland
+en la ruta de tus dotfiles en la carpeta hypr hay un archivo llamado **hyprland.conf**
+y agregar lo siguiente para que se ejecute **nm-applet** tras iniciar sesion sin la necesidad de ejectarlo desde la terminal.\
+`exec-once = nm-applet`
+
+Y en la parte de waybar te mostrara un simbolo de la red donde te podras conectar.
+
+### nmcli
+Si quieres usar solo NetworkManager sin la interfaz visual y solo en la terminal no necesitas instalarte el applet solo NetworkManager
+* Para ejecutar solo ejecutas el siguiente comando:\
+`nmcli [parametros]`
+* **Ejemplo** para ver la lista de tus redes wifi disponibles:\
+`nmcli device wifi list`
+* Los parametros lo podras ver con:\
+`nmcli --help`
+Espero te sirva para conectarte a una red. :)
 
 ---
 ## AMD
@@ -137,6 +167,38 @@ nvidia_drm
 
 **NOTA:** Lo que mencione anteriormente sobre abrirlo de esta manera ya que en mi caso uso una laptop que tiene grafica integrada AMD radeon graphics por lo que esa tarjeta se dedica a mostrar el escritorio
 y la rtx se dedicaria a las aplicaciones pesadas. :)
+
+### Errores tras actualizar paquetes
+Cuando actualices los paquestes en general o de la RTX:\
+`sudo pacman -Syu`
+Normalmente despues vendra los conflictos como que la computadora no reconozco los drivers de la RTX, quizas no llegue a cargar la UI
+pero en todos los casos y puedas acceder a la terminal o que si llegue a cargar pero con la otra tarjeta grafica (en el caso de ser hibrida)
+* Asi que bueno para verificar que funciona perfectamente es necesario ejecutar los siguientes comandos:
+1. `lspci | grep -i nvidia`
+    1. Si aparece → el hardware esta bien
+    2. Si no aparece → caso rarísimo (pero casi nunca)
+2. `lsmod | grep nvidia`
+    1. Si no sale nada → driver no cargado
+3. `nvidia-smi`
+    1. Si dice “command not found” o “no devices were found” → driver roto
+
+#### Solución
+Para solucionar necesitas estar conectado a internet para reinstalar otra vez los drivers:
+* **Si usas el driver normal:**\
+`sudo pacman -S nvidia nvidia-utils nvidia-settings --overwrite '*'`
+* **Si usas DKMS (recomendado en laptops):**\
+`sudo pacman -S nvidia-dkms nvidia-utils nvidia-settings --overwrite '*'`
+
+**NOTA:** El `--overwrite '*'` es importante: limpia archivos desfasados.
+
+**Despues regenera initramfs**
+`sudo mkinitcpio -P`\
+Sin esto, el kernel sigue arrancando con piezas viejas.
+
+**Luego reinicia tu computadora o ordenador**
+* Para ver si realmente cargo perfecto el driver solo ejecuta otra vez el comando donde no salio nada o donde no ha encontrado el driver
+
+En mi caso ha sido: `nvidia-smi` y perfectamente me mostro el driver.
 
 ---
 ## NVTOP
@@ -561,7 +623,27 @@ En el caso de quieras hacer la descarga por tu propia cuenta con yt-dlp lee el m
 Espero te sirva de ayuda. :)
 
 ---
-## Rust
+## Lenguajes de Programación
+### Python
+* Para instalar este lenguaje de programación necesitas ejecutar el siguiente comando:\
+`sudo pacman -S python`
+* Para verificar la version de python solo ejecutas lo siguiente:\
+`python --version`
+* Para instalar tus imports necesarias de python necesitar crear una ves por proyecto un ambiente con el siguiente comando:\
+`python -m venv venv`
+* Despues para activarlo cada ves que utilices el ambiente de desarrollo puedes usar lo siguiente:\
+`source venv/bin/activate`
+* Despues instalas el siguiente import:\
+`pip install nombre_del_paquete`
+
+* **Para ejecutar tu codigo junto con el import** necesitaras habilitar el ambiente (env) para ejecutarlo por cada proyecto.
+Por ejemplo:\
+1. `source venv/bin/activate`
+2. `python Ejemplo.py`
+
+**Nota:** En Arch Linux se recomienda usar entornos virtuales para evitar conflictos con el Python del sistema por eso creamos el ambiente.
+
+### Rust
 * En el caso de que quieras programar en rust debes ejecutar lo siguiente:\
 `sudo pacman -S rustup`
 * En caso de usar nvim deberias instalar el lsp:\
@@ -572,15 +654,14 @@ Espero te sirva de ayuda. :)
 `rustc --version` y tambien `cargo --version`
 * En donde **rustc** es el compilador y **cargo** es el gestor de proyectos, dependencias y la compilzación.
 
-### Creacion de proyectos en rust
+#### Creacion de proyectos en rust
 * Para crear un nuevo proyecto usaras el siguiente comando:\
 `cargo new hola_rust`
 * Despues te creará un directorio con lo necesario para ejecutar tu proyecto.
 * Dentro del directorio para poder ejecutar tu proyecto, lo haras con el siguiente comando:\
 `cargo run`
 
----
-## Java
+### Java
 Para ejecutar java en tu computador y poder correrlo sin la necesidad de instalar un IDE (Netbeans o IntellijIdea).
 * Primero necesitas instalar el jdk de esta manera:\
 `sudo pacman -S jdk-openjdk`\
@@ -605,7 +686,7 @@ el 21 puedes cambiarlo es la version de java.
 * Por ultimo ya podras ejecutar el codigo con el siguiente comando:\
 `java HolaMundo.java`
 
-### Gradle
+#### Gradle
 * Para correr tu estructura de gradle vas la inicio de tu proyecto y ejecutas el siguiente comando:\
 `./gradlew clean run`
 
