@@ -26,6 +26,7 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 * **File Manager:** Yazi
 * **Launcher:** Rofi
 * **JSON Parser / CLI Filter:** jq
+* **Interactive Filtering Tool:** fzf
 * **Clipboard:** Wl-Copy and CopyQ
 * **Screenshot:** grim and slurp
 #### Multimedia
