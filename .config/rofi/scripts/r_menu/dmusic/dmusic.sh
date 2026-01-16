@@ -9,6 +9,7 @@ WHITELIGHT="\e[1;97m"
 BGBLACK="\e[40m"
 RESET="\033[0m"
 
+
 # Ruta base
 TITLE_DIR="$HOME/.config/rofi/scripts/r_menu/dmusic"
 
@@ -26,39 +27,75 @@ if [ ! -d "$TARGET_DIR" ]; then
     mkdir -p "$TARGET_DIR"
 fi
 
-show_title
-echo
-echo
-echo " Press [Enter] without a URL to exit"
-echo
-echo -e "${RESET}"
-read -p "  Paste YouTube URL: " url
-echo
-[[ -z "$url" ]] && exit 0
-echo "Select download format music:"
-echo "1) mp3"
-echo "2) flac"
-read -p "Option [1-2]: " choice
+# Función de Búsqueda con yt-dlp (Top 30)
+search_music() {
+    echo -e "${CYANLIGHT} Search Music${RESET}"
+    read -p " Artist / 󰎈 Song Name: " query
+    [[ -z "$query" ]] && return
 
-case $choice in
-    1)
-        ext="mp3"
-        ;;
-    2)
-        ext="flac"
-        ;;
-    *)
-        echo "Invalid option. Exiting."
-        exit 1
-        ;;
-esac
+    echo -e "${YELLOW}󱁐 Loading list...${RESET}"
 
-yt-dlp -x --audio-format "$ext" --audio-quality 0 \
+    selected=$(yt-dlp --get-title --get-id --flat-playlist "ytsearch30:$query" | \
+               paste - - | \
+               fzf --header="[j/k: Move | Enter: Select | ESC: Cancel]" \
+                   --prompt="󰎈 Select song: ")
+
+    if [[ -n "$selected" ]]; then
+        # Extraemos la ID (la última palabra de la línea seleccionada)
+        video_id=$(echo "$selected" | awk '{print $NF}')
+        url="https://music.youtube.com/watch?v=$video_id"
+        download_logic "$url"
+    fi
+}
+
+download_logic() {
+    local dl_url=$1
+    echo -e "\n${YELLOW}󰇚 Select Format:${RESET}"
+    echo "m) mp3 (Audio standard)"
+    echo "f) flac (High quality)"
+    read -p "Option [m/f]: " format_choice
+
+    case $format_choice in
+        m) ext="mp3" ;;
+        f) ext="flac" ;;
+        *) echo "Invalid. Defaulting to mp3..."; ext="mp3" ;;
+    esac
+
+    echo -e "${CYANLIGHT}󰇚 Downloading...${RESET}"
+    yt-dlp -x --audio-format "$ext" --audio-quality 0 \
+    --add-metadata \
+    --embed-thumbnail \
+    --parse-metadata "title:%(title)s" \
+    --replace-in-metadata "title" " \([^)]*\)" "" \
+    --replace-in-metadata "title" " \[[^]]*\]" "" \
+    --replace-in-metadata "title" "[^\x00-\x7F]+" "" \
+    --replace-in-metadata "title" "  +" " " \
     -o "$TARGET_DIR/%(title)s.%(ext)s" \
-    --embed-metadata --embed-thumbnail \
-    "$url"
+    "$dl_url"
 
-# Avisa a MPD que hay música nueva
-if command -v mpc > /dev/null; then
-    mpc update
-fi
+    command -v mpc >/dev/null && mpc update
+}
+
+# Menú Principal (Letras en lugar de números)
+while true; do
+    clear
+    show_title
+    echo
+    echo "--------------------------"
+    echo "s)      Search Music"
+    echo "u)      Paste URL manually"
+    echo "q)      Quit"
+    echo "--------------------------"
+    echo -n " Select action: "
+
+    read -n1 -s main_choice
+
+    case $main_choice in
+        s) search_music ;;
+        u) echo -e "\n Paste URL manually (Press Enter to cancel)"
+        read -p " > " manual_url
+           [[ -n "$manual_url" ]] && download_logic "$manual_url" ;;
+        q) echo " Quit"; exit 0 ;;
+        *) echo "Invalid option" ; sleep 1 ;;
+    esac
+done
