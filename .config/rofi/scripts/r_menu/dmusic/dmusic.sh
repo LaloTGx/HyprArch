@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Colores para texto
+# -> COLORS
 RED="\033[1;31m"
 REDLIGHT="\e[1;91m"
 YELLOW="\e[1;93m"
@@ -9,11 +9,9 @@ WHITELIGHT="\e[1;97m"
 BGBLACK="\e[40m"
 RESET="\033[0m"
 
-
-# Ruta base
+# -> Path Script
 TITLE_DIR="$HOME/.config/rofi/scripts/r_menu/dmusic"
 
-# Mostrar título
 show_title() {
   clear
   echo -e "${CYANLIGHT}"
@@ -27,7 +25,6 @@ if [ ! -d "$TARGET_DIR" ]; then
     mkdir -p "$TARGET_DIR"
 fi
 
-# Función de Búsqueda con yt-dlp (Top 30)
 search_music() {
     echo -e "${CYANLIGHT} Search Music${RESET}"
     read -p " Artist / 󰎈 Song Name: " query
@@ -35,13 +32,14 @@ search_music() {
 
     echo -e "${YELLOW}󱁐 Loading list...${RESET}"
 
-    selected=$(yt-dlp --get-title --get-id --flat-playlist "ytsearch30:$query" | \
-               paste - - | \
+    selected=$(yt-dlp --get-title --get-id --flat-playlist \
+               --geo-bypass \
+               "https://music.youtube.com/search?q=$query" | \
+               head -n 60 | paste - - | \
                fzf --header="[j/k: Move | Enter: Select | ESC: Cancel]" \
-                   --prompt="󰎈 Select song: ")
+                   --prompt="󰎈 Music Search: ")
 
     if [[ -n "$selected" ]]; then
-        # Extraemos la ID (la última palabra de la línea seleccionada)
         video_id=$(echo "$selected" | awk '{print $NF}')
         url="https://music.youtube.com/watch?v=$video_id"
         download_logic "$url"
@@ -51,8 +49,8 @@ search_music() {
 download_logic() {
     local dl_url=$1
     echo -e "\n${YELLOW}󰇚 Select Format:${RESET}"
-    echo "m) mp3 (Audio standard)"
-    echo "f) flac (High quality)"
+    echo "m) 󰸪 mp3 (Audio standard)"
+    echo "f) 󰈣 flac (High quality)"
     read -p "Option [m/f]: " format_choice
 
     case $format_choice in
@@ -62,10 +60,14 @@ download_logic() {
     esac
 
     echo -e "${CYANLIGHT}󰇚 Downloading...${RESET}"
+
     yt-dlp -x --audio-format "$ext" --audio-quality 0 \
+    --format "bestaudio/best" \
+    --geo-bypass \
+    --no-playlist \
     --add-metadata \
     --embed-thumbnail \
-    --parse-metadata "title:%(title)s" \
+    --metadata-from-title "%(artist)s - %(title)s" \
     --replace-in-metadata "title" " \([^)]*\)" "" \
     --replace-in-metadata "title" " \[[^]]*\]" "" \
     --replace-in-metadata "title" "[^\x00-\x7F]+" "" \
@@ -74,9 +76,11 @@ download_logic() {
     "$dl_url"
 
     command -v mpc >/dev/null && mpc update
+    echo -e "${YELLOW}󰲸 Library updated!${RESET}"
+    sleep 1
 }
 
-# Menú Principal (Letras en lugar de números)
+# -> MENU
 while true; do
     clear
     show_title
