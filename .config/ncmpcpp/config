@@ -1,0 +1,19 @@
+# - Interface
+autocenter_mode = "yes"
+user_interface = "alternative"
+song_list_format = "$8%a $2 $7%t $2"
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+
+# - Progress Bar
+progressbar_look = "__ "
+progressbar_elapsed_color = "red"
+progressbar_color = "black"
+
+# - Visualizer
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "visualizer_feed"
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "#+"

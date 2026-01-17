@@ -1,0 +1,50 @@
+# -- Global --
+# play/pause
+def_key "w"
+    pause
+# stop
+def_key "e"
+    stop
+# next music
+def_key "a"
+    next
+# previous music
+def_key "d"
+    previous
+
+# -- ModeListen --
+# toggle_single_mode
+def_key "s"
+   toggle_single
+# toggle_consume_mode
+def_key "c"
+    toggle_consume
+
+# -- User Interface --
+# change mode classic / alternative
+def_key "f"
+    toggle_interface
+# Playlist
+def_key "p"
+    show_playlist
+# Browser
+def_key "b"
+    show_browser
+# Search
+def_key "/"
+    show_search_engine
+# Media Library
+def_key "m"
+    show_media_library
+# Lyrics
+def_key "l"
+    show_lyrics
+# Tag Editor
+def_key "e"
+    show_tag_editor
+# Visualizer
+def_key "v"
+    show_visualizer
+# Clock
+def_key "n"
+    show_clock
