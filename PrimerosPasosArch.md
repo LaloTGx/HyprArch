@@ -303,6 +303,12 @@ Puedes usar el editor de texto al que estas adaptado como **nano** o cualquier o
 
 Y listo, ya podras descargar y ejecutar programas. :)
 
+* **Para ver algun paquete instalado solo necesitas ejecutar el siguiente comando:**\
+`whereis + nombre_del_paquete`
+
+* Si te sale la ruta de donde se encuentra el paquete entonces esta instalado por ejemplo:\
+`pacman: /usr/bin/pacman /usr/share/pacman /usr/share/man/man8/pacman.8.gz`
+
 ## Yay
 * Pero en el caso de yay lo primero que tienes que instalar es **base-devel**:\
 `sudo pacman -S --needed base-devel git`
@@ -347,6 +353,8 @@ ayuda :)
 `fc-cache -fv`
 * Para revisar un font en especifico usarias este comando:\
 `fc-list | grep "CodeNewRoman"`
+* Para ver la lista de **fonts Mono** instalados ejecuta lo siguente:\
+`fc-list :spacing=100 family`
 * Para mostrar iconos/emojis en la terminal necesitas instalarte:\
 `sudo pacman -S noto-fonts-emoji`
 * Para mostrar cualquier tipo de lenguaje o expresion matematica (para tu navegador) es necesario instalar lo siguiente:\
@@ -702,6 +710,38 @@ te puedo decir que es bueno para los comienzos como hacer ejercicios de (hackerr
 * Para poder solucionarlo solo necesitara cambiar los permisos de la carpeta opt para que android pueda actualizarse:\
 `sudo chown -R $USER:$USER /opt/android-studio`
 * Y listo con eso podras actualizar tu android studio sin problemas. :)
+
+---
+## Systemd
+Si por curiosidad hiciste un servidor con **Docker** y estas en una laptop y no quieres que se suspenda cuando cierres el monitor o la tapa de la laptop
+* Para entrar a la configuracion de systemd necesitas ejecutar el siguiente comando:\
+`sudo nvim /etc/systemd/logind.conf`
+* Puedes agregar estos comandos en el systemd en la parte inferior de todo el codigo para no perjudicar la configuracion por default que tiene,
+en el caso de que no sea tu primera vez modificando **systemd** entonces solo modifica estas lineas bajo tu responsibilidad:\
+```
+# Para no suspender cuando cierre la tapa del monitor:
+HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+HandleLidSwitchDocked=ignore
+LidSwitchIgnoreInhibited=yes
+```
+* Para reiniciar systemd para ver los cambios necesitas ejecutar:\
+`sudo systemctl restart systemd-logind`
+**En el caso de ejecutar dentro de un WM (como hyprland)** y se llegue a crashear solo necesitas apagarlo y volver a prender la laptop
+y notaras los cambios.
+**Es recomendable** ejecutar el comando dentro de Arch sin ningun **WM**.
+
+* Con esto aunque cierres tu laptop ya no entrara en modo suspension sino que se seguira ejecutando esto es bueno en el caso de que
+estes usando tu laptop como un mini servidor y asi aunque este cerrado para tener un poco mas de espacio.
+* **En el caso de revertir para evitar la suspension** solo borras el codigo agregado o modificas el codigo como estaba antes
+y listo sin problemas otra vez se suspendera cuando cierres la tapa del monitor
+
+### Apagar el monitor
+#### **Esto solo funciona en arch linux sin ningun WM, solo con puro TTY**
+* **Para afinar un poco** y quieras que tu monitor tambien no se quede prendida todo el tiempo puedes ejecutar el siguiente comando:\
+`setterm --blank force`
+* Para revertirlo y poder ver tu monitor otra vez encendido **En la misma sesion donde ejecutaste** `setterm --blank force`  necesitas ejecutar lo siguiente:\
+`setterm --blank poke`
 
 ---
 ## Referencias
