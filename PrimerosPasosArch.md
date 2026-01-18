@@ -1,4 +1,27 @@
-# Tutorial de personalizacion de Hyprland (desde mi proceso) :)
+# Mis Primeros Pasos (Mi Experiencia con Arch Linux) :)
+---
+## Indice
+1. [Mirrorlist](#mirrorlist)
+2. [Conectarte a una red](#conectarte-a-una-red-wifiethernet)
+3. [Procesadores y Tarjetas Graficas](#procesadores-y-tarjetas-graficas)
+4. [Monitoreo y Rendimiento](#monitoreo-y-rendimiento)
+5. [Gestores de Arranque](#gestores-de-arranque)
+6. [Acceder a Repositorios](#acceder-a-repositorios)
+7. [Gestores de Paquetes](#gestores-de-paquetes)
+8. [Editores de Texto](#editores-de-texto)
+9. [Tipografia (Fuentes de Texto)](#tipografia-fuentes-de-texto)
+10. [Pantalla de Bienvenida (Inicio de sesion)](#pantalla-de-bienvenida-inicio-de-sesion)
+11. [Entorno de Escritorio](#entorno-de-escritorio)
+12. [Unidades de Almacenamiento](#unidades-de-almacenamiento)
+13. [Perifericos](#perifericos)
+14. [Utilidades del Sistema](#utilidades-del-sistema)
+15. [Reproductores de Musica](#reproductores-de-musica)
+16. [Lenguajes de Programación](#lenguajes-de-programacion)
+17. [Entornos de Desarrollo](#entornos-de-desarrollo)
+18. [Servidores y Contenedores](#servidores-y-contenedores)
+19. [Comportamiento del Sistema](#comportamiento-del-sistema)
+20. [Referencias](#referencias)
+
 ---
 ## Mirrorlist
 Para poder instalar cualquier cosa se manejan por espejos que tambien parte de la comunidad son conocidos como
@@ -73,7 +96,8 @@ no muestra las redes ocultas, y esto es normal, ya que no anuncian su SSID.\
 
 **TIP:** Para que detecte bien tu red oculta puedes acercarte un poco mas a tu router para tener mas señal y asi pueda encontrar mas rapido tu red oculta. :)
 
-## Network Manager y nm-applet
+---
+### Network Manager y nm-applet
 Quizas te guste manejar tus redes inalambricas con interfaz y no hacerlo desde la terminal.
 **Network Manager** es una herramienta de terminal pero la gente lo ha llegado a usar con **nm-applet** para facilitar conectarte a cualquier red.
 * Para instalarlo necesitas ejecutar el siguiente comando:\
@@ -86,7 +110,7 @@ Quizas te guste manejar tus redes inalambricas con interfaz y no hacerlo desde l
 `sudo systemctl enable NetworkManager`
 `sudo systemctl start NetworkManager`
 
-### Como usar nm-applet para ver la GUI
+#### Como usar nm-applet para ver la GUI
 * Para usarlo desde la terminal solo ejecuta el siguiente comando:\
 `nm-applet &`
 
@@ -98,7 +122,7 @@ y agregar lo siguiente para que se ejecute **nm-applet** tras iniciar sesion sin
 
 Y en la parte de waybar te mostrara un simbolo de la red donde te podras conectar.
 
-### nmcli
+#### nmcli
 Si quieres usar solo NetworkManager sin la interfaz visual y solo en la terminal no necesitas instalarte el applet solo NetworkManager
 * Para ejecutar solo ejecutas el siguiente comando:\
 `nmcli [parametros]`
@@ -109,7 +133,8 @@ Si quieres usar solo NetworkManager sin la interfaz visual y solo en la terminal
 Espero te sirva para conectarte a una red. :)
 
 ---
-## AMD
+## Procesadores y Tarjetas Graficas
+### AMD
 Para poder usar perfectamente el procesador que tienes (en este caso AMD)
 * Necesitas instalar lo siguiente:\
 `sudo pacman -S xf86-video-amdgpu`
@@ -117,7 +142,7 @@ Para poder usar perfectamente el procesador que tienes (en este caso AMD)
 `sudo pacman -S mesa`
 
 ---
-## RTX
+### RTX
 Para usar rtx (en mi caso es una 4050) al principio tenia problemas con **archinstall** asi que, si utilizas este componente cuando quieras instalarte arch linux con hyprland
 selecciona el tipo en minimalista lo que hara sera instalarte arch linux normal (En vista TTY o terminal) y es normal de ahi en adelante usando la terminal instala lo necesario
 que llegues a ocupar en tu dia a dia (en mi caso yazi, git, neovim, etc) para poder moverte con mayor facilidad desde la terminal despues puedes iniciar con el proceso
@@ -158,7 +183,7 @@ nvidia_drm
 * Para ver si se instalo correctamente puedes visualizarlo con lo siguiente:\
 `nvidia-smi`
 
-### NVIDIA-PRIME
+#### NVIDIA-PRIME
 * Para ejecutar cualquier aplicacion con la grafica RTX necesitas instalarte:\
 `sudo pacman -S nvidia-prime`
 
@@ -168,7 +193,7 @@ nvidia_drm
 **NOTA:** Lo que mencione anteriormente sobre abrirlo de esta manera ya que en mi caso uso una laptop que tiene grafica integrada AMD radeon graphics por lo que esa tarjeta se dedica a mostrar el escritorio
 y la rtx se dedicaria a las aplicaciones pesadas. :)
 
-### Errores tras actualizar paquetes
+#### Errores tras actualizar paquetes
 Cuando actualices los paquestes en general o de la RTX:\
 `sudo pacman -Syu`
 Normalmente despues vendra los conflictos como que la computadora no reconozco los drivers de la RTX, quizas no llegue a cargar la UI
@@ -194,22 +219,22 @@ Para solucionar necesitas estar conectado a internet para reinstalar otra vez lo
 **Despues regenera initramfs**
 `sudo mkinitcpio -P`\
 Sin esto, el kernel sigue arrancando con piezas viejas.
-
 **Luego reinicia tu computadora o ordenador**
 * Para ver si realmente cargo perfecto el driver solo ejecuta otra vez el comando donde no salio nada o donde no ha encontrado el driver
 
 En mi caso ha sido: `nvidia-smi` y perfectamente me mostro el driver.
 
 ---
-## NVTOP
+## Monitoreo y Rendimiento
+### NVTOP
 * Para ver el uso de la(s) tarjeta(s) puedes instalarte:\
 `sudo pacman -S nvtop`
 * Y verlo con el siguiente comando:\
 `nvtop`
-
 * **Despues ya podras seguir instalando tus demas instalaciones** como: hyprland, wayland, rofi, etc. :)
+
 ---
-## HTOP
+### HTOP
 Esta herramienta funciona para ver el manejo de los nucleos del procesador y las tareas/aplicaciones que se estan ocupando en ese instante (tambien tareas secundarias)
 * Para descargar la herramienta solo necesitas el siguiente comando:\
 `sudo pacman -S htop`
@@ -217,196 +242,24 @@ Esta herramienta funciona para ver el manejo de los nucleos del procesador y las
 `htop`
 
 ---
-## TLP
+### TLP
 En el caso de que estes utilizando una laptop y no un PC Desk, para prolongar un poco mas la vida util de la bateria y la laptop en general trata de instalar el siguiente paquete con el siguiente comando:\
 `sudo pacman -S tlp`\
 Lo que hace este paquete en pocas palabras es un ahorrador de consumo, apaga los ventiladores si no le estas dando un uso rudo, en este paquete no es necesario hacer modificaciones ni nada solamente
 lo instalas y lo hace de manera automatica. :)
 
 ---
-## GRUB (Gestor de arranque)
+## Gestores de Arranque
+### GRUB
 Grub es lo primero que veras cuando enciendes tu laptop hay varios gestores de arranque que puedes utilizar dependiendo de lo que vas a necesitar (limine para varios SO y kernels, systemd-boot, etc)
 Por lo mientras ando utilizando GRUB como gestor de arranque en mi laptop yo lo instalo desde un principio pero utilizo **Archinstall** pero el comando de instalacio seria:\
 `pacman -S grub efibootmgr`
 * En el caso de que quieras configurar grub lo haces con el siguiente comando:\
 `sudo nvim /etc/default/grub`
 * Para actualizar la configuración del bootloader lo ejecutas con el comando:\
-` sudo grub-mkconfig -o /boot/grub/grub.cfg`
+`sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
----
-## Sobre repositorios SSH y Git
-### SSH
-Antes de comenzar creo que es muy importante aprender git por que en cualquier momento lo podrias
-ocupar tanto para la programación como tambien para instalar o clonar algo de otros repositorios o de hasta tus
-proyectos que hay en github.
-* Para no entrar desde git sino desde ssh necesitar primero instalarte lo siguiente:\
-`sudo pacman -S git openssh`
-* Despues en tu carpeta `/~` lo conectas con este comando:\
-`ssh-keygen -t ed25519 -C "tu_correo@ejemplo.com"`
-* Para iniciar el SSH agent lo haces con lo siguiente:\
-`eval "$(ssh-agent -s)"`\
-`ssh-add ~/.ssh/id_ed25519`
-
-### Vincular la llave SSH a Github
-1. Deberas copear lo que te muestre con el siguiente comando:\
-`cat ~/.ssh/id_ed25519.pub`
-2. Entra a settings de Github (en mi caso lo abri en el navegador)
-    1. Luego dirigete a SSH y GPG keys
-        1. Crea un titulo para reconocer tu llave de tu dispositivo.
-        2. En la seccion de key agrega el contenido que copeaste anteriormente
-    2. Una vez agregado la llave te pedira una verificacion de que eres tu quien agrega esa llave
-3. Ya podras usar ssh
-
-### Verificacion
-* Para confirmar si quedo todo perfecto ejecuta lo siguiente:\
-`ssh -T git@github.com`
-
-### Git
-**Es necesario poder identificarte** tambien en git (para hacer commits, push, etc) con los siguientes comandos:
-1. `git config --global user.name "Tu Nombre o Nick"`
-2. `git config --global user.email "tu_email@ejemplo.com"`
-
-### Cambio de URL a SSH
-* Para cambiar del tipo de repositorio (como pasar url a pasar a SSH para una mejor comodidad) ejecutas lo siguiente:\
-`git remote set-url origin git@github.com:Usuario/Repositorio.git`
-* Para verficar si aun estas ocupando la URL o el SSH, ejecutas el siguiente comando:\
-`git remote -v`
-
-### Clonar repositorios de github
-`git clone git@github.com:usuario/repositorio.git`
-
----
-## Pacman
-Bueno ya tienes instalado por defecto pacman (en el caso de arch)
-* Asi que para instalar con **pacman** es:\
-`sudo pacman -S (nombre del paquete)`
-* Para desinstalar en mi caso ocupo este comando:\
-`sudo pacman -Rns (nombre del paquete)`
-
-### Activar Multilib para pacman
-Al principio tenia duda de para que sirve **Multilib** pero es algo **(Opcional)** dependiendo de que quieras instalar
-en tu sistema, lo que hace al menos desde mi opinion es correr software de **32bits** en tu sistema. Como veras el
-sistema se maneja en dos versiones en **32bits** y en **64bits** casi la mayoria de ordenadores actuales manejan **64bits**
-por lo tanto, lo que hace multilib es descargar las dos versiones para que te permita ejecutarlo como los videojuegos o
-cualquier otro programa.
-
-* Para poder activarlo necesitas ejecutar el siguiente comando:\
-`sudo nvim /etc/pacman.conf`\
-Puedes usar el editor de texto al que estas adaptado como **nano** o cualquier otro.
-
-* Para poder activarlo solo busca en el documento **Multilib**:\
-`[multilib]`\
-`Include = /etc/pacman.d/mirrorlist`\
-
-* Para sincronizar los repositorios ejecutas lo siguiente:\
-`sudo pacman -Sy`
-
-Y listo, ya podras descargar y ejecutar programas. :)
-
-* **Para ver algun paquete instalado solo necesitas ejecutar el siguiente comando:**\
-`whereis + nombre_del_paquete`
-
-* Si te sale la ruta de donde se encuentra el paquete entonces esta instalado por ejemplo:\
-`pacman: /usr/bin/pacman /usr/share/pacman /usr/share/man/man8/pacman.8.gz`
-
-## Yay
-* Pero en el caso de yay lo primero que tienes que instalar es **base-devel**:\
-`sudo pacman -S --needed base-devel git`
-* Para despues instalar **yay**\
-`git clone https://aur.archlinux.org/yay.git`\
-`cd yay`\
-`makepkg -si`
-* En **yay** para instalar cualquier paquete es lo mismo que pacman aqui te muestro\
-`yay -S (nombre del paquete)`\
-`yay pacman -Rns (nombre del paquete)`
-
-## Flatpak
-* Para instalarlo debes ejecutar el siguiente comando:\
-`sudo pacman -S flatpak`
-* Y listo puedes instalar cual app de flatpak usando el siguiente comando:\
-`flatpak install flathub com.project`
-* Para ver el listado de los paquetes instalados por flatpak ejecuta lo siguiente:\
-`flatpak list`
-* Para eliminar paquetes de flatpak puedes usar el siguiente comando:\
-`flatpak uninstall com.project`
-* Para eliminar paquetes que no estan siendo utilizados puedes ejecutar el siguiente comando:\
-`flatpak uninstall --unused`
-
-Espero poder haberte ayudado. :)
-
----
-## Nvim
-* Es un gran editor de texto (y es mucho mejor con sus plugins) pero antes de instalarlo debes instalar primero
-`sudo pacman -S nodejs npm` estos dos son los encargados de descargar los plugins que vaya a ocupar.
-
-* Despues de instalarlo ahora si ya puedes instalar nvim `sudo pacman -S nvim` y despues agregar los plugins que
-para que te ayuden en tu rendimiento de escribir codigo tengo un poco de plugins en mi repo espero esto te sirva de
-ayuda :)
-
----
-## Fonts
-* Si no tienes una carpeta destinada para los fonts lo crear asi:\
-`mkdir ~/.local/share/fonts/`
-* Una vez creado te vas a la ruta donde extraiste tu fuente y puedes copearlo asi:\
-`cp *.otf ~/.local/share/fonts/` o si  gustas moverlo puedes remplazar `cp` por `mv`
-* Para revisar si el font esta instalado puedes verlo con le siguiente comando:\
-`fc-cache -fv`
-* Para revisar un font en especifico usarias este comando:\
-`fc-list | grep "CodeNewRoman"`
-* Para ver la lista de **fonts Mono** instalados ejecuta lo siguente:\
-`fc-list :spacing=100 family`
-* Para mostrar iconos/emojis en la terminal necesitas instalarte:\
-`sudo pacman -S noto-fonts-emoji`
-* Para mostrar cualquier tipo de lenguaje o expresion matematica (para tu navegador) es necesario instalar lo siguiente:\
-`sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-dejavu`
-* Para poder pegar en tu campo de texto necesitas instalar lo siguiente:\
-`sudo pacman -S wtype`\
-Listo puedes ocuparlo en tu sistema anotando el nombre de la fuente en cualquier software que vayas a utilizar :)
-
----
-## Greetings
-Para poder ingrear a tu sesion de hyprland necesitas ingresar para ello hay diferentes paquetes que pueden ser de tu gustó
-te muestró la lista de los que he llegado a probar. :)
-
-### Ly
-Ly es un greeting minimalista solo tiene texto con un fondo negro solo cumple su función es perfecto por si solo quieres tener algo con que ingresar sin que pienses en la personalización.
-* Para instalar ly solo necesitas ejecutar el siguiente comando:
-`sudo pacman -S ly`
-
-### SDDM
-SDDM es lo contrario a Ly es personalizable y puedes encontrar diferentes temas en la comunidad o en repositorios solo es necesario tener los componentes necesarios para que funcione correctamente el tema.
-Casi por lo regular en el repositorio del tema te menciona los paquetes necesarios para que funcione correctamente el tema.
-* Para instalar SDDM necesitas ejecutar el siguiente comando:
-`sudo pacman -S sddm`
-con esto te mostrará el tema por default cuando reinicies tu computadora.
-* Un ejemplo para instalar un tema yo ocupe silent:\
-`yay -S sddm-silent-theme`
-* Para ver los paquetes necesarios que tenia que instalar vi el repositorio que esta en este link:\
-[Repositorio de Silent](https://github.com/uiriansan/SilentSDDM?tab=readme-ov-file)
-* Una ves instalado los paquetes necesarios tenia que confirmar la instalación si mostraba el nombre del tema, para verificar necesitas ejecutar el siguiente comando:\
-`ls /usr/share/sddm/themes`
-* Despues de ver el nombre del tema tuve que modificar el archivo de **SDDM**:\
-`sudo nvim /etc/sddm.conf`
-* Para indicarle que tema utilizarás:
-```
-[Theme]
-Current=silent
-```
-* En donde **silent** es el nombre de la carpeta donde contiene el tema, el nombre del tema debe coincidir **exactamente**.
-
-**En mi opinion:** Estos dos Greetings lo he utilizado desde que comencé con arch linux son dos conceptos diferentes por lo que es perfecto para cada personalidad minimalista / personalizable.
-
----
-## Hyprland
-* Para configurar tus propias binds puedes editar en el siguiente archivo\
-`nvim .config/hypr/hyprland.conf`
-* Si descargaste mis dotfiles o la carpeta de hypr entonces puedes cambiarlo aqui\
-`nvim .config/hypr/binds.conf`
-* ya que lo dividi en subarchivos en el caso de que quieras modificar otra cosas puedes hacer\
-`cd .config/hypr/`
-* y con `ls` veras todos los archivos que quieras modificar con tu editor de texto preferido :)
-
-### Lo mas importante y la razon por la cual te gustaria linux en general
+#### Lo mas importante y la razon por la cual te gustaria linux en general
 * Esto me paso, un dia no me funcionaba dos teclas el dos y la "w" y mi contraseña esta el dos y sinceramente pense:\
 "ya no voy a poder entrar a mi sistema" pero lo bueno de Grub es que desde el inicio cuando seleccionas el sistema\
 te permite entrar como root asi normal y desde ahi pude cambiar mi contraseña y creo que esto es demasiado bueno aunque igual
@@ -435,7 +288,191 @@ Ya por ultimo executa el siguiente comando para iniciar de nuevo con tu nueva co
 `exec /sbin/init`\
 listo ya habras cambiado tu contraseña al entrar desde Grub :)
 
-### Monitores
+---
+## Acceder a Repositorios
+### SSH
+Antes de comenzar creo que es muy importante aprender git por que en cualquier momento lo podrias
+ocupar tanto para la programación como tambien para instalar o clonar algo de otros repositorios o de hasta tus
+proyectos que hay en github.
+* Para no entrar desde git sino desde ssh necesitar primero instalarte lo siguiente:\
+`sudo pacman -S git openssh`
+* Despues en tu carpeta `/~` lo conectas con este comando:\
+`ssh-keygen -t ed25519 -C "tu_correo@ejemplo.com"`
+* Para iniciar el SSH agent lo haces con lo siguiente:\
+`eval "$(ssh-agent -s)"`\
+`ssh-add ~/.ssh/id_ed25519`
+
+#### Vincular la llave SSH a Github
+1. Deberas copear lo que te muestre con el siguiente comando:\
+`cat ~/.ssh/id_ed25519.pub`
+2. Entra a settings de Github (en mi caso lo abri en el navegador)
+    1. Luego dirigete a SSH y GPG keys
+        1. Crea un titulo para reconocer tu llave de tu dispositivo.
+        2. En la seccion de key agrega el contenido que copeaste anteriormente
+    2. Una vez agregado la llave te pedira una verificacion de que eres tu quien agrega esa llave
+3. Ya podras usar ssh
+
+#### Verificacion
+* Para confirmar si quedo todo perfecto ejecuta lo siguiente:\
+`ssh -T git@github.com`
+
+---
+### Git
+**Es necesario poder identificarte** tambien en git (para hacer commits, push, etc) con los siguientes comandos:
+1. `git config --global user.name "Tu Nombre o Nick"`
+2. `git config --global user.email "tu_email@ejemplo.com"`
+
+#### Cambio de URL a SSH
+* Para cambiar del tipo de repositorio (como pasar url a pasar a SSH para una mejor comodidad) ejecutas lo siguiente:\
+`git remote set-url origin git@github.com:Usuario/Repositorio.git`
+* Para verficar si aun estas ocupando la URL o el SSH, ejecutas el siguiente comando:\
+`git remote -v`
+
+#### Clonar repositorios de github
+`git clone git@github.com:usuario/repositorio.git`
+
+---
+## Gestores de Paquetes
+### Pacman
+Bueno ya tienes instalado por defecto pacman (en el caso de arch)
+* Asi que para instalar con **pacman** es:\
+`sudo pacman -S (nombre del paquete)`
+* Para desinstalar en mi caso ocupo este comando:\
+`sudo pacman -Rns (nombre del paquete)`
+
+#### Activar Multilib para pacman
+Al principio tenia duda de para que sirve **Multilib** pero es algo **(Opcional)** dependiendo de que quieras instalar
+en tu sistema, lo que hace al menos desde mi opinion es correr software de **32bits** en tu sistema. Como veras el
+sistema se maneja en dos versiones en **32bits** y en **64bits** casi la mayoria de ordenadores actuales manejan **64bits**
+por lo tanto, lo que hace multilib es descargar las dos versiones para que te permita ejecutarlo como los videojuegos o
+cualquier otro programa.
+
+* Para poder activarlo necesitas ejecutar el siguiente comando:\
+`sudo nvim /etc/pacman.conf`\
+Puedes usar el editor de texto al que estas adaptado como **nano** o cualquier otro.
+* Para poder activarlo solo busca en el documento **Multilib**:\
+`[multilib]`\
+`Include = /etc/pacman.d/mirrorlist`
+* Para sincronizar los repositorios ejecutas lo siguiente:\
+`sudo pacman -Sy`\
+Y listo, ya podras descargar y ejecutar programas. :)
+* **Para ver algun paquete instalado solo necesitas ejecutar el siguiente comando:**\
+`whereis + nombre_del_paquete`
+* Si te sale la ruta de donde se encuentra el paquete entonces esta instalado por ejemplo:\
+`pacman: /usr/bin/pacman /usr/share/pacman /usr/share/man/man8/pacman.8.gz`
+
+#### Solucion al error: unable to lock database
+El error sucede porque **Pacman** crea un archivo llamado `db.lck` para **evitar que dos procesos intenten instalar algo al mismo tiempo.**
+1. Primero, asegúrate de que no haya un Pacman vivo::\
+`ps aux | grep pacman`
+Si ves algún proceso que no sea el **grep**, puedes matarlo con `sudo kill <PID>`
+2. Si no hay procesos, borra el archivo de bloqueo manualmente:\
+`sudo rm /var/lib/pacman/db.lck`
+Con eso solucionaras el error y podras actualizar e instalar tus paquetes como antes. :)
+
+---
+### Yay
+* Pero en el caso de yay lo primero que tienes que instalar es **base-devel**:\
+`sudo pacman -S --needed base-devel git`
+* Para despues instalar **yay**\
+`git clone https://aur.archlinux.org/yay.git`\
+`cd yay`\
+`makepkg -si`
+* En **yay** para instalar cualquier paquete es lo mismo que pacman aqui te muestro\
+`yay -S (nombre del paquete)`\
+`yay pacman -Rns (nombre del paquete)`
+
+---
+### Flatpak
+* Para instalarlo debes ejecutar el siguiente comando:\
+`sudo pacman -S flatpak`
+* Y listo puedes instalar cual app de flatpak usando el siguiente comando:\
+`flatpak install flathub com.project`
+* Para ver el listado de los paquetes instalados por flatpak ejecuta lo siguiente:\
+`flatpak list`
+* Para eliminar paquetes de flatpak puedes usar el siguiente comando:\
+`flatpak uninstall com.project`
+* Para eliminar paquetes que no estan siendo utilizados puedes ejecutar el siguiente comando:\
+`flatpak uninstall --unused`
+
+Espero poder haberte ayudado. :)
+
+---
+## Editores de texto
+### Nvim
+* Es un gran editor de texto (y es mucho mejor con sus plugins) pero antes de instalarlo debes instalar primero
+`sudo pacman -S nodejs npm` estos dos son los encargados de descargar los plugins que vaya a ocupar.
+* Despues de instalarlo ahora si ya puedes instalar nvim `sudo pacman -S nvim` y despues agregar los plugins que
+para que te ayuden en tu rendimiento de escribir codigo tengo un poco de plugins en mi repo espero esto te sirva de
+ayuda :)
+
+---
+## Tipografia (Fuentes de Texto)
+* Si no tienes una carpeta destinada para los fonts lo crear asi:\
+`mkdir ~/.local/share/fonts/`
+* Una vez creado te vas a la ruta donde extraiste tu fuente y puedes copearlo asi:\
+`cp *.otf ~/.local/share/fonts/` o si  gustas moverlo puedes remplazar `cp` por `mv`
+* Para revisar si el font esta instalado puedes verlo con le siguiente comando:\
+`fc-cache -fv`
+* Para revisar un font en especifico usarias este comando:\
+`fc-list | grep "CodeNewRoman"`
+* Para ver la lista de **fonts Mono** instalados ejecuta lo siguente:\
+`fc-list :spacing=100 family`
+* Para mostrar iconos/emojis en la terminal necesitas instalarte:\
+`sudo pacman -S noto-fonts-emoji`
+* Para mostrar cualquier tipo de lenguaje o expresion matematica (para tu navegador) es necesario instalar lo siguiente:\
+`sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-dejavu`
+* Para poder pegar en tu campo de texto necesitas instalar lo siguiente:\
+`sudo pacman -S wtype`\
+Listo puedes ocuparlo en tu sistema anotando el nombre de la fuente en cualquier software que vayas a utilizar :)
+
+---
+## Pantalla de Bienvenida (Inicio de Sesion)
+Para poder ingresar a tu sesion de hyprland necesitas ingresar para ello hay diferentes paquetes que pueden ser de tu gustó
+te muestró la lista de los que he llegado a probar. :)
+
+---
+### Ly
+Ly es un greeting minimalista solo tiene texto con un fondo negro solo cumple su función es perfecto por si solo quieres tener algo con que ingresar sin que pienses en la personalización.
+* Para instalar ly solo necesitas ejecutar el siguiente comando:
+`sudo pacman -S ly`
+
+---
+### SDDM
+SDDM es lo contrario a Ly es personalizable y puedes encontrar diferentes temas en la comunidad o en repositorios solo es necesario tener los componentes necesarios para que funcione correctamente el tema.
+Casi por lo regular en el repositorio del tema te menciona los paquetes necesarios para que funcione correctamente el tema.
+* Para instalar SDDM necesitas ejecutar el siguiente comando:
+`sudo pacman -S sddm`
+con esto te mostrará el tema por default cuando reinicies tu computadora.
+* Un ejemplo para instalar un tema yo ocupe silent:\
+`yay -S sddm-silent-theme`
+* Para ver los paquetes necesarios que tenia que instalar vi el repositorio que esta en este link:\
+[Repositorio de Silent](https://github.com/uiriansan/SilentSDDM?tab=readme-ov-file)
+* Una ves instalado los paquetes necesarios tenia que confirmar la instalación si mostraba el nombre del tema, para verificar necesitas ejecutar el siguiente comando:\
+`ls /usr/share/sddm/themes`
+* Despues de ver el nombre del tema tuve que modificar el archivo de **SDDM**:\
+`sudo nvim /etc/sddm.conf`
+* Para indicarle que tema utilizarás:
+```
+[Theme]
+Current=silent
+```
+* En donde **silent** es el nombre de la carpeta donde contiene el tema, el nombre del tema debe coincidir **exactamente**.
+
+**En mi opinion:** Estos dos Greetings lo he utilizado desde que comencé con arch linux son dos conceptos diferentes por lo que es perfecto para cada personalidad minimalista / personalizable.
+
+---
+## Entorno de Escritorio
+### Hyprland
+* Para configurar tus propias binds puedes editar en el siguiente archivo\
+`nvim .config/hypr/hyprland.conf`
+* Si descargaste mis dotfiles o la carpeta de hypr entonces puedes cambiarlo aqui\
+`nvim .config/hypr/binds.conf`
+* ya que lo dividi en subarchivos en el caso de que quieras modificar otra cosas puedes hacer\
+`cd .config/hypr/`
+* y con `ls` veras todos los archivos que quieras modificar con tu editor de texto preferido :)
+
+#### Monitores
 * Para ver la lista de monitores ejecuta el siguiente comando:\
 `hyprctl monitors`
 * En la lista notaras **eDP-1** el cual seria la pantalla de tu laptop y el **HDMI-A-1** el proyector
@@ -444,6 +481,7 @@ listo ya habras cambiado tu contraseña al entrar desde Grub :)
 * Para usarlo como segundo monitor necesitas ejecutar el siguiente comando:\
 `hyprctl keyword monitor "HDMI-A-1,1920x1080@60,1920x0,1"` lo que hara es mostrarlo en nuevo workspace vacio de esta manera lo hace dinamico.
 
+---
 ### Hyprsunset
 De acuerdo con la documentacion de hyprland hyprsunset es el manejo de la temperatura de tu monitor
 para evitar que tus ojos se cansen de ver mucho la pantalla para poder instalarlo es con este comando
@@ -453,24 +491,8 @@ pero si ya tienes mi archivo corriendo deber hacer `pkill hyprsunset` antes para
 primero verifica si ya tienes perfiles creados por lo que no te permite ejecutar sin antes eleminar ese proceso o tarea
 pero tranqui obviamente no sera permantes solo sera en ese uso si reinicias otra vez se ejecutara los perfiles :)
 
-### Permisos para ejecución
-* Para hacer que tu script se pueda ejecutar solo necesitas ejecutar este comando:
-`chmod +x [la ruta de tu script (tipo de archivo .sh)]`
-* Para revocar los permisos debes agregar el siguiente comando:
-`chmod a-x [script]`\
-Ahora si entramos en un poco especificos...
-* Quita el permiso de ejecución a todos (user/group/others):
-`chmod a-x`
-* Quita solo al dueño (user):
-`chmod u-x`
-* Quita solo al grupo:
-`chmod g-x`
-* Quita solo a otros:
-`chmod o-x`
-Espero te funcione para que puedas ejecutar tus scripts. :)
-
 ---
-## Waybar
+### Waybar
 En mi caso waybar siempre lo he tenido en
 `cd /etc/xdg/waybar`,
 he visto en otros rice o en reddit que lo tienen dentro de **.config**
@@ -480,13 +502,13 @@ en el caso de que tu quieras pasarlo a `cd .config/waybar` esta bien espero que 
 En este caso para mi rice solo quiero dejarte con la parte de config.jscon y style.css si gustas hacerle
 modificaciones puedes entrar y modificarlos archivos **config.jsonc** y **style.css**
 
-### Si quieres agregarle scripts a waybar
+#### Si quieres agregarle scripts a waybar
 como mostrarte el clima y pasaralo con una API o crear tu media player de spotify solo genera una carpeta:
 `mkdir scripts` dentro de waybar,luego crea los archivos dentro de **scripts** con `touch script_example.sh`
 espero te funcione y no dejes de crear :)
 
 ---
-## Swaync
+### Swaync
 Para usar los botones de Swaync (sobre mi repositorio) debes tener instaladado **nmtui** tambien **blueman-manager**
 y **copyq** tambien agreguè en el ultimo boton para tomar una captura pero necesitas instalarte **wl-copy** para que
 te permita tomar screenshot a tu pantalla :)
@@ -497,8 +519,9 @@ te permita tomar screenshot a tu pantalla :)
 `sudo pacman -S libnotify` para poder hacer test desde la terminal de tus notificaciones.
 * Para acceder a la carpeta de swaync:\
 `cd /etc/xdg/swaync`
+
 ---
-## Matugen
+### Matugen
 Matugen recopila los colores de tu fondo de pantalla y te hace un listado de colores esto se complemente bastantae bien\
 con `Swww` que permite cambiar de imagenes.
 * Para poder instalarlo debes ejecutar el siguiente comando:\
@@ -509,20 +532,22 @@ con `Swww` que permite cambiar de imagenes.
 Espero te sirva de ayuda. :)
 
 ---
-## LSBLK
+## Unidades de Almacenamiento
+### LSBLK
 Es para ver tu almacenamiento quizas algun dia lo llegues a ocupar para ver como esta particionado tu
 almacenamiento para ello solo necesitas ejecutar este codigo:\
 `lsblk -o NAME,MODEL,SIZE,TYPE,MOUNTPOINT`\
 espero te sirva de ayuda :)
 
 ---
-## Ver Uso de almacenamiento
+### Monitoreo del Almacenamiento
 Si te preocupar tu almacenamiento de que se llene puedes usar el siguiente comando:\
 `sudo du -hxd1 / | sort -h`
 Esto permitira visualizar las carpetas estan ocupando una cierta cantidad de espacio en tu ordenador. :)
 
 ---
-## Montar una USB
+## Perifericos
+### Montar una USB
 Si algo que tendras que ver en linux es sobre como montar o como ver el contenido de tu **USB**, es un poco laborioso
 pero no imposible.
 * Para poder leer tu memoria usb necesitas ejecutar el siguiente comando:\
@@ -543,14 +568,7 @@ ls o tambien con tu explorador de archivos favorito.\
 Espero te sirva de ayuda para ver el contenido de tu **USB**. :)
 
 ---
-## 7zip
-* Es una herramienta poderosa para extraccion de archivos zip para instarlarlo solo necesitas del comando:\
-`sudo pacman -S 7zip`
-* Para extraer los documentos en la ruta actual donde estas usas este comando:\
-`7z e (el archivo a descomprimir).zip`
-
----
-## Wacom
+### Wacom
 * Para que funcione tu tableta para dibujar necesitas intalarte lo siguiente:\
 `sudo pacman -S xf86-input-wacom`
 * Si quieres que te muestren de manera visual:\
@@ -558,7 +576,24 @@ Espero te sirva de ayuda para ver el contenido de tu **USB**. :)
 Con eso podras ver los botones, la presion pero si viene por parte de kde pero funciona en arch+hyprland aunque si solo buscas lo necesario (que funcione la tableta) puedes solo instalar lo primero y funcionara sin problema. :)
 
 ---
-## Rclone
+## Utilidades del Sistema
+### 7zip
+* Es una herramienta poderosa para extraccion de archivos zip para instarlarlo solo necesitas del comando:\
+`sudo pacman -S 7zip`
+* Para extraer los documentos en la ruta actual donde estas usas este comando:\
+`7z e (el archivo a descomprimir).zip`
+
+---
+### Skim
+* Es una herramienta muy utilizado o almenos yo lo ocupo mucho, en el caso de que estes cansado de escribir:\
+`cd /La/Ruta/`
+* Si quieres ver el listado de tus directorios para abrir un archivo solo escribes:\
+`sk`
+* Y te muestra el listado de directorios a donde quieres ir para editar un archivo es un alivio si ya tienes muchos archivos y no recuerdas la ruta
+Espero te sirva de ayuda. :)
+
+---
+### Rclone
 Si alguna vez te has preocupado por si llegara a fallar tu SO y no hiciste un backup de tu informacion para esto funciona rclone
 para que almacene tu informacion en tu drive (de la nube) favorita. puedes guardar en Google Drive, OneDrive, Dropbox, etc.
 * Para instalarlo ejecuta el siguiente comando:\
@@ -600,18 +635,20 @@ Solo es una opinion mia y por lo que he visto al menos con nvtop.
 * **NOTA:** Para configurarlo necesitas de dotfiles para que realicen una conexion entre estos dos paquetes y de esta manera se puede reproducir la musica.
 * Para ejecutar el reproductor solo necesitas ejecutar el siguiente comando en tu terminal:\
 `ncmpcpp`
+
 ### MPC
-Aunque tengas instalado **MDP y NCMPCPP** no podras controlar la musica que reproduces por que solo reproducira la plyalist actual sin poder regresar a la musica.
+Aunque tengas instalado **MDP y NCMPCPP** no podras controlar la musica que reproduces por que solo reproducira la playlist actual sin poder regresar a la musica.
 * Para ello necesitas instalarte un comunicador para el **MDP** que se llama **MPC** para instalarlo necesitas ejecutar el siguiente comando:
 `sudo pacman -S mpc`
 * Para ver si esta activo solo necesitas ejecutar el siguiente codigo:\
 `mpc status`
 * Para poder usarlo solo necesitas ejecutar los siguientes comandos:
-1. mpc play
-2. mpc pause
-3. mpc next
-4. mpc prev
+1. `mpc play`
+2. `mpc pause`
+3. `mpc next`
+4. `mpc prev`
 
+---
 ### YT-DLP
 Este paquete es un tesoro bien cuidado jaja, lo que hace es alamcenar los videos de youtube en un formato diferente (el cual tu gustes como .MP3 o .FLAC por eso necesita de ffmpeg para hacer la conversion)
 * Para descargarlo necesitas el siguente comando:\
@@ -622,16 +659,7 @@ En el caso de quieras hacer la descarga por tu propia cuenta con yt-dlp lee el m
 `yt-dlp -help` y tambien te muestra un link directo al repositorio para leer toda la documentacion.
 
 ---
-## Skim
-* Es una herramienta muy utilizado o almenos yo lo ocupo mucho, en el caso de que estes cansado de escribir:\
-`cd /La/Ruta/`
-* Si quieres ver el listado de tus directorios para abrir un archivo solo escribes:\
-`sk`
-* Y te muestra el listado de directorios a donde quieres ir para editar un archivo es un alivio si ya tienes muchos archivos y no recuerdas la ruta
-Espero te sirva de ayuda. :)
-
----
-## Lenguajes de Programación
+## Lenguajes de Programacion
 ### Python
 * Para instalar este lenguaje de programación necesitas ejecutar el siguiente comando:\
 `sudo pacman -S python`
@@ -651,6 +679,7 @@ Por ejemplo:\
 
 **Nota:** En Arch Linux se recomienda usar entornos virtuales para evitar conflictos con el Python del sistema por eso creamos el ambiente.
 
+---
 ### Rust
 * En el caso de que quieras programar en rust debes ejecutar lo siguiente:\
 `sudo pacman -S rustup`
@@ -669,6 +698,7 @@ Por ejemplo:\
 * Dentro del directorio para poder ejecutar tu proyecto, lo haras con el siguiente comando:\
 `cargo run`
 
+---
 ### Java
 Para ejecutar java en tu computador y poder correrlo sin la necesidad de instalar un IDE (Netbeans o IntellijIdea).
 * Primero necesitas instalar el jdk de esta manera:\
@@ -702,7 +732,8 @@ Por el momento aun no te puedo decir si se puede trabajar en proyectos grandes d
 te puedo decir que es bueno para los comienzos como hacer ejercicios de (hackerrank o leetcode). Espero que esta seccion te ayude. :)
 
 ---
-## Android Studio
+## Entornos de Desarrollo
+### Android Studio
 * Como sabras puedes instalarte la IDE de android studio con el siguiente comando:\
 `yay -S android-studio`
 * Despues si hay actualizaciones disponibles pero como no tiene privilegios te mandara este mensaje:\
@@ -712,7 +743,54 @@ te puedo decir que es bueno para los comienzos como hacer ejercicios de (hackerr
 * Y listo con eso podras actualizar tu android studio sin problemas. :)
 
 ---
-## Systemd
+## Servidores y Contenedores
+### Docker
+Docker permite aislar aplicaciones en contenedores.
+En Arch Linux, la instalación es directa pero requiere activar el servicio manualmente.
+
+* Para instalar **Docker** necesitas ejecutar el siguiente comando:\
+`sudo pacman -S docker docker-compose`
+**NOTA:** docker-compose Permite gestionar configuraciones complejas mediante archivos `.yml`
+
+* En Arch, los servicios no arrancan solos al instalarse, tienes que usar systemd con el siguiente comando:\
+`sudo systemctl enable --now docker`
+
+* **Recomendado:** Por defecto, Docker te pide sudo para cada comando. Si quieres usarlo con tu usuario normal, añádelo al grupo docker de esta manera:\
+`sudo usermod -aG docker $USER`
+**Importante:** Despues debes reiniciar para que los **comandos de Docker** funcionen correctamente. :)
+
+#### Creacion del Contenedor
+* Para crearlo necesitas crear una carpeta dedicada preferiblemente en `/home` con:\
+`mkdir ~/nombre-de-tu-carpeta && cd ~/nombre-de-tu-carpeta`
+* Dentro de la carpeta crea un archivo llamado:\
+`docker-compose.yml`
+donde ahi contendra tu configuracion para docker.
+#### Comandos de Gestion para Docker
+* **Para levantar el contenedor** necesitas ejecutar el siguiente comando:\
+`docker compose up -d`
+Este lo aplicaras cada que hagas un cambio en el archivo `docker-compose.yml`
+* **Para reiniciar el servicio de Docker** solo necesitas ejecutar el siguiente comando:\
+`sudo systemctl restart docker`
+#### Monitoreo de Docker
+* **Para ver los contenedores activos** necesitas ejecuta el comando:\
+`docker ps`
+* **Para monitorear lor recursos asignados al contenedor** ejecuta el siguiente comando:\
+`docker stats`
+#### Interaccion con la Consola de Docker
+* Para **ver lo que esta pasando** necesitas ejecutar el comando:\
+`docker logs -f nombre-del-contenedor`
+* Para **entrar al contenedor** ejecuta el siguiente comando:\
+`docker attach nombre-del-contenedor`
+* Para **salir del contenedor** solo presiona
+1. `Ctrl + P`
+2. `Ctrl + Q`
+
+**Tip:** Se usa `docker attach` para escribir comandos directamente en la consola y es por eso que no se puede cerrar con `Ctrl + Z` o `Ctrl + C`
+Para no apagar el servidor por error. :)
+
+---
+## Comportamiento del Sistema
+### Systemd
 Si por curiosidad hiciste un servidor con **Docker** y estas en una laptop y no quieres que se suspenda cuando cierres el monitor o la tapa de la laptop
 * Para entrar a la configuracion de systemd necesitas ejecutar el siguiente comando:\
 `sudo nvim /etc/systemd/logind.conf`
@@ -729,7 +807,7 @@ LidSwitchIgnoreInhibited=yes
 `sudo systemctl restart systemd-logind`
 **En el caso de ejecutar dentro de un WM (como hyprland)** y se llegue a crashear solo necesitas apagarlo y volver a prender la laptop
 y notaras los cambios.
-**Es recomendable** ejecutar el comando dentro de Arch sin ningun **WM**.
+**Es recomendable** ejecutar el comando dentro de Arch sin ningun **WM (Windows Manager ejemplo: Hyprland o KDE)**.
 
 * Con esto aunque cierres tu laptop ya no entrara en modo suspension sino que se seguira ejecutando esto es bueno en el caso de que
 estes usando tu laptop como un mini servidor y asi aunque este cerrado para tener un poco mas de espacio.
