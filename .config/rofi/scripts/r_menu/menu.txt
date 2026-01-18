@@ -8,7 +8,9 @@ Suspend|kitty -e systemctl suspend|Suspend.png
 Update Emojis|kitty -e bash ~/.config/hypr/scripts/r_emoji/emoji-picker.sh --update|Emoji.png
 Disable Warm Color Filter|kitty -e pkill hyprsunset|Hyprsunset.png
 Update Packages|kitty -e sudo pacman -Syu|Update.png
+unlock bd pacman|kitty -e sudo rm /var/lib/pacman/db.lck|
 Clean cache|sudo pacman -Sc|cleancache.png
+Clean trash|bash -c "rm -rf ~/.local/share/Trash/files/* && rm -rf ~/.local/share/Trash/info/* && notify-send 'Trash' 'Papelera vaciada'"|cleancache.png
 View Storage|kitty -e bash .config/rofi/scripts/r_menu/storage/storage.sh|Disk.png
 Sync Documents|kitty -e rclone copy ~/Documents gdrive:BackupDocuments -P|Cloud.png
 CheatSheet Hyprland|kitty -e bash .config/rofi/scripts/r_menu/cheatsheet/cheatsheet.sh|Keyboard.png
