@@ -1,16 +1,22 @@
 Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_remember/cmd.txt|Addcommand.png
 Clone Repos|git clone git@github.com:usuario/repositorio.git|github.png
-C++| g++ main.cpp -o app -lSDL2 -lGLEW -lGL|compilecpp.png
-C++| ./app|runcpp.png
-Java| javac|compilejava.png
-Java| java|runjava.png
+C++| g++ main.cpp -o app -lSDL2 -lGLEW -lGL|cpp.png
+C++| ./app|cpp.png
+Java| javac|java.png
+Java| java|java.png
 Java| ./gradlew clean run|compilegradle.png
-Rust| cargo new|createrust.png
-Rust| cargo run|compilerust.png
-Rust| cargo clean|cleanrust.png
+Rust| cargo new|rust.png
+Rust| cargo run|rust.png
+Rust| cargo clean|rust.png
 Python| source venv/bin/activate|python.png
 Python| python|python.png
 Python| pip install|python.png
+Docker| docker compose up -d|docker.png
+Dccker| sudo systemctl restart docker|docker.png
+Docker| docker ps|docker.png
+Docker| docker stats|docker.png
+Docker| docker logs -f|docker.png
+Docker| docker attach|docker.png
 Monitor| hyprctl monitors|monitor.png
 Monitor| hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"|monitor.png
 Monitor| hyprctl keyword monitor "HDMI-A-1,1920x1080@60,1920x0,1"|monitor.png
