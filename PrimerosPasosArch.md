@@ -532,6 +532,13 @@ con `Swww` que permite cambiar de imagenes.
 Espero te sirva de ayuda. :)
 
 ---
+### Kitty
+* Para instalar kitty en tu ordenador solo necesitas ejecutar esto:\
+`sudo pacman -S kitty`
+* Para instalarle alguna fuente a kitty solo necesitas ejecutar este comando:\
+`kitty +list-fonts --query`
+
+---
 ## Unidades de Almacenamiento
 ### LSBLK
 Es para ver tu almacenamiento quizas algun dia lo llegues a ocupar para ver como esta particionado tu
