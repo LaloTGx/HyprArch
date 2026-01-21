@@ -339,6 +339,12 @@ Bueno ya tienes instalado por defecto pacman (en el caso de arch)
 `sudo pacman -S (nombre del paquete)`
 * Para desinstalar en mi caso ocupo este comando:\
 `sudo pacman -Rns (nombre del paquete)`
+* Para ver la lista de paquetes instalados completos ejecuta:\
+`pacman -Q`
+* Si solo quieres ver los paquetes que instalaste explicitamente ejecuta:\
+`pacman -Qe`
+* Para buscar algun paquete ya instalado ejecuta:\
+`pacman -Qs`
 
 #### Activar Multilib para pacman
 Al principio tenia duda de para que sirve **Multilib** pero es algo **(Opcional)** dependiendo de que quieras instalar
@@ -381,6 +387,10 @@ Con eso solucionaras el error y podras actualizar e instalar tus paquetes como a
 * En **yay** para instalar cualquier paquete es lo mismo que pacman aqui te muestro\
 `yay -S (nombre del paquete)`\
 `yay pacman -Rns (nombre del paquete)`
+* Para ver los paquetes instalados del AUR ejecuta lo siguiente:\
+`yay -Qm`
+* Para buscar algun paquete ya instalado ejecuta:\
+`yay -Qs`
 
 ---
 ### Flatpak

@@ -1,17 +1,18 @@
-Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_menu/menu.txt|Addcommand.png
-Conf Kitty|kitty -e nvim ~/.config/kitty/kitty.conf|Terminal.png
-Primeros Pasos|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosArch.md|Firststeps.png
+Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_menu/menu.txt|addcommand.png
+Conf Kitty|kitty -e nvim ~/.config/kitty/kitty.conf|terminal.png
+CheatSheet Hyprland|kitty -e bash .config/rofi/scripts/r_menu/cheatsheet/cheatsheet.sh|keyboard.png
+Primeros Pasos|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosArch.md|firststeps.png
 Notes|kitty -e bash ~/.config/rofi/scripts/r_menu/notes/homenotes.sh|notes.png
-View packages (pacman)|kitty -e bash -c "pacman -Q; echo; echo 'Press any key to exit...'; read -n 1"|pacman.png
-Mirror|hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"|Mirror.png
-Suspend|kitty -e systemctl suspend|Suspend.png
-Update Emojis|kitty -e bash ~/.config/hypr/scripts/r_emoji/emoji-picker.sh --update|Emoji.png
-Disable Warm Color Filter|kitty -e pkill hyprsunset|Hyprsunset.png
-Update Packages|kitty -e sudo pacman -Syu|Update.png
-unlock bd pacman|kitty -e sudo rm /var/lib/pacman/db.lck|
+Download Music|kitty -e bash .config/rofi/scripts/r_menu/dmusic/dmusic.sh|downloadmusic.png
+Disable Warm Color Filter|kitty -e pkill hyprsunset|hyprsunset.png
+Mirror|hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"|mirror.png
+View Storage|kitty -e bash .config/rofi/scripts/r_menu/storage/storage.sh|disk.png
+View packages (pacman)|kitty -e bash -c "pacman -Qe; echo; echo 'Press any key to exit...'; read -n 1"|pacman.png
+View packages (yay)|kitty -e bash -c "yay -Qm; echo; echo 'Press any key to exit...'; read -n 1"|yay.png
+View packages (flatpak)|kitty -e bash -c "flatpak list; echo; echo 'Press any key to exit...'; read -n 1"|flatpak.png
+Update Packages|kitty -e sudo pacman -Syu|update.png
+unlock bd pacman|kitty -e sudo rm /var/lib/pacman/db.lck|unlock.png
 Clean cache|sudo pacman -Sc|cleancache.png
-Clean trash|bash -c "rm -rf ~/.local/share/Trash/files/* && rm -rf ~/.local/share/Trash/info/* && notify-send 'Trash' 'Papelera vaciada'"|cleancache.png
-View Storage|kitty -e bash .config/rofi/scripts/r_menu/storage/storage.sh|Disk.png
-Sync Documents|kitty -e rclone copy ~/Documents gdrive:BackupDocuments -P|Cloud.png
-CheatSheet Hyprland|kitty -e bash .config/rofi/scripts/r_menu/cheatsheet/cheatsheet.sh|Keyboard.png
-Download Music|kitty -e bash .config/rofi/scripts/r_menu/dmusic/dmusic.sh|Downloadmusic.png
+Clean trash|bash -c "rm -rf ~/.local/share/Trash/files/* && rm -rf ~/.local/share/Trash/info/* && notify-send 'Trash' 'Papelera vaciada'"|trash.png
+Update Emojis|kitty -e bash ~/.config/hypr/scripts/r_emoji/emoji-picker.sh --update|emoji.png
+Sync Documents|kitty -e rclone copy ~/Documents gdrive:BackupDocuments -P|cloud.png
