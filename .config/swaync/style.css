@@ -6,8 +6,8 @@
   --noti-bg: 0, 0, 0;
   --noti-bg-alpha: 0.6;
   --noti-bg-darker: rgb(38, 38, 38);
-  --noti-bg-hover: rgb(56, 56, 56);
-  --noti-bg-focus: rgba(68, 68, 68, 0.6);
+  --noti-bg-hover: rgba(56, 56, 56, 0);
+  --noti-bg-focus: rgba(68, 68, 68, 0);
   --noti-close-bg: rgb(78, 78, 78);
   --noti-close-bg-hover: rgb(94, 94, 94);
   --text-color: #e6f2ff;
@@ -19,7 +19,7 @@
 }
 
 * {
-  font-family: DepartureMono Nerd Font, monospace;
+  font-family: Monocraft, Nerd Font, monospace;
   font-size: 14px;
   font-weight: bolder;
   /*text-shadow: 0 0 2px #b5e65c, 0 0 5px #b5e65c;*/
@@ -81,7 +81,7 @@
 }
 
 .notification-row:focus {
-  background: var(--noti-bg-focus);
+  background: transparent;
 }
 
 .notification-row .notification-background {
@@ -89,12 +89,18 @@
 }
 
 .notification-row .notification-background .notification {
-  /* The actual notification */
+  /* The actual notification
   border-radius: 1px;
   border: 1px solid var(--noti-border-color);
   padding: 4px 0px;
   transition: background 0.15s ease-in-out;
-  background: rgba(var(--noti-bg), var(--noti-bg-alpha));
+  /*background: rgba(var(--noti-bg), var(--noti-bg-alpha));*/
+  background-image: url("file:///home/lalo/.config/swaync/achievement.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 10px; /* Espacio para que el texto no toque los bordes del logro */
+  border-radius: 0px;
+  min-height: 64px;
 }
 
 .notification-row .notification-background .notification.low {
