@@ -4,15 +4,15 @@
 []  [L]     Subir volumen
 
  Micrófono
-[]  [U]     Silenciar micrófono (toggle)
-[]  [I]     Bajar volumen del micrófono
+[]  [I]     Silenciar micrófono (toggle)
+[]  [O]     Bajar volumen del micrófono
 []  [O]     Subir volumen del micrófono
 
 󰛨 Brillo
-[Fn]  [↑]    Subir brillo
-[Fn]  [↓]    Bajar brillo
+[]  [Z]    Bajar brillo
+[]  [X]    Subir brillo
 
- Reproducción multimedia
-[Fn]  [F11]  Play/Pause (toggle)
-[Fn]  [F10]  Anterior
-[Fn]  [F12]  Siguiente
+ Reproducción multimedia (No MPD)
+[]  [B]  Anterior
+[]  [N]  Play/Pause (toggle)
+[]  [M]  Siguiente

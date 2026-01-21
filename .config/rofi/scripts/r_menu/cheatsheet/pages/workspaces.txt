@@ -1,12 +1,16 @@
-  Pasar entre workspaces
+  Pasar entre workspaces (teclado)
 [ALT]  [1–0]   Cambia al workspace correspondiente
+[ALT]  ["["]   Cambia al workspace en secuencia (anterior)
+[ALT]  ["]"]   Cambia al workspace en secuencia (siguiente)
 
-  Mover ventanas activas
+  Mover ventanas activas (teclado)
 []  [1–0]     Mueve la ventana al workspace correspondiente
+[]  ["["]     Mueve al workspace en secuencia (anterior)
+[]  ["]"]     Mueve al workspace en secuencia (siguiente)
 
 󱂬 Workspace Special
 []  [`]       Mover al workspace special
 [ALT]  [`]     Pasar al workspace special
 
-  Pasar entre workspaces con el mouse
+  Pasar entre workspaces (mouse)
 []  󱕒 Scroll  Pasar de workspace 1–10
