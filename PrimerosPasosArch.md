@@ -405,6 +405,19 @@ Con eso solucionaras el error y podras actualizar e instalar tus paquetes como a
 * Para eliminar paquetes que no estan siendo utilizados puedes ejecutar el siguiente comando:\
 `flatpak uninstall --unused`
 
+---
+### NPM (Node Package Manager)
+Es el gestor de paquetes de Node.js. Permite instalar herramientas que puedes usar en la terminal de forma global. Muchas extensiones de **VS Code** tienen su versión equivalente en **NPM**.\
+* **Comando de instalación global:** `npm install -g <nombre-del-paquete>`
+* **Comando de instalación local:** `npm install <nombre-del-paquete>`
+* **Ejemplo (Servidor local con auto-reload):** `npm install -g live-server`
+* **Uso:** `live-server`dentro de la carpeta de tu proyecto.
+* **Ver lista de paquetes globales:** `npm list -g --depth=0`
+* **Ver lista de paquetes locales:** `npm list --depth=0`
+* **Ver lista de actualizaciones:** `npm outdated -g`
+* **Comando de desinstalación global:** `npm uninstall -g <nombre-del-paquete>`
+* **Comando de desinstalación local:** `npm uninstall <nombre-del-paquete>`
+
 Espero poder haberte ayudado. :)
 
 ---
