@@ -16,3 +16,4 @@ Clean cache|sudo pacman -Sc|cleancache.png
 Clean trash|bash -c "rm -rf ~/.local/share/Trash/files/* && rm -rf ~/.local/share/Trash/info/* && notify-send 'Trash' 'Papelera vaciada'"|trash.png
 Update Emojis|kitty -e bash ~/.config/hypr/scripts/r_emoji/emoji-picker.sh --update|emoji.png
 Sync Documents|kitty -e rclone copy ~/Documents gdrive:BackupDocuments -P|cloud.png
+Notify Twitch|~/repositorios/PyCreators/Notifymsgtwt.py &|twitch.png

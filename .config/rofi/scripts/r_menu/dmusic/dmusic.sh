@@ -51,7 +51,8 @@ download_logic() {
     echo -e "\n${YELLOW}󰇚 Select Format:${RESET}"
     echo "m) 󰸪 mp3 (Audio standard)"
     echo "f) 󰈣 flac (High quality)"
-    read -p "Option [m/f]: " format_choice
+    echo -n " Select option [m/f]: "
+    read -n1 -s format_choice
 
     case $format_choice in
         m) ext="mp3" ;;
@@ -59,7 +60,7 @@ download_logic() {
         *) echo "Invalid. Defaulting to mp3..."; ext="mp3" ;;
     esac
 
-    echo -e "${CYANLIGHT}󰇚 Downloading...${RESET}"
+    echo -e "\n${CYANLIGHT}󰇚 Downloading and processing artwork...${RESET}"
 
     yt-dlp -x --audio-format "$ext" --audio-quality 0 \
     --format "bestaudio/best" \
@@ -67,6 +68,8 @@ download_logic() {
     --no-playlist \
     --add-metadata \
     --embed-thumbnail \
+    --convert-thumbnails jpg \
+    --ppa "EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf crop='ih:ih'" \
     --metadata-from-title "%(artist)s - %(title)s" \
     --replace-in-metadata "title" " \([^)]*\)" "" \
     --replace-in-metadata "title" " \[[^]]*\]" "" \

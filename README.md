@@ -38,7 +38,7 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 ### Optional
 * **IDE:** Neovim
 * **Data Sync:** Rclone
-* **PDF Reader:** Zathura
+* **PDF Reader:** zathura / zathura-pdf-poppler
 * **Markdown Previewer:** Glow
 * **Fuzzy Finder:** Skim (`sk`)
 ---
