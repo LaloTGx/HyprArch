@@ -1,0 +1,26 @@
+gui:
+  theme:
+    activeBorderColor:
+      - magenta
+      - bold
+    inactiveBorderColor:
+      - white
+      - bold
+    optionsTextColor:
+      - blue
+      - bold
+    selectedLineBgColor:
+      - black
+      - bold
+    cherryPickedCommitBgColor:
+      - yellow
+      - bold
+    cherryPickedCommitFgColor:
+      - green
+      - bold
+    unstagedChangesColor:
+      - red
+      - bold
+    defaultFgColor:
+      - white
+      - bold
