@@ -22,8 +22,8 @@
       "total": "░"
     },
     "color": {
-        "elapsed": "bright_light_cyan",
-        "total": "bright_blue"
+        "elapsed": "cyan",
+        "total": "cyan"
     },
     "border": null,
     "width": 20
@@ -46,7 +46,7 @@
   "modules": [
     {
         "type": "custom",
-        "format": "{#bright_light_black}┏━{#yellow}━━━━━{#light_yellow}━━━━━{#light_magenta} •{#light_white}•"
+        "format": "{#bright_light_black}┏━{#yellow}━━━━━{#yellow}━━━━━{#blue} •{#blue}•"
     },
     {
       "type": "users",
@@ -115,13 +115,13 @@
       "key": "",
       "keyColor": "bright_light_cyan",
       "outputColor":"bright_blue",
-      "format": "{percentage-bar} {#light_cyan}{used}{#bright_light_green}/{#light_blue}{total}"
+      "format": "{percentage-bar} {#light_blue}{total}{#bright_light_green}: {#light_cyan}{used}"
     },
     {
 	  "type": "custom",
       "key": "󰏘",
       "keyColor": "bright_light_blue",
-	  "format": "\u001b[1m\u001b[30m \u001b[1m\u001b[31m \u001b[1m\u001b[33m \u001b[1m\u001b[32m \u001b[1m\u001b[36m \u001b[1m\u001b[34m \u001b[1m\u001b[35m \u001b[1m\u001b[37m  \u001b[1m\u001b[90m \u001b[1m\u001b[91m \u001b[1m\u001b[93m \u001b[1m\u001b[92m \u001b[1m\u001b[96m \u001b[1m\u001b[94m \u001b[1m\u001b[95m \u001b[1m\u001b[97m "
+	  "format": "\u001b[1m\u001b[30mB \u001b[1m\u001b[31mR \u001b[1m\u001b[33mY \u001b[1m\u001b[32mG \u001b[1m\u001b[36mC \u001b[1m\u001b[34mB \u001b[1m\u001b[35mM \u001b[1m\u001b[37mW"
 	},
     {
       "type":"uptime",
@@ -148,7 +148,7 @@
       "key": "",
       "keyColor": "bright_light_cyan",
       "outputColor": "bright_blue",
-      "format": "{size-percentage-bar} {#light_cyan}{size-used}{#bright_light_green}/{#light_blue}{size-total}"
+      "format": "{size-percentage-bar} {#light_blue}{size-total}{#bright_light_green}: {#light_cyan}{size-used}"
     },
 
 // Muestra el titulo del audio completo
@@ -179,7 +179,7 @@
     },
     {
         "type": "custom",
-        "format": "{#bright_light_black}┗━{#yellow}━━━━━{#light_yellow}━━━━━{#light_magenta} •{#light_white}•"
+        "format": "{#bright_light_black}┗━{#yellow}━━━━━{#yellow}━━━━━{#blue} •{#blue}•"
     }
 
 //    {
