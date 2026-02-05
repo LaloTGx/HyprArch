@@ -11,6 +11,11 @@ version_check = false
 input_path = '~/.config/matugen/templates/matugen-kitty.conf'
 output_path = '~/.config/kitty/matugen/colors-matugen.conf'
 
+# Nvim
+[templates.nvim]
+input_path = '~/.config/matugen/templates/matugen-nvim.conf'
+output_path = '~/.config/nvim/matugen/matugen-nvim.conf'
+
 # Rofi
 [templates.rofi]
 input_path = '~/.config/matugen/templates/matugen-rofi.rasi'

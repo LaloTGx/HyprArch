@@ -4,31 +4,30 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-      -- Inicia Mason
       require("mason").setup()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "marksman", -- Markdown
-          "ts_ls", -- JavaScript / TypeScript
-          "html",     -- HTML
-          "cssls",    -- CSS
-          "jdtls",    -- Java
-          "pyright",  -- Python
-        }
-      })
+      local mason_lspconfig = require("mason-lspconfig")
 
-      -- Configuración de cada LSP
-      local lspconfig = require("lspconfig")
       local servers = { "marksman", "ts_ls", "html", "cssls", "jdtls", "pyright" }
 
+      mason_lspconfig.setup({
+        ensure_installed = servers,
+      })
+
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      -- MIGRACIÓN A 0.11:
       for _, server in ipairs(servers) do
-        lspconfig[server].setup({
-          capabilities = require("cmp_nvim_lsp").default_capabilities(),
+        -- 1. Configuramos el servidor en el core de Neovim
+        vim.lsp.config(server, {
+          capabilities = capabilities,
         })
+
+        -- 2. Lo "encendemos" (esto reemplaza al .setup({}))
+        vim.lsp.enable(server)
       end
     end,
   },
 }
-
