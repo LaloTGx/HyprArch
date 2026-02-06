@@ -1,7 +1,8 @@
-/*-----Surface Transparent Background------*/
-@define-color surface-alpha {{colors.surface.default.rgba | set_alpha: 0.5}};
-
 /*-----All Colors--------*/
 <* for name, value in colors *>
 @define-color {{name}} {{value.default.hex}};
 <* endfor *>
+
+/*-----Surface Transparent Background------*/
+@define-color surface-alpha {{colors.surface.default.rgba | set_alpha: 0.5}};
+@define-color background {{colors.background.default.rgba | set_alpha: 0.3}};

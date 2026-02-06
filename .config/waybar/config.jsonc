@@ -3,9 +3,9 @@
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   //"height": 30,     // Waybar height (to be removed for auto height)
-  "width": 1366, // Waybar width
+  //"width": 1920, // Waybar width
   "spacing": "0px", // Gaps between modules (4px)
-  "modules-left": ["hyprland/workspaces","hyprland/window"],
+  "modules-left": ["hyprland/workspaces","tray","hyprland/window","mpd"],
   "modules-center": ["clock"],
   "modules-right": ["pulseaudio","backlight","hyprland/language","memory","cpu","battery","network","custom/power"],
   "hyprland/workspaces": {
@@ -30,9 +30,12 @@
     }
   },
   "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    //"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    //"format": "{stateIcon} {artist} - {title}",
+    "format": "{stateIcon} {title}",
+    "max-length": 25,
+    "format-disconnected": " ",
+    "format-stopped": " ",
     "unknown-tag": "N/A",
     "interval": 5,
     "consume-icons": {
@@ -61,7 +64,7 @@
     "format-es": "ES"
   },
   "tray": {
-    // "icon-size": 21,
+    "icon-size": 15,
     "spacing": 10
     // "icons": {
     //   "blueman": "bluetooth",
@@ -89,7 +92,7 @@
   "hyprland/window": {
     "format": "󱙝 {}",
     "separate-outputs": true,
-    "max-length": 40,
+    "max-length": 35,
     "tooltip": false
   },
   "backlight": {
@@ -103,10 +106,10 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
     "format-alt": "{time} {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
@@ -119,7 +122,8 @@
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     //"format-wifi": "󰤨  {essid} {signalStrength}",
     "format-wifi": "{icon} {essid}",
-    "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+    //"format-ethernet": " {ipaddr}/{cidr}",
+    "format-ethernet": " {ifname}",
     "tooltip-format": "{ifname} via {gwaddr}  ({signalStrength}%)",
     "format-linked": "{ifname} (No IP) 󱚻",
     "format-disconnected": "󰤮",

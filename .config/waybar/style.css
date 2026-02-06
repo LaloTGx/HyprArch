@@ -4,14 +4,15 @@
 
 /* Anything */
 * {
-  font-family: JetBrainsMono Nerd Font, monospace;
-  font-size: 13px;
-  font-weight: 600;
-  color: @tertiary;
-  text-shadow: 0 0 1px @tertiary, 0 0 4px @tertiary;
-  animation: pulse 5s ease-in-out infinite;
-}
+  font-family: DejaVu Sans Mono, Nerd Font, monospace;
+  font-size: 14px;
+  font-weight: 900;
+  color: @primary;
+  }
+/*  text-shadow: 0 0 1px @tertiary, 0 0 4px @tertiary;
+  animation: pulse 5s ease-in-out infinite;*/
 
+/*
 @keyframes pulse {
   0%   { color: @tertiary; }
   50%  { color: @primary; text-shadow: none;}
@@ -32,16 +33,17 @@
   24%  { opacity: 0.8; }
   55%  { opacity: 0.9; }
 }
+*/
 
-/* Window (container) */
+/* Window (container)
 window {
   animation: flicker 2s infinite;
 }
+*/
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.33);
+    background-color: @background;
     color: #b5e65c;
-    /*border-bottom: 2px ridge #e6f2ff;*/
     transition-property: background-color;
     transition-duration: .5s;
 }
