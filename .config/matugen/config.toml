@@ -27,6 +27,12 @@ input_path = '~/.config/matugen/templates/matugen-waybar.css'
 output_path = '~/.config/waybar/matugen/matugen-waybar.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
+# Mako
+[templates.mako]
+input_path = '~/.config/matugen/templates/matugen-mako.conf'
+output_path = '~/.config/mako/colors'
+post_hook = 'makoctl reload'
+
 # Swaync
 [templates.swaync]
 input_path = '~/.config/matugen/templates/matugen-swaync.css'

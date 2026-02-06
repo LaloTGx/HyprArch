@@ -11,6 +11,9 @@ def_key "a"
 # previous music
 def_key "d"
     previous
+# clear playlist
+def_key "g"
+    clear_main_playlist
 
 # -- ModeListen --
 # toggle_single_mode

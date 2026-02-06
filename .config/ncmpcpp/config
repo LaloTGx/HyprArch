@@ -1,4 +1,5 @@
 # - Interface
+incremental_seeking = "yes"
 autocenter_mode = "yes"
 user_interface = "alternative"
 song_list_format = "$8%a $2 $7%t $2"
@@ -17,3 +18,6 @@ visualizer_output_name = "visualizer_feed"
 visualizer_in_stereo = "yes"
 visualizer_type = "spectrum"
 visualizer_look = "#+"
+
+# - Notfication
+execute_on_song_change = notify-send -c "mpd" -i "audio-x-generic" "$(mpc -f '%title%|%file%' current)" "$(mpc -f %artist% current)"

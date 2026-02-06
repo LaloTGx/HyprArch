@@ -1,5 +1,5 @@
 # --- Configuración General ---
-font=JetBrainsMono Nerd Font 10
+font=JetBrainsMono Nerd Font 13
 width=300
 height=150
 margin=0
@@ -12,22 +12,12 @@ max-icon-size=48
 # Posición
 anchor=top-right
 
-# --- Colores ---
-background-color=#1e1e2e30
-text-color=#cdd6f4
-progress-color=over #313244
+# --- Importar Colores de Matugen ---
+include=~/.config/mako/colors
 
 # Time show (en milisegundos)
 default-timeout=5000
 
-# --- Reglas Específicas ---
-
-# Notificaciones críticas
-[urgency=high]
-border-color=#f38ba8
-default-timeout=5000
-
 # Notificaciones de música o progreso
 [category=mpd]
-border-color=#a6e3a1
 default-timeout=3000
