@@ -1,5 +1,9 @@
 * {
-    primary: {{colors.primary.default.hex}};
+    primary: {{colors.background.default.hex}};
+    title: {{colors.on_background.default.hex}};
+    background: {{colors.background.default.hex}}40;
+    foreground: {{colors.primary.default.hex}}50;
+    notuse: {{colors.on_tertiary_container.default.hex}}90;
     primary-fixed: {{colors.primary_fixed.default.hex}};
     primary-fixed-alpha: {{colors.primary_fixed.default.rgba | set_alpha: 0.1}};
     primary-fixed-dim: {{colors.primary_fixed_dim.default.hex}};

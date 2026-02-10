@@ -17,3 +17,4 @@ Clean trash|bash -c "rm -rf ~/.local/share/Trash/files/* && rm -rf ~/.local/shar
 Update Emojis|kitty -e bash ~/.config/hypr/scripts/r_emoji/emoji-picker.sh --update|emoji.png
 Sync Documents|kitty -e rclone copy ~/Documents gdrive:BackupDocuments -P|cloud.png
 Notify Twitch|~/repositorios/PyCreators/Notifymsgtwt.py &|twitch.png
+Virtual Audio Sink|bash -c "pactl load-module module-null-sink sink_name=Musica_VOD sink_properties=device.description=StreamMusic && notify-send 'Audio' 'Sink Virtual Creado'"|jack.png

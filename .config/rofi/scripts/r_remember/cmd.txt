@@ -8,9 +8,12 @@ Java| ./gradlew clean run|compilegradle.png
 Rust| cargo new|rust.png
 Rust| cargo run|rust.png
 Rust| cargo clean|rust.png
+Python| python -m venv venv|python.png
 Python| source venv/bin/activate|python.png
-Python| python|python.png
+Python| pip install --upgrade pip|python.png
 Python| pip install|python.png
+Python| python|python.png
+Python| deactivate|python.png
 Docker| docker compose up -d|docker.png
 Dccker| sudo systemctl restart docker|docker.png
 Docker| docker ps|docker.png
