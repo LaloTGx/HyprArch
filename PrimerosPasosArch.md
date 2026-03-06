@@ -96,6 +96,19 @@ no muestra las redes ocultas, y esto es normal, ya que no anuncian su SSID.\
 
 **TIP:** Para que detecte bien tu red oculta puedes acercarte un poco mas a tu router para tener mas señal y asi pueda encontrar mas rapido tu red oculta. :)
 
+#### Como puedo ver/olvidar todas mis redes guardadas
+* La primera opcion para ver/cambiar la contraseña debes ejecutar fuera de iwctl:
+1. Para listar las redes conocidas para obtener el nombre exacto:\
+`iwctl known-networks list`
+2. Eliminar la red:\
+`iwctl known-networks "NOMBRE_DE_TU_RED" forget`
+
+* La segunda opcion debes dirigirte en modo root a:
+`cd /var/lib/iwd/`\
+Donde veras en forma de archivos cada red.
+* Entras con tu editor de texto favorito y cambias la contraseña.
+* En el caso de eliminar la red solo **eliminar el archivo del nombre de la red**
+
 ---
 ### Network Manager y nm-applet
 Quizas te guste manejar tus redes inalambricas con interfaz y no hacerlo desde la terminal.
