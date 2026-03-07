@@ -1,5 +1,5 @@
 return {
-    "catppuccin/nvim", -- Usamos un plugin vacío o cualquiera solo para disparar el config
+    "catppuccin/nvim", -- Usamos un plugin cualquiera solo para disparar el config
     name = "matugen-theme",
     config = function()
         local matugen = require("core.matugen").get_colors()
@@ -18,5 +18,18 @@ return {
         hl(0, "Keyword", { fg = c.primary, bold = true })
         hl(0, "Function", { fg = c.primary_fixed or c.primary })
         hl(0, "String", { fg = c.tertiary })
+
+        -- Configuracion dinamica del cursor con matugen
+        hl(0, "Cursor", { fg = c.surface, bg = c.primary })
+        hl(0, "CursorInsert", { fg = c.surface, bg = c.tertiary })
+        hl(0, "CursorVisual", { fg = c.surface, bg = c.secondary })
+
+        vim.opt.guicursor = {
+            "n-c:block-Cursor",
+            "v:block-CursorVisual",
+            "i-ci-ve:ver25-CursorInsert",
+            "r-cr:hor20-CursorReplace",
+            "a:blinkwait700-blinkoff500-blinkon500",
+        }
     end,
 }
