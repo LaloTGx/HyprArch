@@ -1,7 +1,9 @@
 Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_menu/menu.txt|addcommand.png
 Conf Kitty|kitty -e nvim ~/.config/kitty/kitty.conf|terminal.png
 CheatSheet Hyprland|kitty -e bash .config/rofi/scripts/r_menu/cheatsheet/cheatsheet.sh|keyboard.png
-Primeros Pasos|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosArch.md|firststeps.png
+PP Arch|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosArch.md|firststeps.png
+PP Term|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosTTY.md|firststeps.png
+PP Nvim|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosNvim.md|firststeps.png
 Notes|kitty -e bash ~/.config/rofi/scripts/r_menu/notes/homenotes.sh|notes.png
 Download Music|kitty -e bash .config/rofi/scripts/r_menu/dmusic/dmusic.sh|downloadmusic.png
 Disable Warm Color Filter|kitty -e pkill hyprsunset|hyprsunset.png

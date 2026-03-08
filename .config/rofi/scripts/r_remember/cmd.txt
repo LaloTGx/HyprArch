@@ -15,6 +15,8 @@ Python| pip install|python.png
 Python| python|python.png
 Python| deactivate|python.png
 Docker| docker compose up -d|docker.png
+Docker| docker-compose down|docker.png
+Dccker| docker-compose up -d --force-recreate|docker.png
 Dccker| sudo systemctl restart docker|docker.png
 Docker| docker ps|docker.png
 Docker| docker stats|docker.png
@@ -23,3 +25,4 @@ Docker| docker attach|docker.png
 Monitor| hyprctl monitors|monitor.png
 Monitor| hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"|monitor.png
 Monitor| hyprctl keyword monitor "HDMI-A-1,1920x1080@60,1920x0,1"|monitor.png
+Matugen| matugen image ~/.config/hypr/bg/bgdark/bg_Archgray.png --show-colors|monitor.png
