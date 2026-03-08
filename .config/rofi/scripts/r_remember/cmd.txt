@@ -1,5 +1,6 @@
 Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_remember/cmd.txt|Addcommand.png
 Clone Repos|git clone git@github.com:usuario/repositorio.git|github.png
+nvim sustitute| :%s/palabra_vieja/palabra_nueva/g|neovim.png
 C++| g++ main.cpp -o app -lSDL2 -lGLEW -lGL|cpp.png
 C++| ./app|cpp.png
 Java| javac|java.png
@@ -25,4 +26,8 @@ Docker| docker attach|docker.png
 Monitor| hyprctl monitors|monitor.png
 Monitor| hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"|monitor.png
 Monitor| hyprctl keyword monitor "HDMI-A-1,1920x1080@60,1920x0,1"|monitor.png
-Matugen| matugen image ~/.config/hypr/bg/bgdark/bg_Archgray.png --show-colors|monitor.png
+Matugen| matugen image ~/.config/hypr/bg/bgdark/bg_Archgray.png --show-colors|pantone.png
+7z path| 7z x|rar.png
+7z files| 7z e|rar.png
+7z list| 7z l|rar.png
+7z test| 7z t|rar.png

@@ -1,7 +1,6 @@
 # Atajos de NVIM
 
 ## Buscar y moverse entre coincidencias
-
 `/palabra` → buscar hacia adelante.\
 `?palabra` → buscar hacia atrás.\
 `n` → siguiente coincidencia.\
@@ -12,7 +11,6 @@
 `g*` y `g#` → buscar coincidencias parciales (no palabra completa).
 
 ## Movimiento entre palabras y texto
-
 `w` → saltar al inicio de la siguiente palabra.
 `e` → saltar al final de la palabra actual.
 `b` → saltar al inicio de la palabra anterior.
@@ -27,7 +25,6 @@
 `L` → ir a la parte inferior de la ventana.
 
 ## Navegación por pantallas y párrafos
-
 `Ctrl + d` → bajar media pantalla.
 `Ctrl + u` → subir media pantalla.
 `Ctrl + f` → avanzar una pantalla completa.
@@ -36,7 +33,6 @@
 `}` → saltar al inicio del siguiente párrafo.
 
 ## Selección y edición
-
 `v` → entrar en modo visual (selección de caracteres).
 `V` → modo visual por línea.
 `Ctrl + v` → modo visual por bloque/columnas.
@@ -46,7 +42,6 @@
 `P` → pegar antes del cursor.
 
 ## Otros tips útiles
-
 `.` → repetir la última acción.
 `u` → deshacer.
 `Ctrl + r` → rehacer.
@@ -54,3 +49,9 @@
 `:set number` → mostrar números de línea.
 `:set relativenumber` → mostrar números relativos.
 `zz` → centrar la línea actual en la pantalla.
+
+## Sustitucion de palabras
+:%s/palabra_vieja/palabra_nueva/g → Permite cambiar las palabras en todo el archivo.
+:%s/vieja/nueva/gc → Permite cambiar las palabras pero solicitara tu confirmacion antes de realizar cada cambio.
+:%s#/home/user#/home/user/backup#g → Permite cambiar las rutas donde el delimitador es #.
+
