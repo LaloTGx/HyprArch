@@ -2,11 +2,39 @@
 edit = [
     { run = 'nvim "$@"', block = true, for = "unix" }
 ]
+play = [
+    { run = 'mpv "$@"', orphan = true, for = "unix" }
+]
+music = [
+    { run = 'mpc clear && mpc add "${1#$HOME/Music/}" && mpc play', orphan = true, for = "unix" }
+]
+display = [
+    { run = 'imv "$@"', orphan = true, for = "unix" }
+]
+extract = [
+    { run = '7z x "$@"', block = true, for = "unix" }
+]
 
 [open]
 rules = [
+    # Texto y Configs
     { name = "*.txt", use = "edit" },
     { mime = "text/*", use = "edit" },
     { mime = "application/json", use = "edit" },
-    { mime = "inode/x-empty", use = "edit" }
+    { mime = "inode/x-empty", use = "edit" },
+
+    # Imágenes
+    { mime = "image/*", use = "display" },
+
+    # Video y Audio
+    { mime = "video/*", use = "play" },
+    { mime = "audio/*", use = "music" },
+
+    # Archivos comprimidos
+    { mime = "application/x-7z-compressed", use = "extract" },
+    { mime = "application/zip", use = "extract" },
+    { mime = "application/x-rar", use = "extract" },
+    { mime = "application/x-tar", use = "extract" },
+    { mime = "application/x-bzip2", use = "extract" },
+    { mime = "application/x-gzip", use = "extract" }
 ]
