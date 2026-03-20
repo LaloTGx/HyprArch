@@ -1,6 +1,7 @@
 Add Commands|kitty -e nvim ~/.config/rofi/scripts/r_remember/cmd.txt|Addcommand.png
 Clone Repos|git clone git@github.com:usuario/repositorio.git|github.png
 nvim sustitute| :%s/palabra_vieja/palabra_nueva/g|neovim.png
+nvim Comment| :'<,'>s/^/\/\//|neovim.png
 C++| g++ main.cpp -o app -lSDL2 -lGLEW -lGL|cpp.png
 C++| ./app|cpp.png
 Java| javac|java.png
