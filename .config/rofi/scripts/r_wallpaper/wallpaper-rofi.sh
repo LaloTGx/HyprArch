@@ -44,4 +44,4 @@ transition=${transitions[$RANDOM % ${#transitions[@]}]}
 
 swww img "$FULL_PATH" --transition-type "$transition" --transition-step 90
 notify-send "🖼️ Wallpaper" "$SELECTED_WALL"
-matugen image "$FULL_PATH" --mode "$MODE" -j hex > ~/.cache/matugen/colors.json
+matugen image "$FULL_PATH" --mode "$MODE" --source-color-index 0 --continue-on-error -j hex > ~/.cache/matugen/colors.json
