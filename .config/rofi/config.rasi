@@ -23,6 +23,9 @@ configuration {
     show-icons: true;
     display-drun: "    Run App";
     drun-display-format: "{icon} {name}";
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
 }
 
 listview {
