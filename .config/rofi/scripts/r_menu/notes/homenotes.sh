@@ -4,52 +4,54 @@ REDLIGHT="\e[1;91m"
 WHITELIGHT="\e[1;97m"
 RESET="\033[0m"
 
-NOTES_DIR="$HOME/notes"
+NOTES_FILE="$HOME/Notes/notes.md"
 SCRIPT_DIR="$HOME/.config/rofi/scripts/r_menu/notes"
-NOTE_SCRIPT="$SCRIPT_DIR/note.sh"
 TITLE_FILE="$SCRIPT_DIR/titlenote.txt"
 
-mkdir -p "$NOTES_DIR"
+# Asegurar que el archivo existe antes de empezar
+mkdir -p "$(dirname "$NOTES_FILE")"
+[ ! -f "$NOTES_FILE" ] && echo "# Nueva Nota. * Escribe algo aquí" > "$NOTES_FILE"
 
-get_notes() {
-  mapfile -t NOTES < <(ls -1 "$NOTES_DIR" 2>/dev/null)
+get_tasks() {
+    # Extrae solo las líneas que empiezan con #
+    mapfile -t TASKS < <(grep "^#" "$NOTES_FILE" 2>/dev/null)
 }
 
 current=0
 
 while true; do
   clear
-  echo -e "${REDLIGHT}"
-  cat "$TITLE_FILE"
-  echo -e "${RESET}"
+  # Título decorativo
+  [ -f "$TITLE_FILE" ] && echo -e "${REDLIGHT}$(cat "$TITLE_FILE")${RESET}" || echo -e "${REDLIGHT}=== NOTEFICATIONS TUI ===${RESET}"
 
-  get_notes
+  get_tasks
 
-  if [ ${#NOTES[@]} -eq 0 ]; then
-    echo "  (sin notas)"
+  if [ ${#TASKS[@]} -eq 0 ]; then
+    echo -e "  ${REDLIGHT}(Archivo vacío o sin títulos)${RESET}"
   else
-    for i in "${!NOTES[@]}"; do
+    echo -e "  Títulos detectados en notes.md:\n"
+    for i in "${!TASKS[@]}"; do
+      # Limpiar el '#' para que se vea estético
+      display_name=$(echo "${TASKS[$i]}" | sed 's/^# //')
+
       if [ "$i" -eq "$current" ]; then
-        echo -e "${WHITELIGHT}> ${NOTES[$i]}${RESET}"
+        echo -e "${WHITELIGHT}  ➜ $display_name ${RESET}"
       else
-        echo "  ${NOTES[$i]}"
+        echo "    $display_name"
       fi
     done
   fi
 
-  echo
-  echo "[Enter] Abrir | [a] Nueva | [j/k] Mover | [q] Salir"
+  echo -e "\n${REDLIGHT}──────────────────────────────────────────${RESET}"
+  echo -e "[Enter] Edit notes | [j/k] Move | [q] Exit"
 
   read -rsn1 key
 
   case "$key" in
-    j) ((current++)); [ "$current" -ge "${#NOTES[@]}" ] && current=0 ;;
-    k) ((current--)); [ "$current" -lt 0 ] && current=$((${#NOTES[@]} - 1)) ;;
+    j) ((current++)); [ "$current" -ge "${#TASKS[@]}" ] && current=0 ;;
+    k) ((current--)); [ "$current" -lt 0 ] && current=$((${#TASKS[@]} - 1)) ;;
     "")
-      [ ${#NOTES[@]} -gt 0 ] && bash "$NOTE_SCRIPT" "$NOTES_DIR/${NOTES[$current]}"
-      ;;
-    a)
-      bash "$NOTE_SCRIPT"
+      nvim "$NOTES_FILE"
       ;;
     q)
       clear

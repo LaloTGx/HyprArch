@@ -23,7 +23,7 @@ else
 fi
 
 # Aplicar el wallpaper con swww
-swww img "$WALLPAPER" --transition-type wipe --transition-step 90
+awww img "$WALLPAPER" --transition-type wipe --transition-step 90
 
 # Ejecutar matugen con el modo detectado
 matugen image "$WALLPAPER" --mode "$MODE" --source-color-index 0 --continue-on-error -j hex > "$HOME/.cache/matugen/colors.json"

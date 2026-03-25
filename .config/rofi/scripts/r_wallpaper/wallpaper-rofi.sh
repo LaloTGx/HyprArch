@@ -42,6 +42,6 @@ fi
 transitions=("grow" "outer" "left" "right" "top" "bottom" "center" "wipe" "wave")
 transition=${transitions[$RANDOM % ${#transitions[@]}]}
 
-swww img "$FULL_PATH" --transition-type "$transition" --transition-step 90
+awww img "$FULL_PATH" --transition-type "$transition" --transition-step 90
 notify-send "🖼️ Wallpaper" "$SELECTED_WALL"
 matugen image "$FULL_PATH" --mode "$MODE" --source-color-index 0 --continue-on-error -j hex > ~/.cache/matugen/colors.json
