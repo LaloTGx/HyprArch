@@ -43,32 +43,34 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 * **Fuzzy Finder:** Skim (`sk`)
 ---
 
-## Screenshots – Desktop
+## Screenshots – Dark Mode
 
 * **Desktop**
-![desktop](./screenshots/desk.png)
-
-* **Modules**
-![modules](./screenshots/modules.png)
+![ddesktop](./screenshots/dark_desktop.png)
 
 * **Launcher App**
-![launcher](./screenshots/launcherapp.png)
-
-* **Launcher Command**
-![launcher](./screenshots/launchercmd.png)
-
-* **Launcher Remember**
-![launcher](./screenshots/launcherrem.png)
+![dmenu](./screenshots/dark_menu.png)
 
 * **Launcher Wallpaper**
-![launcher](./screenshots/launcherwall.png)
+![dwallpaper](./screenshots/dark_wallpaper.png)
 
-* **Launcher Emoji**
-![launcher](./screenshots/launcheremoji.png)
+* **Terminal**
+![dterminal](./screenshots/dark_terminal.png)
+---
 
-* **Launcher Keyboard**
-![launcher](./screenshots/launcherkey.png)
+## Screenshots – Light Mode
 
+* **Desktop**
+![ldesktop](./screenshots/light_desktop.png)
+
+* **Launcher App**
+![lmenu](./screenshots/light_menu.png)
+
+* **Launcher Wallpaper**
+![lwallpaper](./screenshots/light_wallpaper.png)
+
+* **Terminal**
+![lterminal](./screenshots/light_terminal.png)
 ---
 
 ## Command Icons
