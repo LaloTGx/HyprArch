@@ -5,7 +5,7 @@ PP Arch|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosArch.md|firststeps.pn
 PP Term|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosTTY.md|firststeps.png
 PP Nvim|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosNvim.md|firststeps.png
 Notes|kitty -e bash ~/.config/rofi/scripts/r_menu/notes/homenotes.sh|notes.png
-Notefication|bash ~/.config/hypr/scripts/notefications.sh|notes.png
+Notefication|bash ~/.config/hypr/scripts/notefications.sh|notification.png
 Download Music|kitty -e bash .config/rofi/scripts/r_menu/dmusic/dmusic.sh|downloadmusic.png
 Disable Warm Color Filter|kitty -e pkill hyprsunset|hyprsunset.png
 Mirror|hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"|mirror.png
