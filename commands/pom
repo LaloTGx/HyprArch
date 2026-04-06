@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+# Ocultar el cursor
+tput civis
+# Restaurar cursor al salir (Ctrl+C o cierre normal)
+trap "tput cnorm; echo; exit" SIGINT SIGTERM
+
+echo "--- CONFIGURACIÓN DEL POMODORO ---"
+read -p "Tiempo (ej. 25m, 1h) o 'q' para salir: " entrada
+
+# Salida inmediata si el usuario presiona 'q' al inicio
+if [[ "$entrada" == "q" ]]; then
+    tput cuu1 && tput el
+    tput cuu1 && tput el
+    tput cnorm
+    echo "Hasta pronto"
+    exit 0
+fi
+
+# Si está vacío, por defecto 25 min
+[[ -z "$entrada" ]] && entrada="25m"
+
+# Lógica de conversión con limpieza de errores
+if [[ $entrada =~ ([0-9]+)h ]]; then
+    segundos=$(( ${BASH_REMATCH[1]} * 3600 ))
+elif [[ $entrada =~ ([0-9]+)m ]]; then
+    segundos=$(( ${BASH_REMATCH[1]} * 60 ))
+elif [[ $entrada =~ ^[0-9]+$ ]]; then
+    segundos=$(( entrada * 60 ))
+else
+    # Si metió cualquier otra cosa que no sea un formato válido
+    tput cuu1 && tput el
+    tput cuu1 && tput el
+    tput cnorm
+    echo "Error: '$entrada' no es un tiempo válido (ej: 25m, 1h)."
+    exit 1
+fi
+
+# Limpiar las líneas de configuración
+tput cuu1 && tput el
+tput cuu1 && tput el
+
+echo "Enfoque activo: $entrada (Presiona 'q' para abortar)"
+
+# El bucle que llega a 00:00:00
+while [ $segundos -ge 0 ]; do
+    h=$((segundos / 3600))
+    m=$(((segundos % 3600) / 60))
+    s=$((segundos % 60))
+
+    printf "\rRestante: %02d:%02d:%02d" $h $m $s
+
+    # Escucha la tecla 'q' durante 1 segundo
+    read -n 1 -t 1 -s tecla
+    if [[ "$tecla" == "q" ]]; then
+        echo -e "\n\nPomodoro cancelado."
+        break
+    fi
+
+    : $((segundos--))
+done
+
+tput cnorm
+if [[ "$tecla" != "q" ]]; then
+    echo -e "\n\nFinalizado :)"
+    notify-send "Pomodoro" "¡Sesión terminada!"
+fi
