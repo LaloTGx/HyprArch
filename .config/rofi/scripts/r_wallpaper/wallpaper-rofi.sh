@@ -5,7 +5,7 @@ BG_BASE="$HOME/.config/hypr/bg"
 DARK_DIR="$BG_BASE/bgdark"
 LIGHT_DIR="$BG_BASE/bglight"
 
-# Crea la carpeta de matugen por si no hay ninguna caroeta
+# Crea la carpeta de matugen por si no hay ninguna carpeta
 mkdir -p ~/.config/matugen/templates
 mkdir -p ~/.cache/matugen
 
@@ -15,12 +15,12 @@ shopt -s nullglob
 # Mostrar los wallpapers como iconos en rofi
 SELECTED_WALL=$({
     cd "$DARK_DIR" || exit
-    for a in *.jpg *.png *.jpeg; do
+    for a in *.jpg *.png *.jpeg *.gif; do
         echo -en "$a\0icon\x1f$DARK_DIR/$a\n"
     done
 
     cd "$LIGHT_DIR" || exit
-    for a in *.jpg *.png *.jpeg; do
+    for a in *.jpg *.png *.jpeg *.gif; do
         echo -en "$a\0icon\x1f$LIGHT_DIR/$a\n"
     done
 } | rofi -dmenu -p " Wallpaper: ")
@@ -38,10 +38,11 @@ else
     exit 1
 fi
 
-# Genera la trancision, notificacion y la paleta de colores del wallpaper seleccionado
+# Genera la transicion, notificacion y la paleta de colores del wallpaper seleccionado
 transitions=("grow" "outer" "left" "right" "top" "bottom" "center" "wipe" "wave")
 transition=${transitions[$RANDOM % ${#transitions[@]}]}
 
 awww img "$FULL_PATH" --transition-type "$transition" --transition-step 90
-notify-send "🖼️ Wallpaper" "$SELECTED_WALL"
-matugen image "$FULL_PATH" --mode "$MODE" --source-color-index 0 --continue-on-error -j hex > ~/.cache/matugen/colors.json
+notify-send "Wallpaper: " "$SELECTED_WALL"
+matugen image "$FULL_PATH" --mode "$MODE" --source-color-index 0 --continue-on-error -j hex > "$HOME/.cache/matugen/colors.json"
+#matugen image "$FULL_PATH" --mode "$MODE" --source-color-index 0 --continue-on-error -j hex > ~/.cache/matugen/colors.json

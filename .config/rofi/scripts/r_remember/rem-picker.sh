@@ -7,7 +7,6 @@ KEYS_FILE="$CONFIG_DIR/cmd.txt"
 # Bloque modular: Editor de comandos
 edit_commands() {
     kitty -e nvim "$KEYS_FILE"
-    notify-send "Rofi Remember" "Archivo de comandos abierto en Neovim"
     exit 0
 }
 
