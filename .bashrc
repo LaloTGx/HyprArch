@@ -183,10 +183,18 @@ COLOR_ENTRY="\[\e[1;96m\]"     # cyan brillante
 COLOR_RESET="\[\e[0m\]"        # Reset
 
 # Entrada de Comando
-PS1="\n${COLOR_LINEB}┏━${COLOR_LINEA}━━━━━${COLOR_LINE}━━━━━${COLOR_BGPATH} •${COLOR_PATH}•\n\$(clock_icon)\@ ${COLOR_USER}${ICON_HOST}${COLOR_USER}\h \$(dir_folder) \$(project_icon)${COLOR_PATH}\$(git_iconpath)${ICON_PATH}${COLOR_PATH}\$(git_iconpath)\$(dir_summary) \w\n  ${COLOR_HOST}${ICON_USER}${COLOR_USER}\$(git_icon)${COLOR_LINE}\u${COLOR_PATH}:${COLOR_LINE} "
+PS1="\n\$(clock_icon)\@ ${COLOR_USER}${ICON_HOST}${COLOR_USER}\h \$(dir_folder) \$(project_icon)${COLOR_PATH}\$(git_iconpath)${ICON_PATH}${COLOR_PATH}\$(git_iconpath)\$(dir_summary) \w\n${COLOR_HOST}${ICON_USER}${COLOR_USER}\$(git_icon)${COLOR_LINE}\u${COLOR_PATH}:${COLOR_LINE} "
 # Resultado del Comando
-PS0="${COLOR_LINEB}┏━${COLOR_BGHOST}━━━━━${COLOR_HOST}━━━━━${COLOR_BGDOT} •${COLOR_DOT}• ${COLOR_USER}\n${ICON_RESULT}\# ${COLOR_PATH}${ICON_TERM}${COLOR_PATH}\s: \l${COLOR_HOST}\n"
+PS0="${COLOR_USER}\n${ICON_RESULT}\# ${COLOR_PATH}${ICON_TERM}${COLOR_PATH}\s: \l${COLOR_HOST}\n"
 
 # Necesitas Instalar Fastfetch para correr al inicio
 fastfetch
-export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$PATH:$HOME/.npm-global/bin"
+export PATH="$PATH:$HOME/repositorios/HyprArch/commands"
+
+# -- Binds para la terminal --
+# Mapear Alt + q para ir al inicio (Home)
+#bind '"\eq": beginning-of-line'
+
+# Mapear Alt + e para ir al final (End)
+#bind '"\ee": end-of-line'
