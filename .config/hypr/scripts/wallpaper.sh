@@ -22,8 +22,12 @@ else
     MODE="dark"
 fi
 
+# Genera la trancision, notificacion y la paleta de colores del wallpaper seleccionado
+transitions=("grow" "outer" "left" "right" "top" "bottom" "center" "wipe" "wave")
+transition=${transitions[$RANDOM % ${#transitions[@]}]}
+
 # Aplicar el wallpaper con swww
-awww img "$WALLPAPER" --transition-type wipe --transition-step 90
+awww img "$WALLPAPER" --transition-type "$transition" --transition-step 90
 
 # Ejecutar matugen con el modo detectado
 matugen image "$WALLPAPER" --mode "$MODE" --source-color-index 0 --continue-on-error -j hex > "$HOME/.cache/matugen/colors.json"
