@@ -9,7 +9,7 @@ return {
 
     configs.setup({
       ensure_installed = {
-        "python", "java", "kotlin", "html", "css", "javascript", "typescript", "lua", "vim"
+        "python", "java", "rust", "kotlin", "html", "css", "javascript", "typescript", "lua", "vim"
       },
       highlight = { enable = true },
       indent = { enable = true },

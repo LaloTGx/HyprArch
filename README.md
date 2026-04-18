@@ -37,6 +37,7 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 * **Status Bar:** Waybar **(Tray):** xdg-desktop-portal-gtk / xdg-desktop-portal / xdg-desktop-portal-hyprland
 ### Optional
 * **IDE:** Neovim
+* **Codes:** tree-sitter / tree-sitter-cli
 * **Data Sync:** Rclone
 * **PDF Reader:** zathura / zathura-pdf-poppler
 * **Markdown Previewer:** Glow
