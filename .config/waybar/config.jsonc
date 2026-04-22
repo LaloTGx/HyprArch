@@ -7,7 +7,7 @@
   "spacing": "0px", // Gaps between modules (4px)
   "modules-left": ["hyprland/workspaces","tray","hyprland/window","mpd"],
   "modules-center": ["clock"],
-  "modules-right": ["pulseaudio","backlight","hyprland/language","memory","cpu","battery","network","custom/power"],
+  "modules-right": ["pulseaudio","backlight","hyprland/language","memory","cpu","battery","custom/bluetoth","network","custom/power"],
   "hyprland/workspaces": {
     "disable-scroll": true,
     "on-click": "activate",
@@ -98,7 +98,8 @@
   "backlight": {
     // "device": "acpi_video1",
     "format": "{icon} {percent}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "tooltip": false
   },
   "battery": {
     "states": {
@@ -110,7 +111,7 @@
     "format-full": "{icon} {capacity}%",
     "format-charging": "󰂄 {capacity}%",
     "format-plugged": "󰚥 {capacity}%",
-    "format-alt": "{time} {icon}",
+    "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": ["", "", "", "", ""]
@@ -124,10 +125,11 @@
     "format-wifi": "{icon} {essid}",
     //"format-ethernet": " {ipaddr}/{cidr}",
     "format-ethernet": " {ifname}",
-    "tooltip-format": "{ifname} via {gwaddr}  ({signalStrength}%)",
+    //"tooltip-format": "{ifname} via {gwaddr}  ({signalStrength}%)",
+    "tooltip-format": "{icon} {signalStrength}%",
     "format-linked": "{ifname} (No IP) 󱚻",
     "format-disconnected": "󰤮",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    //"format-alt": "{ifname}: {ipaddr}/{cidr}",
     "format-icons": {
       "wifi": [
         "󰤯", // 0–20%
@@ -169,10 +171,16 @@
     //"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
     //"exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
+  "custom/bluetoth": {
+    "format": "󰂯",
+    "on-click": "blueman-manager",
+    "tooltip": false
+  },
   "custom/power": {
     "format": "󰣇",
+    "tooltip": true,
+    "tooltip-format": "Arch Linux",
     "on-click": "swaync-client -t",
-    "tooltip": false
     //"menu": "on-click",
     //"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
     //"menu-actions": {
