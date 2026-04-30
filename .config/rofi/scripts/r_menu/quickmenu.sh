@@ -38,6 +38,8 @@ CHOICE=$(echo -en "$ENTRIES" | rofi -dmenu -p "   Command:  " -show-icons)
 
 # Buscar y ejecutar el comando correspondiente
 CMD=$(grep "^$CHOICE|" "$MENU_FILE" | cut -d"|" -f2- | cut -d"|" -f1)
+notify-send "Comando ejecutado" "> $CHOICE"
+
 if [ -n "$CMD" ]; then
     if [[ "$CMD" == *"wl-mirror"* ]]; then
         if pgrep -x "wl-mirror" > /dev/null; then

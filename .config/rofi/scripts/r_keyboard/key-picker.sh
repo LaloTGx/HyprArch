@@ -5,6 +5,7 @@ KEYS_FILE="$HOME/.config/rofi/scripts/r_keyboard/keys.txt"
 # Bloque modular: Editor de comandos
 edit_commands() {
     kitty -e nvim "$KEYS_FILE"
+    notify-send "Add Key" "Archivo de Teclas abierto en Neovim"
     exit 0
 }
 

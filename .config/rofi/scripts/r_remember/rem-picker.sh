@@ -54,7 +54,10 @@ CMD=$(echo "$CHOICE" | awk -F'|' '{print $2}' | sed 's/^ *//;s/ *$//')
 if command -v wtype &>/dev/null; then
     sleep 0.15
     wtype "$CMD"
+    copyq copy "$CMD"
+    notify-send "Comando copiado" "$CMD"
 else
     echo -n "$CMD" | wl-copy
+    copyq copy "$CMD"
     notify-send "Comando copiado" "$CMD"
 fi
