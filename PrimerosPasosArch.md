@@ -603,6 +603,7 @@ Esto sirve para que acepte cualquier tipo de formato que tenga tu **USB**.
 Aqui podras identificar tu **USB** y tambien el almacenamiento de tu laptop.
 * Una vez identificado el **USB** procedes a montarlo en mi caso su nombre era **"sdb"**\
 `sudo mount /dev/sdb /mnt/usb`
+`sudo mount /dev/sda1 /mnt/usb`
 * Para ver el contenido del usb montado se encontra en la carpeta **/mnt/usb** esta hasta la raiz **"/"** puedes verlo con
 ls o tambien con tu explorador de archivos favorito.\
 `ls /mnt/usb`

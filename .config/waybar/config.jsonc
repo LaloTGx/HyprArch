@@ -7,7 +7,7 @@
   "spacing": "0px", // Gaps between modules (4px)
   "modules-left": ["hyprland/workspaces","tray","hyprland/window","mpd"],
   "modules-center": ["clock"],
-  "modules-right": ["pulseaudio","backlight","hyprland/language","memory","cpu","battery","custom/bluetoth","network","custom/power"],
+  "modules-right": ["hyprland/language","pulseaudio","backlight","memory","cpu","battery","custom/bluetoth","network","custom/power"],
   "hyprland/workspaces": {
     "disable-scroll": true,
     "on-click": "activate",
@@ -59,7 +59,7 @@
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "hyprland/language": {
-    "format": "󰥻 {}",
+    "format": "{}",
     "format-en": "US",
     "format-es": "ES"
   },
