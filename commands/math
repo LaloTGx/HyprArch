@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+show_help() {
+    echo "Math"
+    echo
+    echo "Uso:"
+    echo "  math 2+3"
+    echo "  math 80/255"
+    echo "  math '(5+2)*10'"
+}
+
+if [ $# -eq 0 ]; then
+    show_help
+    exit 0
+fi
+
+expression="$*"
+
+# Validar caracteres permitidos
+if [[ ! "$expression" =~ ^[-0-9+*/^().[:space:]]+$ ]]; then
+    echo "Error: caracteres inválidos"
+    exit 1
+fi
+
+result=$(awk "BEGIN { print $expression }" 2>/dev/null)
+
+if [ $? -ne 0 ] || [ -z "$result" ]; then
+    echo "Error: expresión inválida"
+    exit 1
+fi
+
+echo "$result"
