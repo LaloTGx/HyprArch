@@ -1,193 +1,217 @@
 // Este archivo se ubica en /etc/xdg/waybar o en .config/waybar
 {
-  "layer": "top", // Waybar at top layer
-  "position": "top", // Waybar position (top|bottom|left|right)
-  //"height": 30,     // Waybar height (to be removed for auto height)
-  //"width": 1920, // Waybar width
-  "spacing": "0px", // Gaps between modules (4px)
-  "modules-left": ["hyprland/workspaces","tray","hyprland/window","mpd"],
-  "modules-center": ["clock"],
-  "modules-right": ["hyprland/language","pulseaudio","backlight","memory","cpu","battery","custom/bluetoth","network","custom/power"],
-  "hyprland/workspaces": {
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    //"height": 30,     // Waybar height (to be removed for auto height)
+    //"width": 1920, // Waybar width
+    "spacing": "0px", // Gaps between modules (4px)
+    "modules-left": ["group/apps","hyprland/window","mpd"],
+    "modules-center": ["clock"],
+    "modules-right": ["hyprland/language","pulseaudio","backlight","memory","cpu","battery","group/hardware","group/conection"],
+    "group/conection": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+		"modules": [
+			"custom/power",
+			"custom/bluetoth",
+			"network"
+		]
+	},
+    "group/apps": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-right-to-left": false
+        },
+		"modules": [
+			"hyprland/workspaces",
+			"tray"
+		]
+	},
+    "hyprland/workspaces": {
     "disable-scroll": true,
     "on-click": "activate",
     "all-outputs": true,
     "active-only": true,
     "warp-on-scroll": false,
-    //"persistent-workspaces": {
-      //"1": "[]",
-      //"2": "[]",
-      //"3": "[]",
-      //"4": "[]",
-      //"5": "[]"
-   // },
-   //"format": "{icon}",
+        //"persistent-workspaces": {
+        //"1": "[]",
+        //"2": "[]",
+        //"3": "[]",
+        //"4": "[]",
+        //"5": "[]"
+        // },
+        //"format": "{icon}",
     "format": " {id}",
     "format-icons": {
       "active": "<span font='14'>󱓻</span>",
       "empty": "<span font='8'></span>",
       "persistent": "<span font='12'>󱨈</span>"
     }
-  },
-  "mpd": {
-    //"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    //"format": "{stateIcon} {artist} - {title}",
-    "format": "{stateIcon} {title}",
-    "max-length": 25,
-    "format-disconnected": " ",
-    "format-stopped": " ",
-    "unknown-tag": "N/A",
-    "interval": 5,
-    "consume-icons": {
-      "on": " "
     },
-    "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " "
+    "mpd": {
+        //"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        //"format": "{stateIcon} {artist} - {title}",
+        "format": "{stateIcon} {title}",
+        "max-length": 25,
+        "format-disconnected": " ",
+        "format-stopped": " ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+        "on": " "
+        },
+        "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ",
+        "on": " "
+        },
+        "repeat-icons": {
+        "on": " "
+        },
+        "single-icons": {
+        "on": "1 "
+        },
+        "state-icons": {
+        "paused": "",
+        "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
     },
-    "repeat-icons": {
-      "on": " "
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "US",
+        "format-es": "ES"
     },
-    "single-icons": {
-      "on": "1 "
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
-  },
-  "hyprland/language": {
-    "format": "{}",
-    "format-en": "US",
-    "format-es": "ES"
-  },
-  "tray": {
+    "tray": {
     "icon-size": 15,
     "spacing": 10
-    // "icons": {
-    //   "blueman": "bluetooth",
-    // }
-  },
-  "clock": {
-    "tooltip": true,
-    "format": "{:%A %d %b %I:%M %p}",
-    //"timezone": "America/New_York"
-    "tooltip-format": "<tt><big>{calendar}</big></tt>",
-    "format-alt": "{:%d %m %Y}"
-  },
-  "cpu": {
-    "format": " {usage}",
-    "tooltip": false
-  },
-  "memory": {
-    "format": " {}"
-  },
-  "disk": {
-    "interval": 30,
-    "format": "󰥠 {used}/{total}",
-    "unit": "GB"
-  },
-  "hyprland/window": {
-    "format": "󱙝 {}",
-    "separate-outputs": true,
-    "max-length": 35,
-    "tooltip": false
-  },
-  "backlight": {
-    // "device": "acpi_video1",
-    "format": "{icon} {percent}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
-    "tooltip": false
-  },
-  "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 15
+        // "icons": {
+        //   "blueman": "bluetooth",
+        // }
     },
-    "format": "{icon} {capacity}%",
-    "format-full": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "󰚥 {capacity}%",
-    "format-alt": "{icon} {time}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
-    "format-icons": ["", "", "", "", ""]
-  },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
-  "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    //"format-wifi": "󰤨  {essid} {signalStrength}",
-    "format-wifi": "{icon} {essid}",
-    //"format-ethernet": " {ipaddr}/{cidr}",
-    "format-ethernet": " {ifname}",
-    //"tooltip-format": "{ifname} via {gwaddr}  ({signalStrength}%)",
-    "tooltip-format": "{icon} {signalStrength}%",
-    "format-linked": "{ifname} (No IP) 󱚻",
-    "format-disconnected": "󰤮",
-    //"format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "format-icons": {
-      "wifi": [
-        "󰤯", // 0–20%
-        "󰤟", // 20–40%
-        "󰤢", // 40–60%
-        "󰤥", // 60–80%
-        "󰤨"  // 80–100%
-      ]
+    "clock": {
+        "tooltip": true,
+        "format": "{:%A %d %b %I:%M %p}",
+        //"timezone": "America/New_York"
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "format-alt": "{:%d %m %Y}"
+    },
+    "cpu": {
+        "format": " {usage}",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}"
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰥠 {used}/{total}",
+        "unit": "GB"
+    },
+    "hyprland/window": {
+        "format": "󱙝 {}",
+        "separate-outputs": true,
+        "max-length": 35,
+        "tooltip": false
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-alt": "{icon} {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        //"format-wifi": "󰤨  {essid} {signalStrength}",
+        "format-wifi": "{icon} {essid}",
+        //"format-ethernet": " {ipaddr}/{cidr}",
+        "format-ethernet": " {ifname}",
+        //"tooltip-format": "{ifname} via {gwaddr}  ({signalStrength}%)",
+        "tooltip-format": "{icon} {signalStrength}%",
+        "format-linked": "{ifname} (No IP) 󱚻",
+        "format-disconnected": "󰤮",
+        //"format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-icons": {
+            "wifi": [
+                "󰤯", // 0–20%
+                "󰤟", // 20–40%
+                "󰤢", // 40–60%
+                "󰤥", // 60–80%
+                "󰤨"  // 80–100%
+            ]
+        }
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{format_source} {icon} {volume}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": " {volume}",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true
+        //"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        //"exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/bluetoth": {
+        "format": "󰂯",
+        "on-click": "blueman-manager",
+        "tooltip": false
+    },
+    "custom/power": {
+        "format": "󰣇",
+        "tooltip": true,
+        "tooltip-format": "Arch Linux",
+        //"menu": "on-click",
+        //"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        //"menu-actions": {
+        //	"shutdown": "shutdown",
+        //	"reboot": "reboot",
+        //	"suspend": "systemctl suspend",
+        //	"hibernate": "systemctl hibernate"
+        //}
     }
-  },
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{format_source} {icon} {volume}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": "  {format_source}",
-    "format-source": " {volume}",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
-    },
-    "on-click": "pavucontrol"
-  },
-  "custom/media": {
-    "format": "{icon} {text}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
-    },
-    "escape": true
-    //"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    //"exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-  },
-  "custom/bluetoth": {
-    "format": "󰂯",
-    "on-click": "blueman-manager",
-    "tooltip": false
-  },
-  "custom/power": {
-    "format": "󰣇",
-    "tooltip": true,
-    "tooltip-format": "Arch Linux",
-    "on-click": "swaync-client -t",
-    //"menu": "on-click",
-    //"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-    //"menu-actions": {
-    //	"shutdown": "shutdown",
-    //	"reboot": "reboot",
-    //	"suspend": "systemctl suspend",
-    //	"hibernate": "systemctl hibernate"
-    //}
-  }
 }
