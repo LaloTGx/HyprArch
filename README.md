@@ -19,6 +19,7 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 * **Window Manager:** Hyprland
 * **Shell:** Bash 5.3.3++
 * **Terminal:** Kitty
+* **Session Manager:** UWSM
 #### Tools Hyprland
 * **Warm Color Filter:** Hyprsunset
 * **Notification:** Mako
