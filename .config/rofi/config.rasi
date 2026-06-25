@@ -5,12 +5,12 @@
     g-spacing: 0px;
     g-margin: 0px;
     b-color: #000000FF;
-    fg-color:  @notuse;
+    fg-color:  @tertiary;
     fgp-color: @title;
     b-radius: 10px;
     g-padding: 4em;
     hl-color: @foreground;
-    hlt-color: @primary;
+    hlt-color: @on-surface;
     alt-color: rgba(0,0,0,0.0);
     wbg-color: @background;
     w-border: 0px solid;
