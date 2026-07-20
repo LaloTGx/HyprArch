@@ -516,6 +516,12 @@ Current=silent
 `hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"`
 * Para usarlo como segundo monitor necesitas ejecutar el siguiente comando:\
 `hyprctl keyword monitor "HDMI-A-1,1920x1080@60,1920x0,1"` lo que hara es mostrarlo en nuevo workspace vacio de esta manera lo hace dinamico.
+* Para checar si el audio del HDMI esta disponible ejecuta lo siguiente:\
+`wpctl status`
+`pactl list cards`
+* Para activar el sonido en el HDMI (en el caso de que sea **NVIDIA**) y estes usando wirepumpler ejecuta lo siguiente:\
+`pactl set-card-profile alsa_card.pci-0000_01_00.1 HiFi`
+* Despues entra a tu manager de audio favorito y selecciona la salida al HDMI que este conectado con eso el sonido se reproducira en el otro dispositivo y no en tu laptop
 
 ---
 ### Hyprsunset
