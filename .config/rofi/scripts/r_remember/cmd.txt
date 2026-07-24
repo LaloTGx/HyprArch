@@ -16,6 +16,9 @@ Python| pip install --upgrade pip|python.png
 Python| pip install|python.png
 Python| python|python.png
 Python| deactivate|python.png
+Pnpm | pnpm dev|node.png
+Pnpm | pnpm create vite|node.png
+Pnpm | pnpm build|node.png
 Docker| docker compose up -d|docker.png
 Docker| docker-compose down|docker.png
 Dccker| docker-compose up -d --force-recreate|docker.png
