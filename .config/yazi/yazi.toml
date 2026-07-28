@@ -52,3 +52,6 @@ rules = [
     { mime = "application/x-gzip", use = "extract" },
     { url = "*", use = "edit" }
 ]
+
+[mgr]
+linemode = "size"
