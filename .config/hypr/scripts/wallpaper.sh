@@ -1,33 +1,28 @@
 #!/bin/bash
 
-# Rutas
 BG_DIR="$HOME/.config/hypr/bg"
-DARK_DIR="$BG_DIR/bgdark"
-LIGHT_DIR="$BG_DIR/bglight"
 
-# Buscamos una imagen aleatoria dentro del directorio de fondos
+if [ ! -d "$BG_DIR" ]; then
+    exit 1
+fi
+
 WALLPAPER=$(find "$BG_DIR" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" -o -name "*.webp" \) | shuf -n 1)
 
-# Si por alguna razón no encuentra nada, salimos para evitar errores
 if [ -z "$WALLPAPER" ]; then
     exit 1
 fi
 
-# Lógica de detección de carpeta para el MODO
 if [[ "$WALLPAPER" == *"/bglight/"* ]]; then
     MODE="light"
-elif [[ "$WALLPAPER" == *"/bgdark/"* ]]; then
-    MODE="dark"
 else
     MODE="dark"
 fi
 
-# Genera la trancision, notificacion y la paleta de colores del wallpaper seleccionado
 transitions=("grow" "outer" "left" "right" "top" "bottom" "center" "wipe" "wave")
 transition=${transitions[$RANDOM % ${#transitions[@]}]}
 
-# Aplicar el wallpaper con swww
 awww img "$WALLPAPER" --transition-type "$transition" --transition-step 90
 
-# Ejecutar matugen con el modo detectado
 matugen image "$WALLPAPER" --mode "$MODE" --source-color-index 0 --continue-on-error -j hex > "$HOME/.cache/matugen/colors.json"
+
+gsettings set org.gnome.desktop.interface color-scheme prefer-"$MODE"
