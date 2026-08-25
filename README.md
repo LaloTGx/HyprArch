@@ -35,7 +35,7 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 * **Media Player:** MPV
 * **Image Viewer:** IMV
 * **Colors Manager:** Matugen
-* **Status Bar:** Waybar **(Tray):** xdg-desktop-portal-gtk / xdg-desktop-portal / xdg-desktop-portal-hyprland
+* **Status Bar:** Waybar **(Tray):** xdg-desktop-portal-gtk / xdg-desktop-portal / xdg-desktop-portal-hyprland **Album-Art (script Bar):** Imagemagick
 ### Optional
 * **IDE:** Neovim
 * **Codes:** tree-sitter / tree-sitter-cli
