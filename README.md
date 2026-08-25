@@ -22,6 +22,8 @@ I want to show you a bit of my desktop — it’s a little minimalist. :)
 * **Session Manager:** UWSM
 #### Tools Hyprland
 * **Warm Color Filter:** Hyprsunset
+* **Session Lock:** Hyprlock
+* **Idle Management:** Hypridle
 * **Notification:** Mako
 * **Background Manager:** SWWW
 * **File Manager:** Yazi
