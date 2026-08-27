@@ -2,12 +2,44 @@
 /* Este archivo se ubica en /etc/xdg/waybar*/
 @import "matugen/matugen-waybar.css";
 
+/* Anything */
 * {
-  font-family: Inter, Nerd Font, monospace;
-  font-size: 15px;
-  font-weight: 700;
+  font-family: DejaVu Sans Mono, Nerd Font, monospace;
+  font-size: 14px;
+  font-weight: 900;
   color: @primary;
   }
+/*  text-shadow: 0 0 1px @tertiary, 0 0 4px @tertiary;
+  animation: pulse 5s ease-in-out infinite;*/
+
+/*
+@keyframes pulse {
+  0%   { color: @tertiary; }
+  50%  { color: @primary; text-shadow: none;}
+  100% { color: @tertiary; }
+}
+
+@keyframes flicker {
+  0%   { opacity: 1; }
+  19%  { opacity: 1; }
+  21%  { opacity: 1; }
+  23%  { opacity: 1; }
+  25%  { opacity: 1; }
+  54%  { opacity: 1; }
+  56%  { opacity: 1; }
+  100% { opacity: 1; }
+
+  20%  { opacity: 0.9; }
+  24%  { opacity: 0.8; }
+  55%  { opacity: 0.9; }
+}
+*/
+
+/* Window (container)
+window {
+  animation: flicker 2s infinite;
+}
+*/
 
 window#waybar {
     background-color: @background;
@@ -41,9 +73,12 @@ window#waybar.chromium {
 
 #workspaces button {
     /*padding: 0 10px;*/
-    padding: 0 0 0 2px;
+    padding: 0 0 0 8px;
     background-color: transparent;
 }
+
+/*#workspaces button:hover {
+}*/
 
 /* Button */
 button {
@@ -58,9 +93,8 @@ button:hover {
 }
 
 /* Components */
-#custom-finder,
-#custom-tune,
-#custom-share,
+#custom-power,
+#custom-bluetoth,
 #cpu,
 #memory,
 #backlight,
@@ -83,21 +117,17 @@ button:hover {
 #wireplumber,
 #language,
 #network,
-#bluetooth
+#clock
 {
-    margin: 2px 6px;
+    margin: 5px 5px;
 }
 
-#clock{
-    margin: 0 15px 0 6px;
-}
-
-#custom-logo{
-    margin: 0 6px 0 15px;
+#custom-power{
+    margin: 0 15px 0 0;
 }
 
 #workspaces.current{
-    margin: 0 0 0 0;
+    margin: 0 5px 0 5px;
 }
 
 #workspaces.slots{
@@ -122,8 +152,20 @@ button:hover {
     animation: none;
 }
 
-#battery.critical:not(.charging) {
+#wireplumber.muted {
+    color: @primary;
+    text-shadow: none;
+    animation: none;
+   }
+
+#wireplumber-source.muted {
     color: @primary;
     text-shadow: none;
     animation: none;
 }
+
+#battery.critical:not(.charging) {
+    color: @primary;
+    text-shadow: none;
+    animation: none;
+   }

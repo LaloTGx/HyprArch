@@ -1,0 +1,268 @@
+// Este archivo se ubica en /etc/xdg/waybar o en .config/waybar
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    //"height": 30,     // Waybar height (to be removed for auto height)
+    //"width": 1920, // Waybar width
+    "spacing": "0px", // Gaps between modules (4px)
+    "modules-left": ["group/workspaces","hyprland/window","group/music"],
+    "modules-center": ["clock"],
+    "modules-right": ["hyprland/language","pulseaudio","backlight","memory","cpu","battery","group/conection"],
+    "group/conection": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+		"modules": [
+			"custom/power",
+			"custom/bluetoth",
+			"network",
+            "tray"
+		]
+	},
+    "group/music": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-right-to-left": false
+        },
+		"modules": [
+            "image#album-art",
+            "mpris",
+            "mpd"
+		]
+	},
+    "group/workspaces": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-right-to-left": false
+        },
+		"modules": [
+			"hyprland/workspaces#current",
+			"hyprland/workspaces#slots"
+		]
+	},
+    "hyprland/window": {
+        //"format": "󱙝 {}",
+        "format": "{}",
+        "separate-outputs": true,
+        "max-length": 35,
+        "tooltip": false
+    },
+    "hyprland/workspaces#current": {
+	    "active-only": true,
+	    "format": " {id} {windows}",
+        "window-rewrite-default": "󱚟",
+	    "window-rewrite": {
+		    "title<.*youtube.*>": "",
+		    "title<.*gemini.*>": "󰫣",
+		    "title<.*github.*>": "",
+		    "title<.*Spotify.*>": "󰓇",
+		    "title<.*Gmail.*>": "󰊫",
+		    "title<.*Duolingo.*>": "󱗆",
+		    "title<.*Discord.*>": "",
+		    "title<.*Facebook.*>": "󰈌",
+		    "title<.*Instagram.*>": "󰋾",
+		    "title<.*Twitch.*>": "󰕃",
+		    "title<.*LinkedIn.*>": "",
+		    "title<.*Minecraft.*>": "󰍳",
+		    "title<.*Krita.*>": "",
+		    "title<.*Steam.*>": "󰓓",
+		    "title<.*OBS.*>": "",
+		    "title<.*Blender.*>": "",
+		    "title<.*Audacity.*>": "󰋋",
+		    "title<.*CopyQ.*>": "",
+		    "title<.*Inkscape.*>": "",
+		    "class<firefox>": "󰈹",
+		    "class<kitty>": "",
+            "class<kitty> title<.*yazi*>": "",
+            "class<kitty> title<.*ncmpcpp .*>": "󰎇"
+	    }
+    },
+    "hyprland/workspaces#slots": {
+	    "disable-scroll": false,
+	    "on-click": "activate",
+	    "all-outputs": false,
+	    "active-only": false,
+	    "warp-on-scroll": false,
+	        "persistent-workspaces": {
+		        "1": "[]",
+		        "2": "[]",
+		        "3": "[]",
+		        "4": "[]",
+		        "5": "[]"
+	        },
+	        "format": "{icon}",
+	    "format-icons": {
+	      "active": "<span font='14'>󱓻</span>",
+	      "empty": "<span font='8'></span>",
+	      "persistent": "<span font='12'>󱨈</span>"
+	    }
+    },
+    "mpd": {
+        //"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        //"format": "{stateIcon} {artist} - {title}",
+        "format": "{stateIcon} {title}",
+        "max-length": 25,
+        "format-disconnected": " ",
+        "format-stopped": " ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+        "on": " "
+        },
+        "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ",
+        "on": " "
+        },
+        "repeat-icons": {
+        "on": " "
+        },
+        "single-icons": {
+        "on": " "
+        },
+        "state-icons": {
+        "paused": "",
+        "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "mpris": {
+	    "format": "{status_icon} {dynamic}",
+	    "format-paused": "{status_icon} {dynamic}",
+        "tooltip": false,
+        "title-len":25,
+        "artist-len": 15,
+        "album-len": 0,
+        "dynamic-order":["title", "artist"],
+        "dynamic-separator": " | ",
+	    "status-icons": {
+		    "playing": "",
+		    "paused": ""
+	    }
+    },
+    "image#album-art": {
+        "exec": "~/.config/waybar/scripts/album.sh",
+        "size": 26,
+        "interval": 5
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "US",
+        "format-es": "ES"
+    },
+    "tray": {
+    "icon-size": 15,
+    "spacing": 10
+        // "icons": {
+        //   "blueman": "bluetooth",
+        // }
+    },
+    "clock": {
+        "tooltip": true,
+        "format": "{:%A %d %b %I:%M %p}",
+        //"timezone": "America/New_York"
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "format-alt": "{:%d %m %Y}"
+    },
+    "cpu": {
+        "format": " {usage}",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}"
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰥠 {used}/{total}",
+        "unit": "GB"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            "good": 80,
+            "warning": 40,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-alt": "{icon} {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        //"format-wifi": "󰤨  {essid} {signalStrength}",
+        "format-wifi": "{icon} {essid}",
+        //"format-ethernet": " {ipaddr}/{cidr}",
+        "format-ethernet": " {ifname}",
+        //"tooltip-format": "{ifname} via {gwaddr}  ({signalStrength}%)",
+        "tooltip-format": "{icon} {signalStrength}%",
+        "format-linked": "{ifname} (No IP) 󱚻",
+        "format-disconnected": "󰤮",
+        //"format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-icons": {
+            "wifi": [
+                "󰤯", // 0–20%
+                "󰤟", // 20–40%
+                "󰤢", // 40–60%
+                "󰤥", // 60–80%
+                "󰤨"  // 80–100%
+            ]
+        }
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{format_source} {icon} {volume}",
+        "format-bluetooth": "{format_source}   {icon} {volume}",
+        "format-bluetooth-muted": "{format_source}    ",
+        "format-muted": "{format_source}  ",
+        "format-source": " {volume}",
+        "format-source-muted": "",
+        "format-icons": {
+//            "headphone": " ",
+//            "hands-free": "",
+//            "headset": "",
+//            "phone": "",
+//            "portable": "",
+//            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/bluetoth": {
+        "format": "󰂯",
+        "on-click": "blueman-manager",
+        "tooltip": false
+    },
+    "custom/power": {
+        "format": "󰣇",
+        "tooltip": true,
+        "tooltip-format": "Arch Linux",
+        //"menu": "on-click",
+        //"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        //"menu-actions": {
+        //	"shutdown": "shutdown",
+        //	"reboot": "reboot",
+        //	"suspend": "systemctl suspend",
+        //	"hibernate": "systemctl hibernate"
+        //}
+    }
+}
