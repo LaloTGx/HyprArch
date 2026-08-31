@@ -1,4 +1,4 @@
---# BEZIER #
+-- BEZIER
 hl.curve("easeOutQuint", {
     type = "bezier",
     points = {
@@ -6,6 +6,7 @@ hl.curve("easeOutQuint", {
         {0.32, 1}
     }
 })
+
 hl.curve("easeInOutCubic", {
     type = "bezier",
     points = {
@@ -13,6 +14,7 @@ hl.curve("easeInOutCubic", {
         {0.36, 1}
     }
 })
+
 hl.curve("linear", {
     type = "bezier",
     points = {
@@ -20,6 +22,7 @@ hl.curve("linear", {
         {1, 1}
     }
 })
+
 hl.curve("almostLinear", {
     type = "bezier",
     points = {
@@ -27,6 +30,7 @@ hl.curve("almostLinear", {
         {0.75, 1}
     }
 })
+
 hl.curve("quick", {
     type = "bezier",
     points = {
@@ -34,6 +38,7 @@ hl.curve("quick", {
         {0.1, 1}
     }
 })
+
 -- Workspaces
 hl.curve("easeOutBack", {
     type = "bezier",
@@ -42,6 +47,7 @@ hl.curve("easeOutBack", {
         {0, 1.2}
     }
 })
+
 hl.curve("softBounceOut", {
     type = "bezier",
     points = {
@@ -49,6 +55,8 @@ hl.curve("softBounceOut", {
         {-0.1, 1.2}
     }
 })
+
+
 -- Windows
 hl.curve("popIn", {
     type = "bezier",
@@ -57,6 +65,7 @@ hl.curve("popIn", {
         {0.26, 0.59}
     }
 })
+
 hl.curve("pop", {
     type = "bezier",
     points = {
@@ -64,6 +73,7 @@ hl.curve("pop", {
         {0.67, 1.28}
     }
 })
+
 hl.curve("popOut", {
     type = "bezier",
     points = {
@@ -71,7 +81,9 @@ hl.curve("popOut", {
         {0.52, 0.63}
     }
 })
---# ANIMATIONS #
+
+
+-- ANIMATIONS
 -- Global
 hl.animation({
     leaf = "global",
@@ -86,6 +98,7 @@ hl.animation({
     speed = 5.39,
     bezier = "easeOutQuint"
 })
+
 -- Windows
 hl.animation({
     leaf = "windows",
@@ -93,6 +106,7 @@ hl.animation({
     speed = 2.8,
     bezier = "popIn"
 })
+
 hl.animation({
     leaf = "windowsIn",
     enabled = true,
@@ -100,6 +114,7 @@ hl.animation({
     bezier = "pop",
     style = "slide top"
 })
+
 hl.animation({
     leaf = "windowsOut",
     enabled = true,
@@ -107,6 +122,7 @@ hl.animation({
     bezier = "popOut",
     style = "slide top"
 })
+
 -- Fade
 hl.animation({
     leaf = "fadeIn",
@@ -114,18 +130,21 @@ hl.animation({
     speed = 1.73,
     bezier = "almostLinear"
 })
+
 hl.animation({
     leaf = "fadeOut",
     enabled = true,
     speed = 1.46,
     bezier = "almostLinear"
 })
+
 hl.animation({
     leaf = "fade",
     enabled = true,
     speed = 3.03,
     bezier = "quick"
 })
+
 -- Layers
 hl.animation({
     leaf = "layers",
@@ -133,6 +152,7 @@ hl.animation({
     speed = 3.81,
     bezier = "easeOutQuint"
 })
+
 hl.animation({
     leaf = "layersIn",
     enabled = true,
@@ -140,6 +160,7 @@ hl.animation({
     bezier = "easeOutQuint",
     style = "fade"
 })
+
 hl.animation({
     leaf = "layersOut",
     enabled = true,
@@ -147,6 +168,7 @@ hl.animation({
     bezier = "linear",
     style = "fade"
 })
+
 -- Fade Layers
 hl.animation({
     leaf = "fadeLayersIn",
@@ -154,12 +176,14 @@ hl.animation({
     speed = 1.79,
     bezier = "almostLinear"
 })
+
 hl.animation({
     leaf = "fadeLayersOut",
     enabled = true,
     speed = 1.39,
     bezier = "almostLinear"
 })
+
 -- Workspaces
 hl.animation({
     leaf = "workspaces",
@@ -167,12 +191,14 @@ hl.animation({
     speed = 3,
     bezier = "easeOutBack"
 })
+
 hl.animation({
     leaf = "workspacesIn",
     enabled = true,
     speed = 5,
     bezier = "softBounceOut"
 })
+
 hl.animation({
     leaf = "workspacesOut",
     enabled = true,
