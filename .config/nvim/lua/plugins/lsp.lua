@@ -10,7 +10,7 @@ return {
       require("mason").setup()
       local mason_lspconfig = require("mason-lspconfig")
 
-      local servers = { "marksman", "ts_ls", "html", "cssls", "jdtls", "pyright" }
+      local servers = { "marksman", "ts_ls", "html", "cssls", "jdtls", "pyright", "wgsl_analyzer" }
 
       mason_lspconfig.setup({
         ensure_installed = servers,
