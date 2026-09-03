@@ -4,6 +4,7 @@ CheatSheet Hyprland|kitty -e bash .config/rofi/scripts/r_menu/cheatsheet/cheatsh
 PP Arch|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosArch.md|firststeps.png
 PP Term|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosTTY.md|firststeps.png
 PP Nvim|kitty -e nvim ~/repositorios/HyprArch/PrimerosPasosNvim.md|firststeps.png
+Toggle waybar|bash ~/.config/hypr/scripts/waybar-toggle.sh|status.png
 Notes|kitty -e bash ~/.config/rofi/scripts/r_menu/notes/homenotes.sh|notes.png
 Notefication|bash ~/.config/hypr/scripts/notefications.sh|notification.png
 Download Music|kitty -e bash .config/rofi/scripts/r_menu/dmusic/dmusic.sh|downloadmusic.png
